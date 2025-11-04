@@ -130,17 +130,17 @@ export default function AudioToggle(){
 
   return (
     <div className="flex flex-col items-center gap-1">
+      <div className="text-sm text-[#53565A]">
+        {enabled ? "🔊Sound Off" : "🔇Sound Off"}
+      </div>
       <button 
         onClick={()=>setEnabled(v=>!v)} 
-        className="text-sm text-[#53565A] hover:text-[#8C1515] transition cursor-pointer" 
+        className="text-xs text-[#53565A] hover:text-[#8C1515] transition cursor-pointer underline" 
         aria-pressed={enabled}
         aria-label={enabled ? "Turn sound off" : "Turn sound on"}
       >
-        {enabled ? "🔊Sound Off" : "🔇Sound Off"}
+        (Click to {enabled ? "disable" : "enable"})
       </button>
-      <span className="text-xs text-[#53565A]">
-        {enabled ? "(Click to disable)" : "(Click to enable)"}
-      </span>
       <audio 
         ref={audioRef} 
         src="/sfx-suspense.mp3" 
