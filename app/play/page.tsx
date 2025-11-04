@@ -5,7 +5,7 @@ export default function Modes(){
       <p className="kicker">Begin</p>
       <h2 className="text-2xl font-semibold">Start Your Journey</h2>
       <p>Move through scenarios, save progress anytime, and see the result(s) of each decision.</p>
-      <Link href="/play/individual/1" className="btn">Start Your Journey</Link>
+      <Link href="/play/individual/1" className="btn px-6 py-3 text-base font-semibold">Start Your Journey</Link>
     </div>
   );
 }

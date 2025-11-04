@@ -66,10 +66,10 @@ export default function IndividualLevel({ params }:{ params:{ id:string } }) {
       <ScenarioCard scenario={scenario} level={levelIndex} index={idx} onSubmit={onSubmit} />
 
       <div className="flex gap-2 pt-2">
-        <button onClick={()=> setIdx(i=>Math.max(0, i-1))} disabled={idx===0} className="btn-ghost disabled:opacity-50">Prev</button>
-        {!isLast && <button onClick={()=> setIdx(i=>Math.min(pack.scenarios.length-1, i+1))} className="btn-ghost">Next</button>}
-        {isLast && <Link href={`/results/local-${Date.now()}`} className="btn">See Level Results</Link>}
-        <Link href="/" className="ml-auto btn-ghost">Back Home</Link>
+        <button onClick={()=> setIdx(i=>Math.max(0, i-1))} disabled={idx===0} className="btn-ghost px-4 py-2 text-sm font-semibold disabled:opacity-50">Prev</button>
+        {!isLast && <button onClick={()=> setIdx(i=>Math.min(pack.scenarios.length-1, i+1))} className="btn-ghost px-4 py-2 text-sm font-semibold">Next</button>}
+        {isLast && <Link href={`/results/local-${Date.now()}`} className="btn px-6 py-3 text-base font-semibold">See Level Results</Link>}
+        <Link href="/" className="ml-auto btn-ghost px-4 py-2 text-sm font-semibold">Back Home</Link>
       </div>
     </div>
   );

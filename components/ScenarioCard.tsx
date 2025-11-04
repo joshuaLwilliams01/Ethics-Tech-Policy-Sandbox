@@ -49,8 +49,8 @@ export default function ScenarioCard({
           <p className="text-gray-700 mt-1">{scenario.prompt}</p>
         </div>
         <div className="flex gap-2">
-          <button onClick={doSave} className="btn-ghost">Save Your Progress</button>
-          <Link href="/" className="btn-ghost">Back Home</Link>
+          <button onClick={doSave} className="btn-ghost px-4 py-2 text-sm font-semibold">Save Your Progress</button>
+          <Link href="/" className="btn-ghost px-4 py-2 text-sm font-semibold">Back Home</Link>
         </div>
       </div>
 
@@ -90,7 +90,7 @@ export default function ScenarioCard({
 
       <div className="flex flex-wrap gap-2">
         <button disabled={!canSubmit} onClick={handleSubmit}
-          className={`btn ${!canSubmit ? 'opacity-60 cursor-not-allowed' : ''}`} aria-disabled={!canSubmit}>
+          className={`btn px-6 py-3 text-base font-semibold ${!canSubmit ? 'opacity-60 cursor-not-allowed' : ''}`} aria-disabled={!canSubmit}>
           Submit Decision
         </button>
       </div>
