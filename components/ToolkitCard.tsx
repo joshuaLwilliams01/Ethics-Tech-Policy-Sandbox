@@ -12,11 +12,11 @@ export default function ToolkitCard({ flow, onComplete }:{
   useEffect(() => {
     // Check if prompts are complete
     const promptsComplete = flow.prompts.length === 0 || 
-      answers.filter(a => a.trim().length >= 2).length === flow.prompts.length;
+      (answers.length === flow.prompts.length && answers.filter(a => a.trim().length >= 2).length === flow.prompts.length);
     
     // Check if actions are complete
     const actionsComplete = flow.quick_actions.length === 0 || 
-      (checks.length === flow.quick_actions.length && checks.every(Boolean));
+      (checks.length === flow.quick_actions.length && checks.every(c => c === true));
     
     const isComplete = promptsComplete && actionsComplete;
     
@@ -36,15 +36,26 @@ export default function ToolkitCard({ flow, onComplete }:{
             aria-label={`Toolkit prompt ${i+1}`} />
         </div>
       ))}
-      <div>
-        <div className="font-medium mb-2">Quick actions</div>
-        {flow.quick_actions.map((a, i) => (
-          <label key={i} className="flex items-center gap-2 mb-1">
-            <input type="checkbox" checked={checks[i]} onChange={e => { const next = checks.slice(); next[i] = e.target.checked; setChecks(next); }} aria-label={`Quick action ${i+1}`} />
-            <span>{a}</span>
-          </label>
-        ))}
-      </div>
+      {flow.quick_actions.length > 0 && (
+        <div>
+          <div className="font-medium mb-2">Quick actions</div>
+          {flow.quick_actions.map((a, i) => (
+            <label key={i} className="flex items-center gap-2 mb-1">
+              <input 
+                type="checkbox" 
+                checked={checks[i] || false} 
+                onChange={e => { 
+                  const next = checks.slice(); 
+                  next[i] = e.target.checked; 
+                  setChecks(next); 
+                }} 
+                aria-label={`Quick action ${i+1}`} 
+              />
+              <span>{a}</span>
+            </label>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
