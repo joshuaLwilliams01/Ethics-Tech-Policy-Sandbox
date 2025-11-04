@@ -33,14 +33,18 @@ export default function AudioToggle(){
       gainNodeRef.current = gainNode;
       
       // Slowly modulate frequency for subtle suspense
+      let animationFrame: number;
       const modulate = () => {
         if (!oscillatorRef.current) return;
         const baseFreq = 220;
         const variation = Math.sin(Date.now() / 3000) * 5;
         oscillatorRef.current.frequency.value = baseFreq + variation;
-        if (enabled) requestAnimationFrame(modulate);
+        animationFrame = requestAnimationFrame(modulate);
       };
-      modulate();
+      animationFrame = requestAnimationFrame(modulate);
+      
+      // Store animation frame ID for cleanup
+      (oscillatorRef.current as any)._animationFrame = animationFrame;
     } catch (e) {
       console.warn('Audio context not available:', e);
     }
@@ -48,6 +52,8 @@ export default function AudioToggle(){
 
   const stopFallbackAudio = () => {
     if (oscillatorRef.current) {
+      const animationFrame = (oscillatorRef.current as any)._animationFrame;
+      if (animationFrame) cancelAnimationFrame(animationFrame);
       oscillatorRef.current.stop();
       oscillatorRef.current = null;
     }
