@@ -138,6 +138,7 @@ export default function AudioToggle(){
       >
         {enabled ? "🔊Sound Off" : "🔇Sound Off"}
       </button>
+      {enabled && <span className="text-xs text-[#53565A]">(Click to disable)</span>}
       <span className="text-xs text-[#53565A]">(Click to enable)</span>
       <audio 
         ref={audioRef} 
