@@ -34,9 +34,9 @@ export default function AudioToggle(){
       const bassGain = 0.12;
       const melodyGain = 0.08;
       
-      let noteIndex = 0;
+      const isEnabledRef = { current: true }; // Track enabled state for scheduling
       const scheduleNext = () => {
-        if (!enabled || !audioContextRef.current) return;
+        if (!isEnabledRef.current || !audioContextRef.current) return;
         
         const ctx = audioContextRef.current;
         const currentTime = ctx.currentTime;
@@ -91,17 +91,8 @@ export default function AudioToggle(){
           gainNodesRef.current.push(melodyGainNode);
         }
         
-        // Clean up old oscillators
-        oscillatorsRef.current = oscillatorsRef.current.filter(osc => {
-          try {
-            return osc.context.currentTime < osc.context.currentTime + 1;
-          } catch {
-            return false;
-          }
-        });
-        
         // Schedule next iteration
-        if (enabled && audioContextRef.current) {
+        if (isEnabledRef.current && audioContextRef.current) {
           scheduleIntervalRef.current = window.setTimeout(
             scheduleNext,
             tempo * 1000 / 4 // Check 4 times per beat for precision
@@ -109,8 +100,13 @@ export default function AudioToggle(){
         }
       };
       
+      // Store enabled ref for cleanup
+      (audioContextRef.current as any)._isEnabledRef = isEnabledRef;
+      
       // Start scheduling
       scheduleNext();
+      
+      return isEnabledRef;
     } catch (e) {
       console.warn('Audio context not available:', e);
     }
@@ -121,6 +117,11 @@ export default function AudioToggle(){
     if (scheduleIntervalRef.current !== null) {
       clearTimeout(scheduleIntervalRef.current);
       scheduleIntervalRef.current = null;
+    }
+    
+    // Disable scheduling
+    if (audioContextRef.current && (audioContextRef.current as any)._isEnabledRef) {
+      (audioContextRef.current as any)._isEnabledRef.current = false;
     }
     
     // Stop all oscillators
