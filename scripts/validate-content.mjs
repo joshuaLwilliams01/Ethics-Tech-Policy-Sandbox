@@ -18,7 +18,14 @@ const scenarioSchema = z.object({
   toolkit_flow: z.object({
     order: z.array(z.enum(["T1","T2","T3","T4","T5"])),
     prompts: z.array(z.string()),
-    quick_actions: z.array(z.string()),
+    quick_actions: z.union([
+      z.array(z.string()),
+      z.object({
+        A: z.array(z.string()).optional(),
+        B: z.array(z.string()).optional(),
+        C: z.array(z.string()).optional()
+      })
+    ]),
     metrics: z.array(z.string()).optional(),
     owner_required: z.boolean().optional(),
     review_default_days: z.number().optional()
