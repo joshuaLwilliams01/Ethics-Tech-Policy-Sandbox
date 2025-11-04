@@ -1,8 +1,12 @@
+'use client';
 import Link from "next/link";
 import HowToPlay from "@/components/HowToPlay";
 import AudioToggle from "@/components/AudioToggle";
+import { useState } from "react";
 
 export default function Home(){
+  const [showHowToPlay, setShowHowToPlay] = useState(false);
+  
   return (
     <div className="min-h-screen flex flex-col items-center justify-center py-12 px-4">
       {/* Main Title */}
@@ -73,18 +77,23 @@ export default function Home(){
 
       {/* How to Play & Start Button - AISES style */}
       <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-8">
-        <a href="#how" className="btn-ghost px-6 py-3 text-base font-semibold">
+        <button 
+          onClick={() => setShowHowToPlay(!showHowToPlay)}
+          className="btn-ghost px-6 py-3 text-base font-semibold"
+        >
           📖 HOW TO PLAY
-        </a>
+        </button>
         <Link href="/play/individual/1" className="btn px-6 py-3 text-base font-semibold">
           🎮 START YOUR JOURNEY
         </Link>
       </div>
 
-      {/* How to Play Section */}
-      <div id="how" className="w-full max-w-3xl card mb-8">
-        <HowToPlay />
-      </div>
+      {/* How to Play Section - Expandable */}
+      {showHowToPlay && (
+        <div className="w-full max-w-3xl card mb-8 animate-in fade-in slide-in-from-top-2 duration-300">
+          <HowToPlay />
+        </div>
+      )}
 
       {/* Disclaimer */}
       <div className="text-center text-xs text-[#53565A] max-w-2xl">
