@@ -1,13 +1,29 @@
 'use client';
-import { useEffect, useState } from 'react';
-import type { ToolkitFlow } from '@/lib/types';
+import { useEffect, useState, useMemo } from 'react';
+import type { ToolkitFlow, ChoiceKey } from '@/lib/types';
 
-export default function ToolkitCard({ flow, onComplete }:{
+export default function ToolkitCard({ flow, choice, onComplete }:{
   flow: ToolkitFlow;
+  choice: ChoiceKey | null;
   onComplete: (out:{prompts:string[]; actions:boolean[]; metrics:string[]; isComplete:boolean;})=>void;
 }) {
+  // Get actions based on choice (if choice-specific) or use static array
+  const actions = useMemo(() => {
+    if (Array.isArray(flow.quick_actions)) {
+      return flow.quick_actions; // Static actions
+    } else if (choice && flow.quick_actions[choice]) {
+      return flow.quick_actions[choice]; // Choice-specific actions
+    }
+    return []; // No actions if no choice selected and actions are choice-specific
+  }, [flow.quick_actions, choice]);
+
   const [answers, setAnswers] = useState<string[]>(() => flow.prompts.map(()=>''));
-  const [checks, setChecks]   = useState<boolean[]>(() => flow.quick_actions.map(() => false));
+  const [checks, setChecks] = useState<boolean[]>(() => actions.map(() => false));
+
+  // Reset checks when choice or actions change
+  useEffect(() => {
+    setChecks(actions.map(() => false));
+  }, [choice, actions.length]);
 
   useEffect(() => {
     // Check if prompts are complete
@@ -16,8 +32,8 @@ export default function ToolkitCard({ flow, onComplete }:{
       (answers.length === flow.prompts.length && answers.filter(a => a.trim().length >= 2).length === flow.prompts.length);
     
     // Check if actions are complete
-    const noActions = flow.quick_actions.length === 0;
-    const allActionsChecked = checks.length === flow.quick_actions.length && checks.every(c => c === true);
+    const noActions = actions.length === 0;
+    const allActionsChecked = checks.length === actions.length && checks.every(c => c === true);
     const actionsComplete = noActions || allActionsChecked;
     
     const isComplete = promptsComplete && actionsComplete;
@@ -29,16 +45,17 @@ export default function ToolkitCard({ flow, onComplete }:{
         actionsComplete,
         isComplete,
         promptsLength: flow.prompts.length,
-        actionsLength: flow.quick_actions.length,
+        actionsLength: actions.length,
         checksLength: checks.length,
         allChecked: checks.every(c => c === true),
-        checks: checks
+        checks: checks,
+        choice: choice
       });
     }
     
     // Always call onComplete to update parent state
     onComplete({ prompts:answers, actions:checks, metrics:flow.metrics ?? [], isComplete });
-  }, [answers, checks, flow.prompts.length, flow.quick_actions.length, flow.metrics]);
+  }, [answers, checks, flow.prompts.length, actions.length, flow.metrics, choice]);
 
   return (
     <div className="card space-y-4">
@@ -52,10 +69,10 @@ export default function ToolkitCard({ flow, onComplete }:{
             aria-label={`Toolkit prompt ${i+1}`} />
         </div>
       ))}
-      {flow.quick_actions.length > 0 && (
+      {actions.length > 0 && (
         <div>
-          <div className="font-medium mb-2">Quick actions</div>
-          {flow.quick_actions.map((a, i) => (
+          <div className="font-medium mb-2">Quick actions{choice ? ` (for choice ${choice})` : ''}</div>
+          {actions.map((a, i) => (
             <label key={i} className="flex items-center gap-2 mb-1">
               <input 
                 type="checkbox" 

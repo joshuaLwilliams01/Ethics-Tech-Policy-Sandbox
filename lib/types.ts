@@ -2,7 +2,7 @@ export type ChoiceKey = 'A'|'B'|'C';
 export type ToolkitFlow = {
   order: ('T1'|'T2'|'T3'|'T4'|'T5')[];
   prompts: string[];
-  quick_actions: string[];
+  quick_actions: string[] | Record<ChoiceKey, string[]>; // Can be static array or choice-specific
   metrics?: string[];
   owner_required?: boolean;
   review_default_days?: number;

@@ -87,7 +87,7 @@ export default function ScenarioCard({
         <div className="mt-1"><strong>People + Planet + Parity Cues:</strong> {scenario.p3_cues}</div>
       </div>
 
-      <ToolkitCard flow={scenario.toolkit_flow} onComplete={setToolkit} />
+      <ToolkitCard flow={scenario.toolkit_flow} choice={choice} onComplete={setToolkit} />
 
       <div className="flex flex-wrap gap-2">
         <button 
