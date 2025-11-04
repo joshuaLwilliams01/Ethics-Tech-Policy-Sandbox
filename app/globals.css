@@ -2,14 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Stanford-inspired palette (Ethics Center vibe) */
 :root{
-  --brand:#8C1515; /* Stanford Cardinal */
-  --ink:#1F2937;
-  --bg:#FAFAFA;
-  --accent:#5B8DEF;
-  --success:#10B981;
-  --warn:#F59E0B;
+  --cardinal:#8C1515;       /* primary */
+  --cardinal-dark:#820f0f;
+  --stone:#2E2D29;          /* ink */
+  --fog:#F7F6F3;            /* paper */
+  --accent:#2E6AB3;         /* links */
+  --gold:#B3995D;           /* subtle highlights */
 }
-html,body{ background: var(--bg); color: var(--ink); }
-a{ color: var(--accent); }
 
+html,body{ background:var(--fog); color:var(--stone); }
+a{ color:var(--accent); }
+
+.suspense-bg{
+  background: radial-gradient(1200px 400px at 50% -200px, rgba(140,21,21,0.18), transparent),
+              radial-gradient(600px 300px at 20% 0%, rgba(179,153,93,0.15), transparent),
+              linear-gradient(#ffffff, #faf8f5);
+}
+
+/* Buttons */
+.btn{ @apply inline-flex items-center justify-center px-4 py-2 rounded font-medium transition;
+      background: var(--stone); color:#fff; }
+.btn:hover{ background: #000; }
+.btn-ghost{ @apply border; background:#fff; color:var(--stone); }
+.btn-ghost:hover{ background:#f3f3f3; }
+
+/* Card */
+.card{ @apply rounded border bg-white/80 backdrop-blur p-4; }
+
+/* Small helper */
+.kicker{ @apply uppercase tracking-wide text-xs text-gray-500; }

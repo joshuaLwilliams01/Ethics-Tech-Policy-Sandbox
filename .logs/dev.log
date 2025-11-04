@@ -1,0 +1,35 @@
+
+> dev
+> next dev -p 3000
+
+  ▲ Next.js 14.2.4
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 3.3s
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 4.1s (495 modules)
+ GET / 200 in 3986ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET / 200 in 4315ms
+ GET /_next/static/webpack/c06c0d15ae673a2a.webpack.hot-update.json 404 in 4281ms
+ GET / 200 in 32ms
+ ✓ Compiled /play in 370ms (485 modules)
+ ○ Compiling /play/individual/[id] ...
+ ✓ Compiled /play/individual/[id] in 517ms (545 modules)
+ GET /play/individual/1 200 in 934ms
+ ✓ Compiled /about in 484ms (544 modules)
+ ○ Compiling /play/lecture/[roomId] ...
+ ✓ Compiled /play/lecture/[roomId] in 583ms (546 modules)
+ GET /play/lecture/DEMO 200 in 1007ms
+ GET /play 200 in 39ms
+ ✓ Compiled /play/group/create in 220ms (548 modules)
+ GET /play/group/create 200 in 339ms
+ GET /play 200 in 54ms
+ GET /play/individual/1 200 in 81ms
+ GET /play/individual/1 200 in 52ms
+ GET /play/group/create 200 in 119ms
+ GET /play 200 in 57ms
+ GET /play/individual/1 200 in 96ms
+ ✓ Compiled in 2.4s (566 modules)

@@ -3,7 +3,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { loadLevel } from '@/lib/content';
 import type { LevelPack, ChoiceKey } from '@/lib/types';
 import ScenarioCard from '@/components/ScenarioCard';
-import ScorePanel from '@/components/ScorePanel';
 import { scoreDecision } from '@/lib/scoring';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -13,7 +12,6 @@ type StepResult = {
   choice: ChoiceKey;
   toolkitOut: any;
   p3Out: any;
-  reflection: string;
   score: ReturnType<typeof scoreDecision>;
 };
 
@@ -46,24 +44,17 @@ export default function IndividualLevel({ params }:{ params:{ id:string } }) {
         people: payload.p3Out?.people,
         planet: payload.p3Out?.planet,
         parity: payload.p3Out?.parity,
-        specifics: payload.p3Out?.specifics ?? 0
+        specifics: 0
       },
-      reflectionChars: payload.reflection?.trim().length ?? 0,
+      reflectionChars: 200, // no free-text now; give small credit
       priorVector: 0.5
     });
 
     const step: StepResult = { scenario_id: scenario.scenario_id, ...payload, score };
     const next = [...results]; next[idx] = step; setResults(next);
-
-    const last = idx === pack.scenarios.length - 1;
-    if (last) {
-      sessionStorage.setItem('LATEST_RUN', JSON.stringify({ level: levelIndex, steps: next }));
-      router.push(`/results/local-${Date.now()}`);
-    } else {
-      setIdx(i => i + 1);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
   };
+
+  const isLast = idx === pack.scenarios.length - 1;
 
   return (
     <div className="space-y-6">
@@ -72,19 +63,13 @@ export default function IndividualLevel({ params }:{ params:{ id:string } }) {
         <div className="text-sm text-gray-600">Progress: {progress}</div>
       </div>
 
-      <ScenarioCard scenario={scenario} onSubmit={onSubmit} />
+      <ScenarioCard scenario={scenario} level={levelIndex} index={idx} onSubmit={onSubmit} />
 
-      {results[idx]?.score && (
-        <div>
-          <h4 className="mt-6 mb-2 font-semibold">Your score for this scenario</h4>
-          <ScorePanel breakdown={{ ...results[idx].score, total: results[idx].score.total }} />
-        </div>
-      )}
-
-      <div className="flex gap-2 pt-4">
-        <button onClick={()=> setIdx(i=>Math.max(0, i-1))} disabled={idx===0} className="px-3 py-2 rounded border disabled:opacity-50">Prev</button>
-        <button onClick={()=> setIdx(i=>Math.min(pack.scenarios.length-1, i+1))} disabled={idx===pack.scenarios.length-1} className="px-3 py-2 rounded border disabled:opacity-50">Next</button>
-        <Link href="/play" className="ml-auto px-3 py-2 rounded border">Back to Modes</Link>
+      <div className="flex gap-2 pt-2">
+        <button onClick={()=> setIdx(i=>Math.max(0, i-1))} disabled={idx===0} className="btn-ghost disabled:opacity-50">Prev</button>
+        {!isLast && <button onClick={()=> setIdx(i=>Math.min(pack.scenarios.length-1, i+1))} className="btn-ghost">Next</button>}
+        {isLast && <Link href={`/results/local-${Date.now()}`} className="btn">See Level Results</Link>}
+        <Link href="/" className="ml-auto btn-ghost">Back Home</Link>
       </div>
     </div>
   );

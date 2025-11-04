@@ -3,36 +3,59 @@ import { useMemo, useState } from 'react';
 import type { Scenario, ChoiceKey } from '@/lib/types';
 import ToolkitCard from './ToolkitCard';
 import P3Strip, { P3State } from './P3Strip';
+import { describeResult } from '@/lib/results';
+import Link from 'next/link';
+import { saveProgress } from '@/lib/save';
 
 export default function ScenarioCard({
   scenario,
+  level,
+  index,
   onSubmit
 }:{
   scenario: Scenario;
+  level: number;
+  index: number;
   onSubmit: (payload: {
     choice: ChoiceKey;
     toolkitOut: any;
     p3Out: P3State;
-    reflection: string;
   }) => void
 }) {
   const [choice, setChoice] = useState<ChoiceKey | null>(null);
   const [toolkit, setToolkit] = useState<any>({ isComplete:false });
-  const [p3, setP3] = useState<P3State>({ people:false, planet:false, parity:false, specifics:0 });
-  const [reflection, setReflection] = useState('');
+  const [p3, setP3] = useState<P3State>({ people:false, planet:false, parity:false });
+  const [resultBlock, setResultBlock] = useState<null | {summary:string; benefits:string[]; harms:string[]}>(null);
 
-  const canSubmit = useMemo(() => {
-    return Boolean(choice) && toolkit?.isComplete && reflection.trim().length >= 180;
-  }, [choice, toolkit, reflection]);
+  const canSubmit = useMemo(() => Boolean(choice) && toolkit?.isComplete, [choice, toolkit]);
+
+  const doSave = () => {
+    saveProgress({ level, idx:index, timestamp:Date.now(), payload:{ choice, toolkit, p3 } });
+    alert("Progress saved locally.");
+  };
+
+  const handleSubmit = () => {
+    if (!choice) return;
+    const res = describeResult({ scenario, choice, p3 });
+    setResultBlock(res);
+    onSubmit({ choice, toolkitOut: toolkit, p3Out: p3 });
+  };
 
   return (
     <div className="space-y-5">
-      <div>
-        <h3 className="text-xl font-semibold">{scenario.title}</h3>
-        <p className="text-gray-700 mt-1">{scenario.prompt}</p>
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <h3 className="text-xl font-semibold">{scenario.title}</h3>
+          <p className="text-gray-700 mt-1">{scenario.prompt}</p>
+        </div>
+        <div className="flex gap-2">
+          <button onClick={doSave} className="btn-ghost">Save Your Progress</button>
+          <Link href="/" className="btn-ghost">Back Home</Link>
+        </div>
       </div>
 
-      <fieldset className="space-y-2">
+      <fieldset className="card space-y-2">
+        <div className="font-medium">Choose A / B / C</div>
         {(['A','B','C'] as ChoiceKey[]).map(key => (
           <label key={key} className="flex items-center gap-2">
             <input type="radio" name={`choice-${scenario.scenario_id}`} checked={choice===key} onChange={()=>setChoice(key)} />
@@ -41,29 +64,37 @@ export default function ScenarioCard({
         ))}
       </fieldset>
 
-      <div className="text-sm text-gray-600">
-        <div><strong>Toolkit cues:</strong> {scenario.toolkit_cues}</div>
-        <div><strong>P3 cues:</strong> {scenario.p3_cues}</div>
+      <div className="text-sm text-gray-700 card">
+        <div><strong>Stanford Ethics Toolkit Cue(s):</strong> {scenario.toolkit_cues}</div>
+        <div className="mt-1"><strong>People + Planet + Parity Cues:</strong> {scenario.p3_cues}</div>
       </div>
 
       <ToolkitCard flow={scenario.toolkit_flow} onComplete={setToolkit} />
       <P3Strip onUpdate={setP3} />
 
-      <div>
-        <label className="block font-medium mb-1">Reflection (min ~180 chars)</label>
-        <textarea className="w-full border rounded p-2 min-h-[120px]" value={reflection} onChange={e=>setReflection(e.target.value)} />
-        <div className="text-xs text-gray-500 mt-1">{reflection.trim().length} / 180</div>
+      <div className="flex flex-wrap gap-2">
+        <button disabled={!canSubmit} onClick={handleSubmit}
+          className={`btn ${!canSubmit ? 'opacity-60 cursor-not-allowed' : ''}`} aria-disabled={!canSubmit}>
+          Submit Decision
+        </button>
       </div>
 
-      <button
-        disabled={!canSubmit}
-        onClick={()=> onSubmit({ choice: choice!, toolkitOut: toolkit, p3Out: p3, reflection })}
-        className={`px-4 py-2 rounded ${canSubmit ? 'bg-black text-white' : 'bg-gray-300 text-gray-600 cursor-not-allowed'}`}
-        aria-disabled={!canSubmit}
-      >
-        Submit decision
-      </button>
+      {resultBlock && (
+        <div className="card">
+          <div className="font-semibold mb-1">Result(s) of your decision</div>
+          <p className="mb-2">{resultBlock.summary}</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <div>
+              <div className="kicker mb-1">Benefits</div>
+              <ul className="list-disc ml-5">{resultBlock.benefits.map((b,i)=><li key={i}>{b}</li>)}</ul>
+            </div>
+            <div>
+              <div className="kicker mb-1">Harms</div>
+              <ul className="list-disc ml-5">{resultBlock.harms.map((h,i)=><li key={i}>{h}</li>)}</ul>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
-
