@@ -11,14 +11,30 @@ export default function ToolkitCard({ flow, onComplete }:{
 
   useEffect(() => {
     // Check if prompts are complete
-    const promptsComplete = flow.prompts.length === 0 || 
+    const noPrompts = flow.prompts.length === 0;
+    const promptsComplete = noPrompts || 
       (answers.length === flow.prompts.length && answers.filter(a => a.trim().length >= 2).length === flow.prompts.length);
     
     // Check if actions are complete
-    const actionsComplete = flow.quick_actions.length === 0 || 
-      (checks.length === flow.quick_actions.length && checks.every(c => c === true));
+    const noActions = flow.quick_actions.length === 0;
+    const allActionsChecked = checks.length === flow.quick_actions.length && checks.every(c => c === true);
+    const actionsComplete = noActions || allActionsChecked;
     
     const isComplete = promptsComplete && actionsComplete;
+    
+    // Debug logging
+    if (process.env.NODE_ENV === 'development') {
+      console.log('ToolkitCard completion check:', {
+        promptsComplete,
+        actionsComplete,
+        isComplete,
+        promptsLength: flow.prompts.length,
+        actionsLength: flow.quick_actions.length,
+        checksLength: checks.length,
+        allChecked: checks.every(c => c === true),
+        checks: checks
+      });
+    }
     
     // Always call onComplete to update parent state
     onComplete({ prompts:answers, actions:checks, metrics:flow.metrics ?? [], isComplete });
