@@ -41,9 +41,9 @@ export default function IndividualLevel({ params }:{ params:{ id:string } }) {
         totalActions: scenario.toolkit_flow.quick_actions.length,
       },
       p3: {
-        people: payload.p3Out?.people,
-        planet: payload.p3Out?.planet,
-        parity: payload.p3Out?.parity,
+        people: false,
+        planet: false,
+        parity: false,
         specifics: 0
       },
       reflectionChars: 200, // no free-text now; give small credit
