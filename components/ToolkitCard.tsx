@@ -18,11 +18,11 @@ export default function ToolkitCard({ flow, onComplete }:{
     // - No prompts AND no actions (empty toolkit)
     // - OR all prompts filled (>= 2 chars) AND all actions checked
     const promptsComplete = noPrompts || (answers.filter(a => a.trim().length >= 2).length === flow.prompts.length);
-    const actionsComplete = noActions || checks.every(Boolean);
+    const actionsComplete = noActions || (checks.length > 0 && checks.every(Boolean));
     const isComplete = promptsComplete && actionsComplete;
     
     onComplete({ prompts:answers, actions:checks, metrics:flow.metrics ?? [], isComplete });
-  }, [answers, checks, flow.prompts.length, flow.quick_actions.length, flow.metrics, onComplete]);
+  }, [answers, checks, flow.prompts.length, flow.quick_actions.length, flow.metrics]);
 
   return (
     <div className="card space-y-4">
