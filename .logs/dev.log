@@ -33,3 +33,6 @@
  GET /play 200 in 57ms
  GET /play/individual/1 200 in 96ms
  ✓ Compiled in 2.4s (566 modules)
+ GET /play/individual/1 200 in 170ms
+ GET /play/individual/1 200 in 52ms
+ ✓ Compiled in 499ms (566 modules)

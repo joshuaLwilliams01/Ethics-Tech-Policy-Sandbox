@@ -65,7 +65,23 @@ export default function ScenarioCard({
       </fieldset>
 
       <div className="text-sm text-gray-700 card">
-        <div><strong>Stanford Ethics Toolkit Cue(s):</strong> {scenario.toolkit_cues}</div>
+        <div>
+          <strong>Stanford Ethics Toolkit Cue(s):</strong> {scenario.toolkit_cues}
+          {scenario.toolkit_flow.order.length > 0 && (
+            <span className="ml-2 text-xs text-gray-600">
+              ({scenario.toolkit_flow.order.map(t => {
+                const names: Record<string, string> = {
+                  'T1': 'Impacts Explorer',
+                  'T2': 'Values Clarifier',
+                  'T3': 'Risks Anticipator',
+                  'T4': 'Alternatives Generator',
+                  'T5': 'Accountability Builder'
+                };
+                return names[t] || t;
+              }).join(', ')})
+            </span>
+          )}
+        </div>
         <div className="mt-1"><strong>People + Planet + Parity Cues:</strong> {scenario.p3_cues}</div>
       </div>
 
