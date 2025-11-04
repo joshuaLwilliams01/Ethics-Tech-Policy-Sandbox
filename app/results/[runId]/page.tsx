@@ -46,8 +46,8 @@ export default function Results({ params }:{ params:{ runId:string } }) {
         ))}
       </div>
       <div className="flex gap-2">
-        <button onClick={generateCertificate} className="px-4 py-2 rounded bg-black text-white">Generate Certificate</button>
-        <Link href="/play" className="px-4 py-2 rounded border">Back to Modes</Link>
+        <button onClick={generateCertificate} className="btn px-6 py-3 text-base font-semibold">Generate Certificate</button>
+        <Link href="/" className="btn-ghost px-6 py-3 text-base font-semibold">Back Home</Link>
       </div>
     </div>
   );
