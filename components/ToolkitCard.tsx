@@ -10,10 +10,20 @@ export default function ToolkitCard({ flow, onComplete }:{
   const [checks, setChecks]   = useState<boolean[]>(() => flow.quick_actions.map(() => false));
 
   const complete = () => {
-    const isComplete = checks.every(Boolean) && answers.filter(a => a.trim().length >= 2).length === flow.prompts.length;
+    // If no prompts or actions, consider complete
+    const noPrompts = flow.prompts.length === 0;
+    const noActions = flow.quick_actions.length === 0;
+    
+    // Complete if:
+    // - No prompts AND no actions (empty toolkit)
+    // - OR all prompts filled (>= 2 chars) AND all actions checked
+    const promptsComplete = noPrompts || (answers.filter(a => a.trim().length >= 2).length === flow.prompts.length);
+    const actionsComplete = noActions || checks.every(Boolean);
+    const isComplete = promptsComplete && actionsComplete;
+    
     onComplete({ prompts:answers, actions:checks, metrics:flow.metrics ?? [], isComplete });
   };
-  useMemo(complete, [answers, checks]); // keep parent updated
+  useMemo(complete, [answers, checks, flow.prompts.length, flow.quick_actions.length]); // keep parent updated
 
   return (
     <div className="card space-y-4">
