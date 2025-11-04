@@ -93,3 +93,7 @@
  ✓ Compiled in 552ms (790 modules)
  ✓ Compiled in 202ms (790 modules)
  ✓ Compiled in 197ms (790 modules)
+ ✓ Compiled in 591ms (790 modules)
+ GET / 200 in 95ms
+ GET /sfx-suspense.mp3 416 in 27ms
+ ✓ Compiled in 429ms (790 modules)

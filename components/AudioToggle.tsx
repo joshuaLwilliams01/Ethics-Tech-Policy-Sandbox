@@ -31,8 +31,8 @@ export default function AudioToggle(){
       const melodyNotes = [164.81, 196.00, 220.00, 246.94, 220.00, 196.00, 164.81]; // E3, G3, A3, B3, A3, G3, E3 (one octave lower)
       
       const tempo = 0.35; // Slower tempo for calmer feel
-      const bassGain = 0.06; // Much quieter
-      const melodyGain = 0.04; // Very subtle
+      const bassGain = 0.12; // Increased by 2 levels (was 0.06)
+      const melodyGain = 0.08; // Increased by 2 levels (was 0.04)
       
       const isEnabledRef = { current: true }; // Track enabled state for scheduling
       const scheduleNext = () => {
