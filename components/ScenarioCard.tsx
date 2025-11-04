@@ -90,10 +90,20 @@ export default function ScenarioCard({
       <ToolkitCard flow={scenario.toolkit_flow} onComplete={setToolkit} />
 
       <div className="flex flex-wrap gap-2">
-        <button disabled={!canSubmit} onClick={handleSubmit}
-          className={`btn px-6 py-3 text-base font-semibold ${!canSubmit ? 'opacity-60 cursor-not-allowed' : ''}`} aria-disabled={!canSubmit}>
+        <button 
+          disabled={!canSubmit} 
+          onClick={handleSubmit}
+          className={`btn px-6 py-3 text-base font-semibold ${!canSubmit ? 'opacity-60 cursor-not-allowed' : ''}`} 
+          aria-disabled={!canSubmit}
+        >
           Submit Decision
         </button>
+        {/* Debug info - remove in production */}
+        {process.env.NODE_ENV === 'development' && (
+          <div className="text-xs text-gray-500 mt-2">
+            Debug: choice={choice ? 'yes' : 'no'}, toolkit.isComplete={toolkit?.isComplete ? 'true' : 'false'}
+          </div>
+        )}
       </div>
 
       {resultBlock && (
