@@ -1,5 +1,5 @@
 'use client';
-import { useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { ToolkitFlow } from '@/lib/types';
 
 export default function ToolkitCard({ flow, onComplete }:{
@@ -9,7 +9,7 @@ export default function ToolkitCard({ flow, onComplete }:{
   const [answers, setAnswers] = useState<string[]>(() => flow.prompts.map(()=>''));
   const [checks, setChecks]   = useState<boolean[]>(() => flow.quick_actions.map(() => false));
 
-  const complete = () => {
+  useEffect(() => {
     // If no prompts or actions, consider complete
     const noPrompts = flow.prompts.length === 0;
     const noActions = flow.quick_actions.length === 0;
@@ -22,8 +22,7 @@ export default function ToolkitCard({ flow, onComplete }:{
     const isComplete = promptsComplete && actionsComplete;
     
     onComplete({ prompts:answers, actions:checks, metrics:flow.metrics ?? [], isComplete });
-  };
-  useMemo(complete, [answers, checks, flow.prompts.length, flow.quick_actions.length]); // keep parent updated
+  }, [answers, checks, flow.prompts.length, flow.quick_actions.length, flow.metrics, onComplete]);
 
   return (
     <div className="card space-y-4">
