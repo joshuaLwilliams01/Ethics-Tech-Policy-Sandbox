@@ -247,12 +247,12 @@ header {
   transform: scale(1.02);
 }
 
-/* Stanford Tree/Mascot inspired decorative element */
-.stanford-tree {
+/* Stanford Logo styling */
+.stanford-logo {
   display: inline-block;
-  font-size: 1.5em;
   animation: bounce-subtle 2s ease-in-out infinite;
   filter: drop-shadow(0 2px 4px rgba(140,21,21,0.3));
+  flex-shrink: 0;
 }
 
 /* Level card animations */

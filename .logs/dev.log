@@ -2387,3 +2387,14 @@ Import trace for requested module:
  ✓ Compiled in 1125ms (1154 modules)
  GET / 200 in 798ms
  ✓ Compiled in 1192ms (1154 modules)
+ ✓ Compiled in 1413ms (1154 modules)
+ ✓ Compiled in 1346ms (1154 modules)
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 2.2s (1143 modules)
+ GET /stanford-logo.png 404 in 2604ms
+ GET /stanford-logo.png 404 in 149ms
+ ✓ Compiled in 2.3s (1157 modules)
+ GET /stanford-logo.png 404 in 90ms
+ ✓ Compiled in 1997ms (1157 modules)
+ GET /stanford-logo.png 404 in 107ms
+ ✓ Compiled in 748ms (1157 modules)

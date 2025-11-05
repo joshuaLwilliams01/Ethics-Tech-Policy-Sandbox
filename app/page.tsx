@@ -11,7 +11,13 @@ export default function Home(){
     <div className="min-h-screen flex flex-col items-center justify-center py-12 px-4">
       {/* Main Title - Enhanced */}
       <div className="text-center mb-8 relative">
-        <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 text-6xl opacity-20" style={{ animation: 'bounce-subtle 2s ease-in-out infinite' }}>🌲</div>
+        <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 opacity-20" style={{ animation: 'bounce-subtle 2s ease-in-out infinite' }}>
+          <img 
+            src="/stanford-logo.png" 
+            alt="Stanford University" 
+            className="h-24 w-24 object-contain"
+          />
+        </div>
         <h1 className="text-5xl md:text-6xl font-bold mb-4 text-[#8C1515] tracking-tight relative inline-block">
           <span className="bg-gradient-to-r from-[#8C1515] via-[#C41E3A] to-[#8C1515] bg-clip-text text-transparent" style={{ animation: 'pulse-glow 3s ease-in-out infinite' }}>
             ETHICS-TECH-POLICY
@@ -78,9 +84,17 @@ export default function Home(){
       <div className="mb-8 w-full max-w-4xl">
         <div className="text-center mb-6">
           <div className="text-xl font-semibold text-[#2E2D29] mb-2 flex items-center justify-center gap-2">
-            <span className="stanford-tree">🌲</span>
+            <img 
+              src="/stanford-logo.png" 
+              alt="Stanford University" 
+              className="stanford-logo h-6 w-6 object-contain"
+            />
             <span>Choose Your Level</span>
-            <span className="stanford-tree">🌲</span>
+            <img 
+              src="/stanford-logo.png" 
+              alt="Stanford University" 
+              className="stanford-logo h-6 w-6 object-contain"
+            />
           </div>
         </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
