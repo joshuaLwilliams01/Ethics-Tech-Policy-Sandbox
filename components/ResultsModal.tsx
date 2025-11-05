@@ -31,12 +31,15 @@ export default function ResultsModal({
     if (isOpen) {
       document.addEventListener('keydown', handleEscape);
       // Scroll both container and modal to top when opening
-      if (containerRef.current) {
-        containerRef.current.scrollTop = 0;
-      }
-      if (modalRef.current) {
-        modalRef.current.scrollTop = 0;
-      }
+      // Use requestAnimationFrame to ensure DOM is ready
+      requestAnimationFrame(() => {
+        if (containerRef.current) {
+          containerRef.current.scrollTop = 0;
+        }
+        if (modalRef.current) {
+          modalRef.current.scrollTop = 0;
+        }
+      });
     }
     return () => {
       document.removeEventListener('keydown', handleEscape);
