@@ -2708,3 +2708,8 @@ digest: "2094012415"
  GET / 200 in 2085ms
  ✓ Compiled in 3.1s (1158 modules)
  ✓ Compiled in 648ms (1158 modules)
+ ✓ Compiled in 3.2s (1158 modules)
+ GET /test-progress 200 in 223ms
+ ✓ Compiled in 1981ms (1158 modules)
+ ✓ Compiled in 3.1s (1158 modules)
+ ✓ Compiled in 2.7s (1158 modules)

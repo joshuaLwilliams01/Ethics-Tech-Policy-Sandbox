@@ -1,11 +1,25 @@
 'use client';
 import Link from "next/link";
 import HowToPlayModal from "@/components/HowToPlayModal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { playButtonClick } from "@/lib/sounds";
+import { loadProgress } from "@/lib/save";
 
 export default function Home(){
   const [showHowToPlay, setShowHowToPlay] = useState(false);
+  const [savedProgress, setSavedProgress] = useState<Map<number, boolean>>(new Map());
+
+  useEffect(() => {
+    // Check saved progress for all levels
+    const progressMap = new Map<number, boolean>();
+    for (let level = 1; level <= 7; level++) {
+      const saved = loadProgress();
+      if (saved && saved.level === level) {
+        progressMap.set(level, true);
+      }
+    }
+    setSavedProgress(progressMap);
+  }, []);
   
   return (
     <div className="min-h-screen flex flex-col items-center justify-center py-12 px-4">
@@ -106,7 +120,14 @@ export default function Home(){
                       <div className="text-2xl font-bold text-[#8C1515] mb-2 glow-cardinal">Level {level}</div>
                       <div className="font-semibold text-[#2E2D29] mb-1 text-lg">{title}</div>
                       <div className="text-sm text-[#53565A]">{desc}</div>
-                      <div className="mt-3 text-xs text-[#8C1515] font-medium opacity-0 hover:opacity-100 transition-opacity">Start Journey →</div>
+                      <div className="mt-3 text-xs text-[#8C1515] font-medium opacity-0 hover:opacity-100 transition-opacity">
+                        {savedProgress.get(level) ? 'Continue Journey →' : 'Start Journey →'}
+                      </div>
+                      {savedProgress.get(level) && (
+                        <div className="mt-1 text-xs text-green-600 font-medium opacity-75">
+                          Progress saved
+                        </div>
+                      )}
                     </Link>
                   ))}
                 </div>
