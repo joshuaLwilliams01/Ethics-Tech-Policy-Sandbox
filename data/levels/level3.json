@@ -14,20 +14,8 @@
       "toolkit_cues": "How do we balance child safety with privacy by default? What mix limits harm?",
       "p3_cues": "People (victim safety), Planet (scale inference), Parity (over-policing certain groups).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: What is the balance between harm minimization and privacy? What duties do we have?",
-          "T1 Map Impacts: Who is harmed by delays? Who is harmed by privacy violations? Who faces false positives?",
-          "T3 Anticipate Risks: What are the risks of false positives? What are the risks of delayed detection?",
-          "T4 Alternatives: Evaluate each option. How does each address harm, privacy, and false positives?",
-          "T5 Accountability: Who is responsible for child safety? What appeal process will exist?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Establish clear false positive appeal process",
           "Create educational resources on reporting",
@@ -55,20 +43,8 @@
       "toolkit_cues": "What abuse paths and secondary-trauma risks exist? What gates and response plans are required?",
       "p3_cues": "People (reviewer well-being), Planet (retraining cycles), Parity (access for small orgs).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: What is the balance between openness and prevention? What is our duty to test?",
-          "T1 Map Impacts: Who is harmed by inappropriate content? Who benefits from access? Who is excluded by restrictions?",
-          "T3 Anticipate Risks: What are the risks of release? What are the risks of delayed access?",
-          "T4 Alternatives: Evaluate each option. How does each address prevention and responsible access?",
-          "T5 Accountability: Who ensures safety? What testing and review process will you establish?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Conduct comprehensive red-teaming exercises",
           "Establish clear safety protocols and watermarking",
@@ -96,20 +72,8 @@
       "toolkit_cues": "Do faster reports outweigh wrongful flags? Who reviews, how fast, and with what limits?",
       "p3_cues": "People (mislabeling harm), Planet (processing load), Parity (small platform capacity).",
       "toolkit_flow": {
-        "order": [
-          "T1",
-          "T2",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T1 Map Impacts: Who is harmed by false reports? Who benefits from bulk uploads? Who lacks capacity?",
-          "T2 Clarify Values: What is accountability when errors cascade? Who is responsible?",
-          "T3 Anticipate Risks: What are the risks of bulk uploads? What are the risks of delays?",
-          "T4 Alternatives: Evaluate each option. How does each address accountability and false reports?",
-          "T5 Accountability: Who is responsible for accuracy? What oversight will prevent abuse?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Establish rate limits and abuse prevention measures",
           "Create independent verification process",
@@ -137,20 +101,8 @@
       "toolkit_cues": "Is monitoring the least intrusive means for safety? What non-AI measures could replace it?",
       "p3_cues": "People (student trust), Planet (data storage), Parity (guardian consent gaps).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: What is in the child's best interest? How do we balance safety and privacy?",
-          "T1 Map Impacts: Who is harmed by security risks? Who benefits from monitoring? Who lacks consent?",
-          "T3 Anticipate Risks: What are the security risks? What are the risks of alternatives?",
-          "T4 Alternatives: Evaluate each option. How does each serve the child's best interest?",
-          "T5 Accountability: Who ensures student safety and privacy? What oversight will schools have?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Conduct security audit of AI monitoring systems",
           "Establish clear consent process for parents and students",
@@ -178,20 +130,8 @@
       "toolkit_cues": "How does speed vs. evidence retention affect survivors? What safe proof and appeal paths exist?",
       "p3_cues": "People (re-trauma risk), Planet (storage), Parity (legal access pathways).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: What does 'do no further harm' mean here? What is informed consent?",
-          "T1 Map Impacts: Who is harmed by delays? Who is harmed by lack of evidence? Who is re-traumatized?",
-          "T3 Anticipate Risks: What are the risks of rapid removal? What are the risks of preserving evidence?",
-          "T4 Alternatives: Evaluate each option. How does each minimize harm and respect consent?",
-          "T5 Accountability: Who ensures survivor wellbeing? What process balances removal and justice?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Establish survivor consent process",
           "Create evidence escrow system",

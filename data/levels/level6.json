@@ -14,20 +14,8 @@
       "toolkit_cues": "What does a just transition require here? What guardrails and KPIs prove it?",
       "p3_cues": "People (dignity/autonomy), Planet (compute intensity), Parity (who gains from productivity).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: What is a just transition? What are surveillance limits? What is error accountability?",
-          "T1 Map Impacts: Who is displaced? Who benefits from productivity? Who loses autonomy?",
-          "T3 Anticipate Risks: What are the risks of displacement? What are the risks of delays?",
-          "T4 Alternatives: Evaluate each option. How does each address just transition and dignity?",
-          "T5 Accountability: Who ensures just transition? What oversight will protect workers?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Establish worker councils and input mechanisms",
           "Create reskilling and transition programs",
@@ -55,20 +43,8 @@
       "toolkit_cues": "How does scheduling affect burnout vs. stability? What co-designed alternatives fit?",
       "p3_cues": "People (fatigue), Planet (energy), Parity (frontline voice).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: What is human agency? How does it relate to efficiency?",
-          "T1 Map Impacts: Who experiences burnout? Who benefits from optimization? Who loses voice?",
-          "T3 Anticipate Risks: What are the risks of algorithmic scheduling? What are the risks of alternatives?",
-          "T4 Alternatives: Evaluate each option. How does each balance agency and efficiency?",
-          "T5 Accountability: Who ensures worker wellbeing? What input will workers have?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Involve workers in algorithm design",
           "Establish manual override mechanisms",
@@ -96,20 +72,8 @@
       "toolkit_cues": "What surveillance and skill-loss risks exist? Where should assist be limited?",
       "p3_cues": "People (morale/agency), Planet (compute per call), Parity (advancement paths).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: What is the balance between skill development and dependency?",
-          "T1 Map Impacts: Who benefits from efficiency? Who loses skills? Who is blocked from promotion?",
-          "T3 Anticipate Risks: What are the risks of dependency? What are the risks of alternatives?",
-          "T4 Alternatives: Evaluate each option. How does each address skill development?",
-          "T5 Accountability: Who ensures skill development? What training will agents receive?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Develop comprehensive training program",
           "Create skill-building opportunities",
@@ -137,20 +101,8 @@
       "toolkit_cues": "How do tiers shift income and access? What transparent floors and appeals are needed?",
       "p3_cues": "People (income swings), Planet (routing), Parity (bias by rating).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: What is procedural fairness? What is transparency?",
-          "T1 Map Impacts: Who is harmed by tiers? Who benefits? Who faces bias?",
-          "T3 Anticipate Risks: What are the risks of tiers? What are the risks of alternatives?",
-          "T4 Alternatives: Evaluate each option. How does each address fairness and transparency?",
-          "T5 Accountability: Who ensures fairness? What oversight will prevent bias?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Publish evaluation criteria and methodology",
           "Establish expedited appeal process",
@@ -178,20 +130,8 @@
       "toolkit_cues": "Who should share automation gains? What mix of severance, training, and shared work is fair?",
       "p3_cues": "People (stability), Planet (facility use), Parity (training access).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: Who should benefit from automation? Who shares the gains?",
-          "T1 Map Impacts: Who is displaced? Who benefits from automation? Who has training access?",
-          "T3 Anticipate Risks: What are the risks of displacement? What are the risks of each option?",
-          "T4 Alternatives: Evaluate each option. How does each address just transition?",
-          "T5 Accountability: Who ensures just transition? What oversight will protect workers?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Develop comprehensive re-skilling programs",
           "Create re-hiring prioritization process",

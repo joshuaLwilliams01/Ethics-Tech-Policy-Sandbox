@@ -14,20 +14,8 @@
       "toolkit_cues": "What lock-in and surveillance risks arise? What exit and audit options hedge power?",
       "p3_cues": "People (data exposure), Planet (duplicated infra), Parity (market concentration).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: What are the incentives? What is true neutrality? What is our bargaining power?",
-          "T1 Map Impacts: Who is harmed by surveillance? Who benefits from scaling? Who is locked in?",
-          "T3 Anticipate Risks: What are the risks of lock-in? What are the risks of delays?",
-          "T4 Alternatives: Evaluate each option. How does each address incentives, lock-in, and exit plans?",
-          "T5 Accountability: Who ensures neutrality? What oversight will prevent abuse of power?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Negotiate clear data separation and audit rights",
           "Establish oversight board with diverse stakeholders",
@@ -55,20 +43,8 @@
       "toolkit_cues": "Who loses access if we leave the store? How will we pursue fairer fees and report outcomes?",
       "p3_cues": "People (user access), Planet (extra builds), Parity (gatekeeper rents).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: What is leverage? How do coalitions work? What is fair access?",
-          "T1 Map Impacts: Who loses access? Who benefits from native features? Who pays gatekeeper rents?",
-          "T3 Anticipate Risks: What are the risks of paying? What are the risks of web-only?",
-          "T4 Alternatives: Evaluate each option. How does each address leverage and access?",
-          "T5 Accountability: Who ensures fair access? What coalition will you build?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Build coalition with other public-interest apps",
           "Advocate for fee exemptions or reductions",
@@ -96,20 +72,8 @@
       "toolkit_cues": "Who should capture value from public data? What reciprocity and audit terms are needed?",
       "p3_cues": "People (public benefit), Planet (retraining), Parity (vendor advantages).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: Who owns value created from public data? What is fair benefit sharing?",
-          "T1 Map Impacts: Who benefits from improvements? Who is excluded? Who captures value?",
-          "T3 Anticipate Risks: What are the risks of exclusivity? What are the risks of transparency?",
-          "T4 Alternatives: Evaluate each option. How does each address value capture and public benefit?",
-          "T5 Accountability: Who ensures public benefit? What oversight will prevent monopolization?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Establish clear value-sharing framework",
           "Create transparent improvement reporting",
@@ -137,20 +101,8 @@
       "toolkit_cues": "What conflicts of interest or influence risks exist? What safeguards keep curricula independent?",
       "p3_cues": "People (opinion shaping), Planet (program footprint), Parity (voice imbalance).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: What is a conflict of interest? What is educational integrity?",
-          "T1 Map Impacts: Who is harmed by conflicts? Who benefits from funding? Who loses voice?",
-          "T3 Anticipate Risks: What are the risks of accepting? What are the risks of rejecting?",
-          "T4 Alternatives: Evaluate each option. How does each address conflicts and integrity?",
-          "T5 Accountability: Who ensures educational integrity? What oversight will prevent bias?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Establish independent advisory committee",
           "Create clear conflict-of-interest policies",
@@ -178,20 +130,8 @@
       "toolkit_cues": "What is the privacy cost of growth features? What partnership terms preserve public value?",
       "p3_cues": "People (communication access), Planet (redundancy), Parity (barriers for new entrants).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: What is public value? What are network effects? How do they relate?",
-          "T1 Map Impacts: Who benefits from partnerships? Who loses access? Who is excluded?",
-          "T3 Anticipate Risks: What are the risks of data collection? What are the risks of alternatives?",
-          "T4 Alternatives: Evaluate each option. How does each balance network effects and public value?",
-          "T5 Accountability: Who ensures public value? What oversight will prevent exploitation?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Establish privacy-preserving data collection",
           "Create public value metrics",

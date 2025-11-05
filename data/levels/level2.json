@@ -14,20 +14,8 @@
       "toolkit_cues": "Which fairness goal are we optimizing? Who absorbs false negatives?",
       "p3_cues": "People (rejected applicants), Planet (retraining compute), Parity (opportunity gaps).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: What does 'fairness' mean here? Equal opportunity? Equal outcomes? Equalized odds?",
-          "T1 Map Impacts: Who is harmed by the disparity? Who benefits from the tool? Who is excluded?",
-          "T3 Anticipate Risks: What are the risks of continuing vs. fixing? Consider hiring delays, discrimination, legal issues.",
-          "T4 Alternatives: Evaluate each option. What safeguards will ensure fairness?",
-          "T5 Accountability: Who is responsible for fair hiring? What accountability chain exists?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Define fairness metrics and targets",
           "Establish appeal and review process",
@@ -54,20 +42,8 @@
       "toolkit_cues": "What privacy harms could arise from location scoring? What safer pilots exist?",
       "p3_cues": "People (over-indebted), Planet (always-on scoring), Parity (data-poor applicants).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: What makes consent meaningful? Is opt-out consent sufficient here?",
-          "T1 Map Impacts: Who benefits from quick loans? Who is harmed by mis-scoring? Who lacks data access?",
-          "T3 Anticipate Risks: What are the risks of over-indebtedness? Privacy violations? Bias against certain groups?",
-          "T4 Alternatives: Evaluate each option. How does each address meaningful consent and potential harms?",
-          "T5 Accountability: Who ensures fair lending? What oversight will prevent bias and abuse?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Conduct bias audit on scoring model",
           "Establish clear consent process and documentation",
@@ -95,20 +71,8 @@
       "toolkit_cues": "Who is mis-flagged and with what consequences? What low-intrusion options exist?",
       "p3_cues": "People (stress/dignity), Planet (video monitoring), Parity (false positives by skin tone).",
       "toolkit_flow": {
-        "order": [
-          "T1",
-          "T2",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T1 Map Impacts: Who is harmed by false positives? Who benefits from proctoring? What alternatives exist?",
-          "T2 Clarify Values: What is the balance between integrity and dignity? Is less intrusive always better?",
-          "T3 Anticipate Risks: What are the risks of false positives? What are the risks of alternatives?",
-          "T4 Alternatives: Evaluate each option. How does each address fairness and dignity?",
-          "T5 Accountability: Who ensures fair testing? What appeal process will students have?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Conduct bias audit on proctoring system",
           "Develop alternative assessment methods",
@@ -135,20 +99,8 @@
       "toolkit_cues": "Where is data missing and how does it bias priority? Who can override and how?",
       "p3_cues": "People (care outcomes), Planet (compute), Parity (patients with thin histories).",
       "toolkit_flow": {
-        "order": [
-          "T1",
-          "T2",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T1 Map Impacts: Who is deprioritized? Who benefits from reduced wait times? Who has limited medical history?",
-          "T2 Clarify Values: How should we handle missing data? What does fairness mean in healthcare?",
-          "T3 Anticipate Risks: What are the health risks of mis-prioritization? What are the risks of each option?",
-          "T4 Alternatives: Evaluate each option. How does each address bias from missing data?",
-          "T5 Accountability: Who is responsible for patient outcomes? What oversight will ensure fairness?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Conduct bias audit on triage model",
           "Establish override protocols and documentation",
@@ -176,20 +128,8 @@
       "toolkit_cues": "Is our process fair even if outcomes improve? What alternatives reduce surveillance load?",
       "p3_cues": "People (chilling effects), Planet (patrol miles), Parity (over-policing hot spots).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: What is the difference between outcome fairness and process fairness? Which matters more here?",
-          "T1 Map Impacts: Who experiences increased surveillance? Who benefits from crime reduction? What are the chilling effects?",
-          "T3 Anticipate Risks: What are the risks of hot spot policing? What are the risks of alternatives?",
-          "T4 Alternatives: Evaluate each option. How does each address fairness and community trust?",
-          "T5 Accountability: Who decides where patrols go? What community input will you seek?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Conduct community impact assessment",
           "Establish transparent decision-making process",

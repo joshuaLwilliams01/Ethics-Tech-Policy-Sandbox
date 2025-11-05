@@ -14,20 +14,8 @@
       "toolkit_cues": "What benefits come from memory vs. chilling effects? What privacy-preserving defaults fit?",
       "p3_cues": "People (speech/privacy), Planet (local vs. cloud energy), Parity (opt-in exclusion).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: What is informed consent? What is secondary use? What is redress?",
-          "T1 Map Impacts: Who is harmed by data collection? Who benefits? Who loses utility?",
-          "T3 Anticipate Risks: What are the risks of storage? What are the risks of opt-in?",
-          "T4 Alternatives: Evaluate each option. How does each address consent and privacy?",
-          "T5 Accountability: Who ensures privacy? What redress process will exist?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Establish clear consent process and documentation",
           "Create data deletion mechanisms",
@@ -55,20 +43,8 @@
       "toolkit_cues": "Is price-for-privacy coercive here? What re-identification risks follow?",
       "p3_cues": "People (movement privacy), Planet (edge compute), Parity (regressive tradeoffs).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: What makes consent meaningful? Is discount consent coercive?",
-          "T1 Map Impacts: Who benefits from discounts? Who is harmed by privacy loss? Who faces regressive tradeoffs?",
-          "T3 Anticipate Risks: What are the risks of location sharing? What are the risks of alternatives?",
-          "T4 Alternatives: Evaluate each option. How does each address coercive consent?",
-          "T5 Accountability: Who ensures meaningful consent? What oversight will prevent coercion?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Establish transparent data usage policies",
           "Create user control mechanisms",
@@ -96,20 +72,8 @@
       "toolkit_cues": "Who becomes newly visible or targeted? What legitimacy and usage limits are required?",
       "p3_cues": "People (expectations), Planet (storage load), Parity (visibility of vulnerable groups).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: What is legitimacy? What is transparency in the data supply chain?",
-          "T1 Map Impacts: Who benefits from planning? Who is made visible? Who is vulnerable?",
-          "T3 Anticipate Risks: What are the risks of brokered data? What are the risks of alternatives?",
-          "T4 Alternatives: Evaluate each option. How does each address legitimacy and transparency?",
-          "T5 Accountability: Who ensures legitimacy? What oversight will prevent abuse?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Engage stakeholders in data usage decisions",
           "Establish clear objectives and metrics",
@@ -137,20 +101,8 @@
       "toolkit_cues": "What residual re-ID risks remain? What safer sharing options exist for research?",
       "p3_cues": "People (stigma), Planet (DP/synthetic compute), Parity (who benefits).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: What is residual risk? How do we balance risk and public benefit?",
-          "T1 Map Impacts: Who is harmed by re-identification? Who benefits from research? Who faces stigma?",
-          "T3 Anticipate Risks: What are the risks of sharing? What are the risks of not sharing?",
-          "T4 Alternatives: Evaluate each option. How does each address residual risk?",
-          "T5 Accountability: Who ensures privacy? What oversight will minimize risk?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Conduct privacy risk assessment",
           "Develop privacy-preserving technologies",
@@ -178,20 +130,8 @@
       "toolkit_cues": "Is biometric entry necessary and proportional? What oversight and opt-outs enforce trust?",
       "p3_cues": "People (biometric risk), Planet (cameras), Parity (accuracy gaps).",
       "toolkit_flow": {
-        "order": [
-          "T2",
-          "T1",
-          "T3",
-          "T4",
-          "T5"
-        ],
-        "prompts": [
-          "T2 Clarify Values: Is this necessary? Is it proportional? What alternatives exist?",
-          "T1 Map Impacts: Who is harmed by biometric collection? Who benefits? Who faces accuracy gaps?",
-          "T3 Anticipate Risks: What are the risks of facial recognition? What are the risks of alternatives?",
-          "T4 Alternatives: Evaluate each option. How does each address necessity and proportionality?",
-          "T5 Accountability: Who ensures privacy and fairness? What oversight will employees have?"
-        ],
+        "order": [],
+        "prompts": [],
         "quick_actions": [
           "Establish opt-out mechanisms and alternatives",
           "Create independent oversight committee",
