@@ -2381,3 +2381,6 @@ Import trace for requested module:
  ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
  GET /_next/static/webpack/c9e9c1a92418e11d.webpack.hot-update.json 404 in 3296ms
  GET /play/individual/1 200 in 900ms
+ ✓ Compiled in 1604ms (1159 modules)
+ GET /completion?test=true 200 in 555ms
+ ✓ Compiled in 5s (1154 modules)
