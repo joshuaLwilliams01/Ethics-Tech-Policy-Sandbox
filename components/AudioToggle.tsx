@@ -3,186 +3,55 @@ import { useEffect, useRef, useState } from "react";
 import { playButtonClick } from "@/lib/sounds";
 import { useSound } from "@/contexts/SoundContext";
 
+// Pixabay CDN URL - update with actual URL from Pixabay page
+// To get the URL: visit the Pixabay track page, click Download, right-click the MP3 link, "Copy link address"
+const PIXABAY_SRC = "https://cdn.pixabay.com/download/audio/2024/01/20/audio_412906.mp3?filename=spy-detective-background-suspenseful-investigation-full-412906.mp3";
+
 export default function AudioToggle(){
   const audioRef = useRef<HTMLAudioElement|null>(null);
-  const audioContextRef = useRef<AudioContext|null>(null);
-  const oscillatorsRef = useRef<OscillatorNode[]>([]);
-  const gainNodesRef = useRef<GainNode[]>([]);
-  const scheduleIntervalRef = useRef<number|null>(null);
-  const startTimeRef = useRef<number>(0);
   const { enabled, setEnabled } = useSound();
-  const [usingFallback, setUsingFallback] = useState(false);
 
-  // Generate pleasant, ambient background music using Web Audio API
-  const startFallbackAudio = () => {
-    try {
-      const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
-      if (!AudioContextClass) return;
-      
-      // Stop any existing audio first
-      stopFallbackAudio();
-      
-      const ctx = new AudioContextClass();
-      audioContextRef.current = ctx;
-      startTimeRef.current = ctx.currentTime;
-      
-      // Simple, pleasant ambient background music
-      // Using a gentle, repeating pattern with smooth sine waves
-      const baseNote = 220.0; // A3 - pleasant, mid-range frequency
-      const interval = 0.6; // 600ms between notes - slow, ambient pace
-      const noteGain = 0.08; // Low volume for pleasant background
-      
-      const isEnabledRef = { current: true }; // Track enabled state for scheduling
-      
-      // Create a simple, pleasant sequence
-      const sequence = [
-        { freq: baseNote, duration: interval * 1.5 },      // A3 - longer
-        { freq: baseNote * 1.25, duration: interval },    // C#4
-        { freq: baseNote * 1.5, duration: interval },     // E4
-        { freq: baseNote * 1.25, duration: interval },    // C#4
-        { freq: baseNote, duration: interval * 2 },       // A3 - longer pause
-      ];
-      
-      let sequenceIndex = 0;
-      
-      const scheduleNext = () => {
-        if (!isEnabledRef.current || !audioContextRef.current) return;
-        
-        const ctx = audioContextRef.current;
-        const currentTime = ctx.currentTime;
-        const note = sequence[sequenceIndex % sequence.length];
-        
-        // Create a smooth sine wave note
-        const osc = ctx.createOscillator();
-        const gainNode = ctx.createGain();
-        
-        osc.type = 'sine'; // Pure sine wave - smoothest possible
-        osc.frequency.value = note.freq;
-        
-        // Very smooth envelope - gentle attack and decay
-        gainNode.gain.setValueAtTime(0, currentTime);
-        gainNode.gain.linearRampToValueAtTime(noteGain, currentTime + 0.1); // Gentle attack
-        gainNode.gain.setValueAtTime(noteGain, currentTime + note.duration * 0.3); // Sustain
-        gainNode.gain.exponentialRampToValueAtTime(0.001, currentTime + note.duration * 0.9); // Gentle decay
-        
-        osc.connect(gainNode);
-        gainNode.connect(ctx.destination);
-        
-        osc.start(currentTime);
-        osc.stop(currentTime + note.duration);
-        
-        oscillatorsRef.current.push(osc);
-        gainNodesRef.current.push(gainNode);
-        
-        sequenceIndex++;
-        
-        // Schedule next note
-        if (isEnabledRef.current && audioContextRef.current) {
-          scheduleIntervalRef.current = window.setTimeout(
-            scheduleNext,
-            note.duration * 1000
-          );
-        }
-      };
-      
-      // Store enabled ref for cleanup
-      (audioContextRef.current as any)._isEnabledRef = isEnabledRef;
-      
-      // Start scheduling
-      scheduleNext();
-      
-      return isEnabledRef;
-    } catch (e) {
-      console.warn('Audio context not available:', e);
-    }
-  };
+  // Initialize audio element
+  useEffect(() => {
+    const el = new Audio(PIXABAY_SRC);
+    el.loop = true;
+    el.preload = "auto";
+    el.volume = 0.28;
+    el.muted = true; // Start muted for autoplay safety
+    audioRef.current = el;
 
-  const stopFallbackAudio = () => {
-    // Clear scheduling interval
-    if (scheduleIntervalRef.current !== null) {
-      clearTimeout(scheduleIntervalRef.current);
-      scheduleIntervalRef.current = null;
+    // Load saved preference
+    const saved = localStorage.getItem('soundEnabled');
+    if (saved === 'true') {
+      setEnabled(true);
+      el.muted = false;
+      void el.play().catch(() => {
+        // Autoplay blocked - will play when user clicks
+      });
     }
-    
-    // Disable scheduling
-    if (audioContextRef.current && (audioContextRef.current as any)._isEnabledRef) {
-      (audioContextRef.current as any)._isEnabledRef.current = false;
-    }
-    
-    // Stop all oscillators
-    oscillatorsRef.current.forEach(osc => {
-      try {
-        osc.stop();
-      } catch (e) {
-        // Already stopped
-      }
-    });
-    oscillatorsRef.current = [];
-    
-    // Disconnect all gain nodes
-    gainNodesRef.current.forEach(gain => {
-      try {
-        gain.disconnect();
-      } catch (e) {
-        // Already disconnected
-      }
-    });
-    gainNodesRef.current = [];
-    
-    // Close audio context
-    if (audioContextRef.current) {
-      audioContextRef.current.close().catch(() => {});
-      audioContextRef.current = null;
-    }
-    
-    startTimeRef.current = 0;
-  };
 
-  useEffect(()=>{
+    return () => {
+      el.pause();
+      el.src = '';
+      audioRef.current = null;
+    };
+  }, [setEnabled]);
+
+  // Handle enabled state changes
+  useEffect(() => {
+    const el = audioRef.current;
+    if (!el) return;
+
     if (enabled) {
-      // Try to play audio file first
-      if (audioRef.current) {
-        audioRef.current.volume = 0.25;
-        const playPromise = audioRef.current.play();
-        if (playPromise !== undefined) {
-          playPromise
-            .then(() => {
-              // Audio file is playing successfully
-              setUsingFallback(false);
-            })
-            .catch(() => {
-              // Audio file failed, use fallback
-              setUsingFallback(true);
-              startFallbackAudio();
-            });
-        }
-      } else {
-        // No audio element, use fallback
-        setUsingFallback(true);
-        startFallbackAudio();
-      }
+      el.muted = false;
+      void el.play().catch(() => {
+        // Autoplay may be blocked
+      });
     } else {
-      // Stop audio file
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.currentTime = 0;
-      }
-      // Stop fallback audio
-      stopFallbackAudio();
-      setUsingFallback(false);
+      el.muted = true;
+      el.pause();
     }
   }, [enabled]);
-
-  // Cleanup on unmount
-  useEffect(() => {
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.currentTime = 0;
-      }
-      stopFallbackAudio();
-    };
-  }, []);
 
   return (
     <div className="flex flex-col items-center gap-2">
@@ -231,10 +100,7 @@ export default function AudioToggle(){
       </div>
       <button 
         onClick={() => {
-          // Play sound before toggling (so it plays when turning on)
-          if (!enabled) {
-            playButtonClick();
-          }
+          playButtonClick();
           setEnabled(!enabled);
         }} 
         className={`text-xs transition-all duration-300 hover:scale-105 ${
@@ -247,33 +113,6 @@ export default function AudioToggle(){
       >
         (Click to {enabled ? "disable" : "enable"})
       </button>
-      <audio 
-        ref={audioRef} 
-        src="https://cdn.pixabay.com/download/audio/2024/01/01/audio_412906.mp3?filename=spy-detective-background-suspenseful-investigation-full-412906.mp3" 
-        loop 
-        preload="none"
-        crossOrigin="anonymous"
-        onError={() => {
-          // Try local file if Pixabay URL fails
-          if (audioRef.current && !audioRef.current.src.includes('/public/')) {
-            audioRef.current.src = '/spy-detective-background-suspenseful-investigation-full-412906.mp3';
-            audioRef.current.load();
-            audioRef.current.play().catch(() => {
-              // If local file also fails, use fallback
-              if (enabled && !usingFallback) {
-                setUsingFallback(true);
-                startFallbackAudio();
-              }
-            });
-          } else {
-            // If audio file fails to load, use fallback
-            if (enabled && !usingFallback) {
-              setUsingFallback(true);
-              startFallbackAudio();
-            }
-          }
-        }}
-      />
     </div>
   );
 }
