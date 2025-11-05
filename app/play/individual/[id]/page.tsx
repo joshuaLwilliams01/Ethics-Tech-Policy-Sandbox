@@ -53,6 +53,19 @@ export default function IndividualLevel({ params }:{ params:{ id:string } }) {
 
     const step: StepResult = { scenario_id: scenario.scenario_id, ...payload, score };
     const next = [...results]; next[idx] = step; setResults(next);
+    
+    // Check if this is the last scenario of level 7 (completion)
+    if (isLast && levelIndex === 7) {
+      // Save completion status
+      try {
+        const completedLevels = new Set<number>();
+        completedLevels.add(7);
+        // Store in sessionStorage for completion check
+        sessionStorage.setItem('COMPLETED_LEVELS', JSON.stringify(Array.from(completedLevels)));
+      } catch (e) {
+        console.error('Error saving completion:', e);
+      }
+    }
   };
 
   const isLast = idx === pack.scenarios.length - 1;
