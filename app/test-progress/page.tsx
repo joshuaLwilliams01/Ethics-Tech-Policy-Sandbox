@@ -9,8 +9,14 @@ export default function TestProgressPage() {
   const [savedState, setSavedState] = useState<SaveState | null>(null);
   const [testMessage, setTestMessage] = useState<string>('');
   const [lastSaveTime, setLastSaveTime] = useState<number>(0);
+  const [isClient, setIsClient] = useState(false);
+  const [storageAvailable, setStorageAvailable] = useState<boolean | null>(null);
 
   useEffect(() => {
+    // Mark as client-side to avoid hydration mismatch
+    setIsClient(true);
+    // Check localStorage availability
+    setStorageAvailable(typeof window !== 'undefined' && 'localStorage' in window);
     // Load saved progress on mount
     const loaded = loadProgress();
     setSavedState(loaded);
@@ -173,7 +179,7 @@ export default function TestProgressPage() {
             <div>
               <strong className="text-[#2E2D29]">Storage Available:</strong>
               <span className="ml-2 text-[#53565A]">
-                {typeof window !== 'undefined' && 'localStorage' in window ? '✓ Yes' : '✗ No'}
+                {!isClient ? 'Loading...' : storageAvailable === true ? '✓ Yes' : '✗ No'}
               </span>
             </div>
             <div>
