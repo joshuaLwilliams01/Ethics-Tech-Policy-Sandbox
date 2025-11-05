@@ -242,3 +242,9 @@
  ✓ Compiled in 827ms (792 modules)
  ✓ Compiled in 515ms (792 modules)
  ✓ Compiled in 1363ms (792 modules)
+ ✓ Compiled in 983ms (792 modules)
+ GET /play/individual/1 200 in 172ms
+ GET /play/individual/1 200 in 84ms
+ GET /play/individual/1 200 in 86ms
+ ✓ Compiled in 4.6s (792 modules)
+ ✓ Compiled in 963ms (792 modules)
