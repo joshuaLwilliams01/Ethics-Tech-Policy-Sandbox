@@ -32,7 +32,10 @@ export default function Home(){
             >
               Joshua Williams
             </a>
-            , is a web-based simulator addressing real-world dilemmas at the intersection of technology, policy, and society. Utilizing{' '}
+            , is a web-based simulator that addresses real-world dilemmas at the intersection of technology, policy, and society, drawing on lessons from the Stanford Ethics, Technology + Public Policy for Practitioners SOE-XETECH0001 course.
+          </p>
+          <p className="mt-4">
+            Utilizing{' '}
             <a 
               href="https://ethicsinsociety.stanford.edu/tech-ethics/ethics-toolkit"
               target="_blank"
@@ -41,7 +44,7 @@ export default function Home(){
             >
               Stanford's Ethics Toolkit
             </a>
-            {' '}from Manuela Travaglianti, PhD, and Thomas Both, players explore tradeoffs and justify their decisions, promoting privacy, accessibility, and responsible technology education.
+            {' '}from Manuela Travaglianti, PhD, and Thomas Both, players explore tradeoffs and justify their decisions, promoting privacy, accessibility, and responsible technology.
           </p>
         </div>
       </div>
