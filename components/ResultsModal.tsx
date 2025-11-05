@@ -58,8 +58,8 @@ export default function ResultsModal({
       {/* Modal */}
       <div
         ref={containerRef}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
-        style={{ overflow: 'hidden' }}
+        className="fixed inset-0 z-50 flex items-start justify-center p-4 pointer-events-none"
+        style={{ paddingTop: '3rem', overflow: 'hidden' }}
       >
         <div
           ref={modalRef}
@@ -67,7 +67,7 @@ export default function ResultsModal({
           onClick={(e) => e.stopPropagation()}
           style={{ 
             animation: 'modal-slide-in 0.3s ease-out',
-            maxHeight: '85vh'
+            maxHeight: 'calc(100vh - 6rem)'
           }}
         >
           {/* Header with gradient - always at top, smaller */}
