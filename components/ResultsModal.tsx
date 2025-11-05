@@ -121,7 +121,7 @@ export default function ResultsModal({
           </div>
 
           {/* Footer */}
-          <div className="border-t border-gray-200 p-4 bg-gradient-to-r from-gray-50 to-transparent flex justify-end">
+          <div className="border-t border-gray-200 p-4 bg-gradient-to-r from-gray-50 to-transparent flex justify-end flex-shrink-0">
             <button
               onClick={() => {
                 playButtonClick();
