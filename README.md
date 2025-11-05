@@ -1,84 +1,91 @@
-# Ethics Lab: People · Planet · Parity (ETTP Simulator)
+# Ethics-Tech-Policy Decisions Sandbox
 
-Starter scaffold. Add scenarios in /data/levels and wire components (ToolkitCard, P3Strip, scoring). See full README template in the chat history.
+A web-based simulator for ethical tradeoffs in tech and policy, created by Joshua Williams as part of the Stanford Ethics+Tech Public Policy Practitioner Course.
 
-## Setup
+## 🎮 Features
 
-### Prerequisites
-- Node.js (v18 or v20 recommended)
-- npm, pnpm, or yarn
+- **7 Levels** of ethical decision-making scenarios
+- **Individual Progress Tracking** - Each player has their own saved progress
+- **Certificate Generation** - Downloadable PDF certificates upon completion
+- **Social Sharing** - Share achievements on LinkedIn, Twitter, and Facebook
+- **Stanford Ethics Toolkit Integration** - Based on official Stanford resources
+- **Interactive Learning** - Explore tradeoffs and justify decisions
 
-### Installation
-
-If you have nvm installed:
-```bash
-# Source nvm and use Node.js
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-nvm use default
-
-# Install dependencies
-npm install
-```
-
-Or use the helper script:
-```bash
-./start-dev.sh
-```
+## 🚀 Quick Start
 
 ### Development
 
-Start the development server:
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
+
+# Open http://localhost:3000
 ```
 
-Or use the helper script:
+### Production Build
+
 ```bash
-./start-dev.sh
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Then open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Available Scripts
+## 📋 Scripts
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
-- `npm run validate:content` - Validate all level JSON files
-- `npm run typecheck` - Run TypeScript type checking
-- `npm run seed` - Run seed script
+- `npm run typecheck` - Check TypeScript types
+- `npm run validate:content` - Validate scenario JSON files
 
-### Project Structure
+## 🎯 Test Mode
 
-- `/app` - Next.js app router pages
-- `/components` - React components
-- `/lib` - Utility functions and types
-- `/data/levels` - Scenario JSON files (level1.json through level6.json)
-- `/scripts` - Utility scripts
+Access test features:
+- **Completion Page**: `/completion?test=true`
+- **Progress Tracking**: `/test-progress`
 
-### Testing Scenarios
+## 📁 Project Structure
 
-All 30 scenarios are ready to play:
-- Level 1: Moral Foundations & Complicity (5 scenarios)
-- Level 2: Algorithmic Decision-Making & Fairness (5 scenarios)
-- Level 3: AI, Child Safety & Burden of Responsibility (5 scenarios)
-- Level 4: Political Economy & Distribution of Power (5 scenarios)
-- Level 5: Data Collection, Privacy & Civil Liberties (5 scenarios)
-- Level 6: Future of Work (5 scenarios)
+```
+├── app/                    # Next.js app router pages
+│   ├── page.tsx           # Homepage
+│   ├── play/              # Game pages
+│   ├── completion/        # Completion page
+│   └── test-progress/     # Progress testing page
+├── components/            # React components
+│   ├── ScenarioCard.tsx  # Main scenario display
+│   ├── ToolkitCard.tsx   # Toolkit prompts and actions
+│   └── ResultsModal.tsx  # Results display
+├── lib/                   # Utility functions
+│   ├── save.ts           # Progress saving/loading
+│   ├── player.ts         # Player identification
+│   └── results.ts        # Result generation
+├── data/                  # Scenario data
+│   └── levels/           # Level JSON files
+└── public/               # Static assets
+```
 
-Visit `/play/individual/1` through `/play/individual/6` to play each level.
+## 🔧 Configuration
 
-### Troubleshooting
+No environment variables required. All features work client-side.
 
-**"Connection refused" error:**
-- Make sure the dev server is running: `npm run dev`
-- Check that port 3000 is not in use by another application
+## 📝 License
 
-**Node.js not found:**
-- If using nvm, make sure it's sourced: `source ~/.nvm/nvm.sh`
-- Or use the `start-dev.sh` script which handles this automatically
+This is an independent capstone project; not associated with the Stanford McCoy Family Center for Ethics in Society or its staff.
 
-**Dependencies not installed:**
-- Run `npm install` to install all dependencies
+## 🙏 Credits
+
+- **Creator**: Joshua Williams
+- **Course**: Stanford Ethics, Technology + Public Policy for Practitioners (SOE-XETECH0001)
+- **Framework**: Stanford's Ethics Toolkit
+- **Toolkit Authors**: Manuela Travaglianti, PhD, and Thomas Both
+
+---
+
+For deployment instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md)
