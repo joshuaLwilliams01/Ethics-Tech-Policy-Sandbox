@@ -21,13 +21,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: What is the balance between harm minimization and privacy? What duties do we have?",
-          "T1 Map Impacts: Who is harmed by delays? Who is harmed by privacy violations? Who faces false positives?",
-          "T3 Anticipate Risks: What are the risks of false positives? What are the risks of delayed detection?",
-          "T4 Alternatives: Evaluate each option. How does each address harm, privacy, and false positives?",
-          "T5 Accountability: Who is responsible for child safety? What appeal process will exist?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Perform scans on user devices",
@@ -73,13 +67,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: What is the balance between openness and prevention? What is our duty to test?",
-          "T1 Map Impacts: Who is harmed by inappropriate content? Who benefits from access? Who is excluded by restrictions?",
-          "T3 Anticipate Risks: What are the risks of release? What are the risks of delayed access?",
-          "T4 Alternatives: Evaluate each option. How does each address prevention and responsible access?",
-          "T5 Accountability: Who ensures safety? What testing and review process will you establish?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Implement safety protocols",
@@ -125,13 +113,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T1 Map Impacts: Who is harmed by false reports? Who benefits from bulk uploads? Who lacks capacity?",
-          "T2 Clarify Values: What is accountability when errors cascade? Who is responsible?",
-          "T3 Anticipate Risks: What are the risks of bulk uploads? What are the risks of delays?",
-          "T4 Alternatives: Evaluate each option. How does each address accountability and false reports?",
-          "T5 Accountability: Who is responsible for accuracy? What oversight will prevent abuse?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Require human review for bulk uploads",
@@ -177,13 +159,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: What is in the child's best interest? How do we balance safety and privacy?",
-          "T1 Map Impacts: Who is harmed by security risks? Who benefits from monitoring? Who lacks consent?",
-          "T3 Anticipate Risks: What are the security risks? What are the risks of alternatives?",
-          "T4 Alternatives: Evaluate each option. How does each serve the child's best interest?",
-          "T5 Accountability: Who ensures student safety and privacy? What oversight will schools have?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Advocate for stronger regulations",
@@ -229,13 +205,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: What does 'do no further harm' mean here? What is informed consent?",
-          "T1 Map Impacts: Who is harmed by delays? Who is harmed by lack of evidence? Who is re-traumatized?",
-          "T3 Anticipate Risks: What are the risks of rapid removal? What are the risks of preserving evidence?",
-          "T4 Alternatives: Evaluate each option. How does each minimize harm and respect consent?",
-          "T5 Accountability: Who ensures survivor wellbeing? What process balances removal and justice?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Implement rapid removal process",

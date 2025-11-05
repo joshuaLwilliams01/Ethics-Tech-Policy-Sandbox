@@ -21,13 +21,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: What is informed consent? What is secondary use? What is redress?",
-          "T1 Map Impacts: Who is harmed by data collection? Who benefits? Who loses utility?",
-          "T3 Anticipate Risks: What are the risks of storage? What are the risks of opt-in?",
-          "T4 Alternatives: Evaluate each option. How does each address consent and privacy?",
-          "T5 Accountability: Who ensures privacy? What redress process will exist?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Store conversations by default",
@@ -73,13 +67,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: What makes consent meaningful? Is discount consent coercive?",
-          "T1 Map Impacts: Who benefits from discounts? Who is harmed by privacy loss? Who faces regressive tradeoffs?",
-          "T3 Anticipate Risks: What are the risks of location sharing? What are the risks of alternatives?",
-          "T4 Alternatives: Evaluate each option. How does each address coercive consent?",
-          "T5 Accountability: Who ensures meaningful consent? What oversight will prevent coercion?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Implement opt-in model",
@@ -125,13 +113,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: What is legitimacy? What is transparency in the data supply chain?",
-          "T1 Map Impacts: Who benefits from planning? Who is made visible? Who is vulnerable?",
-          "T3 Anticipate Risks: What are the risks of brokered data? What are the risks of alternatives?",
-          "T4 Alternatives: Evaluate each option. How does each address legitimacy and transparency?",
-          "T5 Accountability: Who ensures legitimacy? What oversight will prevent abuse?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Engage stakeholders",
@@ -177,13 +159,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: What is residual risk? How do we balance risk and public benefit?",
-          "T1 Map Impacts: Who is harmed by re-identification? Who benefits from research? Who faces stigma?",
-          "T3 Anticipate Risks: What are the risks of sharing? What are the risks of not sharing?",
-          "T4 Alternatives: Evaluate each option. How does each address residual risk?",
-          "T5 Accountability: Who ensures privacy? What oversight will minimize risk?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Collaborate with privacy experts",
@@ -229,13 +205,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: Is this necessary? Is it proportional? What alternatives exist?",
-          "T1 Map Impacts: Who is harmed by biometric collection? Who benefits? Who faces accuracy gaps?",
-          "T3 Anticipate Risks: What are the risks of facial recognition? What are the risks of alternatives?",
-          "T4 Alternatives: Evaluate each option. How does each address necessity and proportionality?",
-          "T5 Accountability: Who ensures privacy and fairness? What oversight will employees have?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Offer opt-out option",

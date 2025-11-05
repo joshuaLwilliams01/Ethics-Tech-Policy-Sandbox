@@ -21,13 +21,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: What are the incentives? What is true neutrality? What is our bargaining power?",
-          "T1 Map Impacts: Who is harmed by surveillance? Who benefits from scaling? Who is locked in?",
-          "T3 Anticipate Risks: What are the risks of lock-in? What are the risks of delays?",
-          "T4 Alternatives: Evaluate each option. How does each address incentives, lock-in, and exit plans?",
-          "T5 Accountability: Who ensures neutrality? What oversight will prevent abuse of power?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Accept proposal with oversight board",
@@ -73,13 +67,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: What is leverage? How do coalitions work? What is fair access?",
-          "T1 Map Impacts: Who loses access? Who benefits from native features? Who pays gatekeeper rents?",
-          "T3 Anticipate Risks: What are the risks of paying? What are the risks of web-only?",
-          "T4 Alternatives: Evaluate each option. How does each address leverage and access?",
-          "T5 Accountability: Who ensures fair access? What coalition will you build?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Pay fee to maintain broad reach",
@@ -125,13 +113,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: Who owns value created from public data? What is fair benefit sharing?",
-          "T1 Map Impacts: Who benefits from improvements? Who is excluded? Who captures value?",
-          "T3 Anticipate Risks: What are the risks of exclusivity? What are the risks of transparency?",
-          "T4 Alternatives: Evaluate each option. How does each address value capture and public benefit?",
-          "T5 Accountability: Who ensures public benefit? What oversight will prevent monopolization?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Ensure improvements are transparent",
@@ -177,13 +159,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: What is a conflict of interest? What is educational integrity?",
-          "T1 Map Impacts: Who is harmed by conflicts? Who benefits from funding? Who loses voice?",
-          "T3 Anticipate Risks: What are the risks of accepting? What are the risks of rejecting?",
-          "T4 Alternatives: Evaluate each option. How does each address conflicts and integrity?",
-          "T5 Accountability: Who ensures educational integrity? What oversight will prevent bias?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Set strict conditions",
@@ -229,13 +205,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: What is public value? What are network effects? How do they relate?",
-          "T1 Map Impacts: Who benefits from partnerships? Who loses access? Who is excluded?",
-          "T3 Anticipate Risks: What are the risks of data collection? What are the risks of alternatives?",
-          "T4 Alternatives: Evaluate each option. How does each balance network effects and public value?",
-          "T5 Accountability: Who ensures public value? What oversight will prevent exploitation?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Focus on data collection",

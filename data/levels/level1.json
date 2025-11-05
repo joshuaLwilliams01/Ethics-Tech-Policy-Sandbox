@@ -60,13 +60,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: Are workers being treated as ends in themselves or just means?",
-          "T1 Map Impacts: Who benefits from the app? Who is harmed by low wages? Who loses access if paused?",
-          "T3 Anticipate Risks: What are the risks of continuing vs. pausing? Consider service disruption, worker exploitation, public trust.",
-          "T4 Alternatives: Evaluate each option and identify safeguards for your chosen path.",
-          "T5 Accountability: Who is responsible for ensuring fair labor practices? What review process will you establish?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Audit current vendor labor practices",
@@ -111,13 +105,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T1 Map Impacts: Who is harmed by current working conditions? Who benefits from platform safety?",
-          "T2 Clarify Values: What duties do we have to our moderators? What duties to platform users?",
-          "T3 Anticipate Risks: What are the risks of each option? Consider moderator burnout, content safety gaps, user experience.",
-          "T4 Alternatives: Evaluate each choice and identify additional safeguards.",
-          "T5 Accountability: Who will ensure moderator wellbeing? What metrics will track success?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Establish mental health support program",
@@ -162,13 +150,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T1 Map Impacts: Who experiences blackouts? Who benefits from cost savings? Who is most vulnerable?",
-          "T2 Clarify Values: What is the relationship between consent and harm? Is this proportional?",
-          "T3 Anticipate Risks: What are the health and safety risks of continued outages? What are the financial risks of pausing?",
-          "T4 Alternatives: Evaluate each option. How does each address consent and fair distribution?",
-          "T5 Accountability: Who decides how burdens are distributed? What public process will you establish?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Add relief payments for vulnerable populations",
@@ -213,13 +195,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: What is the goal (sustainability) vs. the method (export)? Are they aligned?",
-          "T1 Map Impacts: Who is harmed by unsafe recycling? Who benefits from the program? Who is responsible for cleanup?",
-          "T3 Anticipate Risks: What are the health risks to workers? Environmental risks? What happens if program pauses?",
-          "T4 Alternatives: Evaluate each option. How does each address responsibility distribution?",
-          "T5 Accountability: Who is responsible for ensuring safe recycling? What oversight will you establish?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Invest in safer facilities abroad",

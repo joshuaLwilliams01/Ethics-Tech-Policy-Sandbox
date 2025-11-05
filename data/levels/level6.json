@@ -21,13 +21,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: What is a just transition? What are surveillance limits? What is error accountability?",
-          "T1 Map Impacts: Who is displaced? Who benefits from productivity? Who loses autonomy?",
-          "T3 Anticipate Risks: What are the risks of displacement? What are the risks of delays?",
-          "T4 Alternatives: Evaluate each option. How does each address just transition and dignity?",
-          "T5 Accountability: Who ensures just transition? What oversight will protect workers?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Deploy LLM copilot",
@@ -73,13 +67,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: What is human agency? How does it relate to efficiency?",
-          "T1 Map Impacts: Who experiences burnout? Who benefits from optimization? Who loses voice?",
-          "T3 Anticipate Risks: What are the risks of algorithmic scheduling? What are the risks of alternatives?",
-          "T4 Alternatives: Evaluate each option. How does each balance agency and efficiency?",
-          "T5 Accountability: Who ensures worker wellbeing? What input will workers have?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Involve workers in design",
@@ -125,13 +113,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: What is the balance between skill development and dependency?",
-          "T1 Map Impacts: Who benefits from efficiency? Who loses skills? Who is blocked from promotion?",
-          "T3 Anticipate Risks: What are the risks of dependency? What are the risks of alternatives?",
-          "T4 Alternatives: Evaluate each option. How does each address skill development?",
-          "T5 Accountability: Who ensures skill development? What training will agents receive?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Support mandate",
@@ -177,13 +159,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: What is procedural fairness? What is transparency?",
-          "T1 Map Impacts: Who is harmed by tiers? Who benefits? Who faces bias?",
-          "T3 Anticipate Risks: What are the risks of tiers? What are the risks of alternatives?",
-          "T4 Alternatives: Evaluate each option. How does each address fairness and transparency?",
-          "T5 Accountability: Who ensures fairness? What oversight will prevent bias?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Maintain tier system",
@@ -229,13 +205,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: Who should benefit from automation? Who shares the gains?",
-          "T1 Map Impacts: Who is displaced? Who benefits from automation? Who has training access?",
-          "T3 Anticipate Risks: What are the risks of displacement? What are the risks of each option?",
-          "T4 Alternatives: Evaluate each option. How does each address just transition?",
-          "T5 Accountability: Who ensures just transition? What oversight will protect workers?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Offer comprehensive severance packages",

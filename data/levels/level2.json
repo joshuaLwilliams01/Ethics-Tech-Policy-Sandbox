@@ -21,13 +21,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: What does 'fairness' mean here? Equal opportunity? Equal outcomes? Equalized odds?",
-          "T1 Map Impacts: Who is harmed by the disparity? Who benefits from the tool? Who is excluded?",
-          "T3 Anticipate Risks: What are the risks of continuing vs. fixing? Consider hiring delays, discrimination, legal issues.",
-          "T4 Alternatives: Evaluate each option. What safeguards will ensure fairness?",
-          "T5 Accountability: Who is responsible for fair hiring? What accountability chain exists?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Establish human-in-the-loop appeals process",
@@ -72,13 +66,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: What makes consent meaningful? Is opt-out consent sufficient here?",
-          "T1 Map Impacts: Who benefits from quick loans? Who is harmed by mis-scoring? Who lacks data access?",
-          "T3 Anticipate Risks: What are the risks of over-indebtedness? Privacy violations? Bias against certain groups?",
-          "T4 Alternatives: Evaluate each option. How does each address meaningful consent and potential harms?",
-          "T5 Accountability: Who ensures fair lending? What oversight will prevent bias and abuse?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Provide clear opt-out options",
@@ -124,13 +112,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T1 Map Impacts: Who is harmed by false positives? Who benefits from proctoring? What alternatives exist?",
-          "T2 Clarify Values: What is the balance between integrity and dignity? Is less intrusive always better?",
-          "T3 Anticipate Risks: What are the risks of false positives? What are the risks of alternatives?",
-          "T4 Alternatives: Evaluate each option. How does each address fairness and dignity?",
-          "T5 Accountability: Who ensures fair testing? What appeal process will students have?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Incorporate human checks",
@@ -175,13 +157,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T1 Map Impacts: Who is deprioritized? Who benefits from reduced wait times? Who has limited medical history?",
-          "T2 Clarify Values: How should we handle missing data? What does fairness mean in healthcare?",
-          "T3 Anticipate Risks: What are the health risks of mis-prioritization? What are the risks of each option?",
-          "T4 Alternatives: Evaluate each option. How does each address bias from missing data?",
-          "T5 Accountability: Who is responsible for patient outcomes? What oversight will ensure fairness?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Include doctor override functionality",
@@ -227,13 +203,7 @@
           "T4",
           "T5"
         ],
-        "prompts": [
-          "T2 Clarify Values: What is the difference between outcome fairness and process fairness? Which matters more here?",
-          "T1 Map Impacts: Who experiences increased surveillance? Who benefits from crime reduction? What are the chilling effects?",
-          "T3 Anticipate Risks: What are the risks of hot spot policing? What are the risks of alternatives?",
-          "T4 Alternatives: Evaluate each option. How does each address fairness and community trust?",
-          "T5 Accountability: Who decides where patrols go? What community input will you seek?"
-        ],
+        "prompts": [],
         "quick_actions": {
           "A": [
             "Allocate funding for community initiatives",
