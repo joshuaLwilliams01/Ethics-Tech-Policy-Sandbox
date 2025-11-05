@@ -46,20 +46,21 @@ export default function ResultsModal({
       
       {/* Modal */}
       <div
-        className="fixed inset-0 z-50 flex items-start justify-center pt-6 pb-6 px-4 pointer-events-none overflow-y-auto"
-        style={{ paddingTop: '1.5rem', paddingBottom: '1.5rem' }}
+        className="fixed inset-0 z-50 flex items-start justify-center px-4 py-8 pointer-events-none overflow-y-auto"
+        style={{ paddingTop: '2rem', paddingBottom: '2rem' }}
       >
         <div
           className="bg-gradient-to-br from-white via-[#F7F6F3] to-white rounded-lg shadow-2xl max-w-3xl w-full flex flex-col relative border-2 border-[#8C1515] pointer-events-auto"
           onClick={(e) => e.stopPropagation()}
           style={{ 
             animation: 'modal-slide-in 0.3s ease-out',
-            maxHeight: 'calc(100vh - 3rem)',
-            marginTop: '0'
+            maxHeight: 'calc(100vh - 4rem)',
+            marginTop: '0',
+            marginBottom: '0'
           }}
         >
           {/* Header with gradient - always visible */}
-          <div className="bg-gradient-to-r from-[#8C1515] via-[#C41E3A] to-[#8C1515] p-6 rounded-t-lg flex-shrink-0">
+          <div className="bg-gradient-to-r from-[#8C1515] via-[#C41E3A] to-[#8C1515] p-6 rounded-t-lg flex-shrink-0 sticky top-0 z-20">
             <div className="flex items-center justify-between">
               <h2 className="text-2xl font-bold text-white flex items-center gap-3">
                 <span className="text-4xl">🎯</span>
@@ -82,7 +83,7 @@ export default function ResultsModal({
           </div>
 
           {/* Content - scrollable */}
-          <div className="p-6 space-y-6 overflow-y-auto flex-1 min-h-0">
+          <div className="p-6 space-y-6 overflow-y-auto flex-1 min-h-0" style={{ maxHeight: 'calc(100vh - 20rem)' }}>
             {/* Summary */}
             <div className="bg-gradient-to-r from-[#8C1515]/10 to-[#175E54]/10 p-5 rounded-lg border-l-4 border-[#8C1515]">
               <p className="text-[#1F2937] text-base font-semibold leading-relaxed">{results.summary}</p>
