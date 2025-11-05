@@ -47,15 +47,16 @@ export default function ResultsModal({
       
       {/* Modal */}
       <div
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
+        className="fixed inset-0 z-50 flex items-start justify-center p-4 pointer-events-none overflow-y-auto"
+        style={{ paddingTop: '1rem' }}
       >
         <div
-          className="bg-gradient-to-br from-white via-[#F7F6F3] to-white rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative border-2 border-[#8C1515] pointer-events-auto"
+          className="bg-gradient-to-br from-white via-[#F7F6F3] to-white rounded-lg shadow-2xl max-w-2xl w-full max-h-[calc(100vh-2rem)] overflow-y-auto relative border-2 border-[#8C1515] pointer-events-auto my-4"
           onClick={(e) => e.stopPropagation()}
           style={{ animation: 'modal-slide-in 0.3s ease-out' }}
         >
-          {/* Header with gradient */}
-          <div className="bg-gradient-to-r from-[#8C1515] via-[#C41E3A] to-[#8C1515] p-4 rounded-t-lg">
+          {/* Header with gradient - sticky to stay visible */}
+          <div className="bg-gradient-to-r from-[#8C1515] via-[#C41E3A] to-[#8C1515] p-4 rounded-t-lg sticky top-0 z-10">
             <div className="flex items-center justify-between">
               <h2 className="text-2xl font-bold text-white flex items-center gap-2">
                 <span className="text-3xl">🎯</span>
