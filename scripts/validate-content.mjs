@@ -50,8 +50,8 @@ function readJSON(p) {
   if (!fs.existsSync(LEVEL_DIR)) {
     console.error("Missing /data/levels folder."); process.exit(1);
   }
-  const files = fs.readdirSync(LEVEL_DIR).filter(f => /^level[1-6]\.json$/.test(f));
-  if (files.length === 0) { console.error("No level files found (expected level1.json … level6.json)."); process.exit(1); }
+  const files = fs.readdirSync(LEVEL_DIR).filter(f => /^level[1-7]\.json$/.test(f));
+  if (files.length === 0) { console.error("No level files found (expected level1.json … level7.json)."); process.exit(1); }
 
   let total = 0; const errors = [];
   for (const f of files) {

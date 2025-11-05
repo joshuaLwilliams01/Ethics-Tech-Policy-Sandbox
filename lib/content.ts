@@ -41,7 +41,7 @@ export async function loadLevel(n:number):Promise<LevelPack>{
 }
 export async function loadAllLevels():Promise<LevelPack[]>{
   const packs: LevelPack[] = [];
-  for (let i=1;i<=6;i++) packs.push(await loadLevel(i));
+  for (let i=1;i<=7;i++) packs.push(await loadLevel(i));
   return packs;
 }
 

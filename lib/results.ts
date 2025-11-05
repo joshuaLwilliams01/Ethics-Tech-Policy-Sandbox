@@ -1143,6 +1143,211 @@ const RESULTS_MAP: Record<string, Record<'A'|'B'|'C', ResultData>> = {
         "Savings arrive more slowly"
       ]
     }
+  },
+  "L7-S1": {
+    A: {
+      summary: "As a result of your decision (A), overtly dehumanizing AI content is removed from government channels, but legitimacy hinges on narrow scope and fair appeals.",
+      benefits: [
+        "Faster protection for targeted groups",
+        "Clear standard for official digital spaces",
+        "Signals city's ethical stance on AI use"
+      ],
+      harms: [
+        "Censorship concerns if scope expands",
+        "Migration of harmful content to shadow forums",
+        "Appeals and review workload increase"
+      ]
+    },
+    B: {
+      summary: "As a result of your decision (B), norms shift through transparency and education, but relief is slower for those harmed right now.",
+      benefits: [
+        "Builds public capacity to contest AI harms",
+        "Protects broader speech values",
+        "Produces evidence for future policy"
+      ],
+      harms: [
+        "Harmful content lingers longer",
+        "Requires sustained facilitation and funding",
+        "Harder to show quick wins"
+      ]
+    },
+    C: {
+      summary: "As a result of your decision (C), tensions cool and shared rules emerge, but process quality determines legitimacy.",
+      benefits: [
+        "Immediate cooling-off period",
+        "Shared ownership improves compliance",
+        "Clear mandate post-vote"
+      ],
+      harms: [
+        "Short-term uncertainty and gaps",
+        "If process feels biased, opposition hardens",
+        "Administration and facilitation costs rise"
+      ]
+    }
+  },
+  "L7-S2": {
+    A: {
+      summary: "As a result of your decision (A), harms are contained quickly, but due-process pressure rises.",
+      benefits: [
+        "Faster protection for targeted users",
+        "Clear, predictable response windows",
+        "Strong deterrence for repeat abuse"
+      ],
+      harms: [
+        "Wrongful removals provoke appeals and scrutiny",
+        "Reviewer stress + staffing needs increase",
+        "Perceived bias if SLAs vary by group"
+      ]
+    },
+    B: {
+      summary: "As a result of your decision (B), accuracy improves, but harmful content may linger longer.",
+      benefits: [
+        "Fewer wrongful removals; more trust",
+        "Transparent stats build legitimacy",
+        "Better training data for future calls"
+      ],
+      harms: [
+        "Exposure window for harms increases",
+        "Higher coordination + tooling costs",
+        "Bad actors may exploit delays"
+      ]
+    },
+    C: {
+      summary: "As a result of your decision (C), legitimacy rises with shared enforcement, but quality can vary by reporter.",
+      benefits: [
+        "Wider buy-in across communities",
+        "Some repeat offenders reform",
+        "Local knowledge improves context"
+      ],
+      harms: [
+        "Inconsistent case quality and pace",
+        "Training + oversight overhead",
+        "Risk of factional capture without audits"
+      ]
+    }
+  },
+  "L7-S3": {
+    A: {
+      summary: "As a result of your decision (A), safety is immediate, but reintegration and learning are not modeled.",
+      benefits: [
+        "Clear boundary; fast reassurance for survivors",
+        "Simpler enforcement going forward",
+        "Deterrence visible to others"
+      ],
+      harms: [
+        "No demonstration of repair",
+        "Evasion attempts drive costs",
+        "Harsh for borderline cases"
+      ]
+    },
+    B: {
+      summary: "As a result of your decision (B), some offenders reform under structure, but trust is conditional on strict enforcement.",
+      benefits: [
+        "Measured reintegration; behavior can improve",
+        "Evidence on which guardrails work",
+        "Survivors see visible compliance checks"
+      ],
+      harms: [
+        "Risk of relapse under lighter controls",
+        "Monitoring overhead and complexity",
+        "Survivors may feel unsafe if violations slip"
+      ]
+    },
+    C: {
+      summary: "As a result of your decision (C), community healing increases, but time and skill demands are high.",
+      benefits: [
+        "Survivor agency and closure",
+        "Deeper norm change; lower recidivism",
+        "Public model for digital repair"
+      ],
+      harms: [
+        "High emotional/time investment",
+        "Limited capacity; not for all cases",
+        "Failure can retraumatize if mishandled"
+      ]
+    }
+  },
+  "L7-S4": {
+    A: {
+      summary: "As a result of your decision (A), deterrence stays strong, but trust depends on audits and opt-outs.",
+      benefits: [
+        "Ongoing reduction in harassment",
+        "Metrics enable oversight and tuning",
+        "Clear rules for data handling"
+      ],
+      harms: [
+        "Misidentifications persist (though fewer)",
+        "Community skepticism remains",
+        "Compliance and auditing costs increase"
+      ]
+    },
+    B: {
+      summary: "As a result of your decision (B), dignity improves, but peak coverage may thin.",
+      benefits: [
+        "Fewer profiling incidents",
+        "Stronger resident–steward relationships",
+        "Better prevention and reporting"
+      ],
+      harms: [
+        "Limited night/peak capacity",
+        "Higher training/staffing costs",
+        "Slower response in rare high-risk cases"
+      ]
+    },
+    C: {
+      summary: "As a result of your decision (C), policy gains a clear mandate, but incidents can rise during the pause.",
+      benefits: [
+        "Democratic legitimacy and clarity",
+        "Stronger acceptance post-vote",
+        "Enables reset with community norms"
+      ],
+      harms: [
+        "Short-term safety dip possible",
+        "Voting fatigue/low turnout risks",
+        "Administration burden to run the process"
+      ]
+    }
+  },
+  "L7-S5": {
+    A: {
+      summary: "As a result of your decision (A), public pressure rises, but clients lose insider protection now.",
+      benefits: [
+        "Strong external signal and scrutiny",
+        "Clear stance and focus for reform",
+        "New coalitions mobilize quickly"
+      ],
+      harms: [
+        "Short-term service gaps for vulnerable users",
+        "Less day-to-day influence on fixes",
+        "Risk of politicizing the issue"
+      ]
+    },
+    B: {
+      summary: "As a result of your decision (B), clients keep services while reforms advance, but personal risk increases.",
+      benefits: [
+        "Service continuity for vulnerable groups",
+        "Measurable, steady reforms",
+        "Institutional learning sticks"
+      ],
+      harms: [
+        "Burnout and retaliation risks",
+        "Slower reputation repair",
+        "Requires strong oversight partners"
+      ]
+    },
+    C: {
+      summary: "As a result of your decision (C), leverage is clear and clients have a safety net if exit occurs.",
+      benefits: [
+        "Focused timelines drive action",
+        "Binary outcome clarifies accountability",
+        "Reduced harm if departure happens"
+      ],
+      harms: [
+        "Negotiation may stall or dilute terms",
+        "Monitoring/reporting overhead",
+        "Risk of abrupt transition at deadline"
+      ]
+    }
   }
 };
 

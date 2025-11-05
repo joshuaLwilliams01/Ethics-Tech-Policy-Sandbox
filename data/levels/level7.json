@@ -1,0 +1,207 @@
+{
+  "level": 7,
+  "title": "Moral Imagination – Civic Courage & Governance",
+  "scenarios": [
+    {
+      "scenario_id": "L7-S1",
+      "title": "Policy Ban on Dehumanizing AI-Generated Content",
+      "prompt": "A city is weighing a policy to ban dehumanizing AI-generated content from official digital channels (city sites, kiosks, SMS bots). Supporters say it prevents real-world harms; critics warn of overreach and chilling effects. How would you proceed?",
+      "choices": {
+        "A": "Enact a narrow policy ban on dehumanizing AI content in official channels, with due-process safeguards.",
+        "B": "No ban; fund counterspeech and digital media literacy programs; require labels for AI content.",
+        "C": "Temporary moratorium while a digital speech charter is co-designed with residents; adopt via public vote."
+      },
+      "toolkit_cues": "What world are we aiming to build in 5 years if we act vs. if we don't? Who becomes safer—or silenced?",
+      "p3_cues": "People (speech & safety), Planet (policy enforcement workload), Parity (whose speech gets limited).",
+      "toolkit_flow": {
+        "order": [],
+        "prompts": [],
+        "quick_actions": {
+          "A": [
+            "Publish narrowly tailored definitions + sunset review",
+            "Create an independent appeals panel with set service level agreements (SLAs) for response times.",
+            "Require provenance/watermark checks on official uploads"
+          ],
+          "B": [
+            "Fund counterspeech + digital literacy tied to AI media",
+            "Require \"AI-generated\" labels on city content",
+            "Publish quarterly incident and outcomes dashboards"
+          ],
+          "C": [
+            "Time-box moratorium (e.g., 90 days) on official channels",
+            "Co-design digital speech charter with representative panels",
+            "Bind to a public vote and scheduled re-evaluation"
+          ]
+        },
+        "metrics": [
+          "Appeals volume",
+          "Content removal rate"
+        ],
+        "owner_required": true,
+        "review_default_days": 90
+      },
+      "toolkit_references": "Future Story, Ethics Frame, Weighing Options, Values Explainer Cards"
+    },
+    {
+      "scenario_id": "L7-S2",
+      "title": "The Civic Integrity Unit (Platform Policy & Enforcement)",
+      "prompt": "Your municipal platform hosts participatory budgeting and service requests. A newly formed Civic Integrity Unit proposes rapid takedowns of posts that deny equal standing (e.g., AI-assisted harassment). Fast action prevents harm; errors damage trust. What should you do?",
+      "choices": {
+        "A": "Fast takedowns with strict timelines and post-hoc review.",
+        "B": "Deliberate review (two reviewers) with temporary visibility limits.",
+        "C": "Community co-enforcement (certified \"trusted reporters\" + restorative routes)."
+      },
+      "toolkit_cues": "What are legitimate limits on harmful speech in public platforms? How do we ensure fair notice and appeal?",
+      "p3_cues": "People (dignity harms), Planet (moderation compute), Parity (even-handed enforcement).",
+      "toolkit_flow": {
+        "order": [],
+        "prompts": [],
+        "quick_actions": {
+          "A": [
+            "Set removal SLAs (1–2 hours) for defined violations",
+            "Require case files + audit trails for each action",
+            "Notify users with reasons + one-click appeal path"
+          ],
+          "B": [
+            "Two-reviewer confirmation on borderline cases",
+            "Apply interstitials/down-ranking during review",
+            "Publish weekly accuracy + correction reports"
+          ],
+          "C": [
+            "Certify and monitor trusted community reporters",
+            "Offer restorative learning paths for some offenses",
+            "Rotate external bias audits of reporter decisions"
+          ]
+        },
+        "metrics": [
+          "Takedown accuracy %",
+          "Appeal rate"
+        ],
+        "owner_required": true,
+        "review_default_days": 90
+      },
+      "toolkit_references": "Ethics Frame, Impact Explorer, Ethics Gauge, Weighing Options"
+    },
+    {
+      "scenario_id": "L7-S3",
+      "title": "Rehabilitation or Exile on a Public Service Platform",
+      "prompt": "A repeat offender on the city's service platform (e.g., doxxing via AI-generated images) completed training but is likely to reoffend. Choose: permanent ban, monitored return, or restorative circle with affected groups.",
+      "choices": {
+        "A": "Permanent ban from the platform.",
+        "B": "Monitored return with strict guardrails and feature limits.",
+        "C": "Restorative circle with survivor consent before re-entry."
+      },
+      "toolkit_cues": "Which path best prevents future harm and restores community on a digital public service?",
+      "p3_cues": "People (survivor agency), Planet (program resources), Parity (who gets second chances).",
+      "toolkit_flow": {
+        "order": [],
+        "prompts": [],
+        "quick_actions": {
+          "A": [
+            "Publish criteria + documented violations",
+            "Provide off-platform rehab resources",
+            "Notify affected communities; close case"
+          ],
+          "B": [
+            "Require acknowledgment of harm + learning plan",
+            "Enforce probation and limit features (e.g., no images)",
+            "Schedule check-ins; publish anonymized outcomes"
+          ],
+          "C": [
+            "Use trained facilitators; center survivor consent",
+            "Co-create repair actions + timelines (e.g., takedown assistance)",
+            "Define re-entry conditions; enforce if breached"
+          ]
+        },
+        "metrics": [
+          "Recidivism rate",
+          "Survivor satisfaction"
+        ],
+        "owner_required": true,
+        "review_default_days": 90
+      },
+      "toolkit_references": "Impact Explorer, Ethics Gauge, Weighing Options, Future Story"
+    },
+    {
+      "scenario_id": "L7-S4",
+      "title": "Community Defense Tech (Drones vs. Human Stewards)",
+      "prompt": "A pilot of AI-assisted patrol drones cut harassment around transit hubs but sometimes profiles residents. Options: keep with stronger consent, switch to human safety stewards, or pause for a consent referendum.",
+      "choices": {
+        "A": "Keep drones with opt-in zones and independent audits.",
+        "B": "Human ambassadors first; drones only for defined emergencies.",
+        "C": "Pause drones and hold a binding consent referendum."
+      },
+      "toolkit_cues": "What does \"safety with dignity\" look like from residents' own accounts?",
+      "p3_cues": "People (stops & stress), Planet (drone energy), Parity (who's targeted).",
+      "toolkit_flow": {
+        "order": [],
+        "prompts": [],
+        "quick_actions": {
+          "A": [
+            "Opt-in geofenced zones + clear signage",
+            "Bias testing; publish stop/search metrics",
+            "Short retention + purpose limits"
+          ],
+          "B": [
+            "Hire/train local de-escalation stewards",
+            "Use drones only on steward request for emergencies",
+            "Track response times, outcomes, and satisfaction"
+          ],
+          "C": [
+            "Halt flights; publish a plain-language risk/benefit brief",
+            "Run binding neighborhood votes with turnout thresholds",
+            "Pilot alternative safety measures during the pause"
+          ]
+        },
+        "metrics": [
+          "Harassment incidents",
+          "Misidentification rate"
+        ],
+        "owner_required": true,
+        "review_default_days": 90
+      },
+      "toolkit_references": "Values Explainer Cards, Impact Explorer, Weighing Options"
+    },
+    {
+      "scenario_id": "L7-S5",
+      "title": "Stay or Exit a Troubled Digital Services Agency",
+      "prompt": "Your city's Digital Services Agency faces ethical breaches (e.g., rushed deployments, weak privacy). Your reform team can exit (to force change from outside), stay and fight, or sign a time-boxed reform pact with exit triggers. What do you do?",
+      "choices": {
+        "A": "Exit and advocate from outside (public letter + watchdog).",
+        "B": "Stay and fight with enforceable safeguards.",
+        "C": "Time-boxed pact (90–180 days) with automatic exit triggers."
+      },
+      "toolkit_cues": "What duties do we owe those who cannot leave? What safeguards make \"staying\" ethical?",
+      "p3_cues": "People (service continuity), Planet (program overhead), Parity (access gaps if reformers exit).",
+      "toolkit_flow": {
+        "order": [],
+        "prompts": [],
+        "quick_actions": {
+          "A": [
+            "Publish resignation letter + reform demands",
+            "Stand up independent watchdog for audits",
+            "Build coalition to support clients externally"
+          ],
+          "B": [
+            "Secure whistleblower protections + oversight access",
+            "Tie your role to equity/service KPIs",
+            "Publish progress dashboards; escalate on misses"
+          ],
+          "C": [
+            "Sign reform pact with deadlines and owners",
+            "Define automatic exit triggers for failures",
+            "Prepare partner handoff plans for clients"
+          ]
+        },
+        "metrics": [
+          "Reform progress %",
+          "Service continuity %"
+        ],
+        "owner_required": true,
+        "review_default_days": 90
+      },
+      "toolkit_references": "Values Explainer Cards, Ethics Frame, Future Story"
+    }
+  ]
+}
+
