@@ -26,18 +26,18 @@ export default function HowToPlayModal({ isOpen, onClose }: { isOpen: boolean; o
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 transition-opacity duration-300"
+        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
         onClick={onClose}
         style={{ animation: 'fade-in 0.3s ease-out' }}
       />
       
       {/* Modal */}
       <div
-        className="fixed inset-0 z-50 flex items-center justify-center p-4"
-        onClick={(e) => e.stopPropagation()}
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
       >
         <div
-          className="bg-white rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative border-2 border-[#8C1515]"
+          className="bg-white rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative border-2 border-[#8C1515] pointer-events-auto"
+          onClick={(e) => e.stopPropagation()}
           style={{ animation: 'modal-slide-in 0.3s ease-out' }}
         >
           {/* Header with gradient */}
