@@ -88,12 +88,16 @@ export default function ScenarioCard({
             >
               https://ethicsinsociety.stanford.edu/tech-ethics/ethics-toolkit
             </a>
-            <div className="mt-1 flex flex-wrap gap-2 text-xs text-[#53565A]">
+            <ol className="mt-1 list-decimal list-inside space-y-1 text-sm text-[#2E2D29] font-medium">
               {scenario.toolkit_references.split(',').map((ref, idx) => {
                 const trimmedRef = ref.trim();
-                return <span key={idx}>{trimmedRef}</span>;
+                return (
+                  <li key={idx} className="leading-relaxed">
+                    {trimmedRef}
+                  </li>
+                );
               })}
-            </div>
+            </ol>
           </div>
         )}
         <div className="mt-2"><strong>People + Planet + Parity Cues:</strong> {scenario.p3_cues}</div>
