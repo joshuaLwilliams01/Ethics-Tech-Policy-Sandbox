@@ -22,13 +22,15 @@ export default function ToolkitCard({ flow, choice, onComplete }:{
 
   // Reset checks when actions change (due to choice change or flow change)
   useEffect(() => {
-    setChecks(actions.map(() => false));
-  }, [actions.length, actions.join(',')]);
+    const newChecks = actions.map(() => false);
+    setChecks(newChecks);
+  }, [actions]);
 
   // Reset answers when prompts change
   useEffect(() => {
-    setAnswers(flow.prompts.map(() => ''));
-  }, [flow.prompts.length, flow.prompts.join(',')]);
+    const newAnswers = flow.prompts.map(() => '');
+    setAnswers(newAnswers);
+  }, [flow.prompts]);
 
   useEffect(() => {
     // Check if prompts are complete
@@ -45,7 +47,7 @@ export default function ToolkitCard({ flow, choice, onComplete }:{
     
     // Always call onComplete to update parent state
     onComplete({ prompts:answers, actions:checks, metrics:flow.metrics ?? [], isComplete });
-  }, [answers, checks, flow.prompts.length, actions.length, flow.metrics, onComplete]);
+  }, [answers, checks, flow.prompts, actions, flow.metrics, onComplete]);
 
   return (
     <div className="card space-y-4">
