@@ -1866,3 +1866,5 @@ digest: "3421250340"
  GET /background-music.ogg 404 in 57ms
  GET /background-music.wav 404 in 63ms
  ✓ Compiled in 6s (802 modules)
+ GET / 200 in 1270ms
+ ✓ Compiled in 2.9s (802 modules)

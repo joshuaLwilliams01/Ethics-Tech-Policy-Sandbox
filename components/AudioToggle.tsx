@@ -19,7 +19,7 @@ export default function AudioToggle(){
           .then(() => {
             // Autoplay succeeded
             audio.loop = true;
-            audio.volume = 0.4; // Professional volume level
+            audio.volume = 0.3; // Professional volume level (lowered)
           })
           .catch((error) => {
             console.warn('Audio autoplay prevented:', error);
