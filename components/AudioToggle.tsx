@@ -3,8 +3,10 @@ import { useEffect, useRef, useState } from "react";
 import { playButtonClick } from "@/lib/sounds";
 import { useSound } from "@/contexts/SoundContext";
 
-// Pixabay CDN URL - update with actual URL from Pixabay page
+// Pixabay CDN URL - Mid-tempo, suspenseful, confident pulse (James Bond/Mission Impossible style)
+// Target: 100-120 BPM, strong bass pulse, suspenseful but confident
 // To get the URL: visit the Pixabay track page, click Download, right-click the MP3 link, "Copy link address"
+// Search Pixabay: https://pixabay.com/music/search/spy%20theme/ or https://pixabay.com/music/search/suspense/
 const PIXABAY_SRC = "https://cdn.pixabay.com/download/audio/2024/01/20/audio_412906.mp3?filename=spy-detective-background-suspenseful-investigation-full-412906.mp3";
 
 export default function AudioToggle(){
