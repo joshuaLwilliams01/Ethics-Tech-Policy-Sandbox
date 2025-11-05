@@ -57,8 +57,8 @@ export default function ToolkitCard({ flow, choice, onComplete }:{
       {/* Title changed by parent; prompts only */}
       {flow.prompts.map((p, i) => (
         <div key={i}>
-          <label className="block font-medium mb-1">{p}</label>
-          <textarea className="w-full border rounded p-2 min-h-[84px]"
+          <label className="block font-semibold text-base text-[#1F2937] mb-2">{p}</label>
+          <textarea className="w-full border rounded p-3 min-h-[84px] text-base text-[#374151] leading-relaxed"
             value={answers[i]}
             onChange={e => { const next = answers.slice(); next[i] = e.target.value; setAnswers(next); }}
             aria-label={`Toolkit prompt ${i+1}`} />
@@ -66,10 +66,10 @@ export default function ToolkitCard({ flow, choice, onComplete }:{
       ))}
       {actions.length > 0 && (
         <div>
-          <div className="font-medium mb-2">Quick actions{choice ? ` (for choice ${choice})` : ''}</div>
-          <p className="text-xs text-gray-500 mb-2">All quick actions must be selected to proceed.</p>
+          <div className="font-bold text-base text-[#1F2937] mb-2">Quick actions{choice ? ` (for choice ${choice})` : ''}</div>
+          <p className="text-sm text-gray-600 mb-3 font-medium">All quick actions must be selected to proceed.</p>
           {actions.map((a, i) => (
-            <label key={i} className="flex items-center gap-2 mb-1">
+            <label key={i} className="flex items-start gap-3 mb-2 cursor-pointer hover:bg-gray-50 p-2 rounded transition-colors">
               <input 
                 type="checkbox" 
                 checked={checks[i] || false} 
@@ -78,9 +78,10 @@ export default function ToolkitCard({ flow, choice, onComplete }:{
                   next[i] = e.target.checked; 
                   setChecks(next); 
                 }} 
-                aria-label={`Quick action ${i+1}`} 
+                aria-label={`Quick action ${i+1}`}
+                className="mt-1 flex-shrink-0"
               />
-              <span>{a}</span>
+              <span className="text-base font-semibold text-[#1F2937] leading-relaxed">{a}</span>
             </label>
           ))}
         </div>
