@@ -26,10 +26,11 @@ export default function ResultsModal({
     };
     if (isOpen) {
       document.addEventListener('keydown', handleEscape);
-      // Don't hide body overflow - let the modal container handle scrolling
+      document.body.style.overflow = 'hidden';
     }
     return () => {
       document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
     };
   }, [isOpen, onClose]);
 
@@ -46,35 +47,26 @@ export default function ResultsModal({
       
       {/* Modal */}
       <div
-        className="fixed inset-0 z-50 flex items-start justify-center px-4 pointer-events-none overflow-y-auto"
-        style={{ paddingTop: '5rem', paddingBottom: '2rem' }}
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
       >
         <div
-          className="bg-gradient-to-br from-white via-[#F7F6F3] to-white rounded-lg shadow-2xl max-w-2xl w-full flex flex-col relative border-2 border-[#8C1515] pointer-events-auto"
+          className="bg-gradient-to-br from-white via-[#F7F6F3] to-white rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative border-2 border-[#8C1515] pointer-events-auto"
           onClick={(e) => e.stopPropagation()}
-          style={{ 
-            animation: 'modal-slide-in 0.3s ease-out',
-            maxHeight: 'calc(100vh - 7rem)',
-            marginTop: '0',
-            marginBottom: '2rem'
-          }}
+          style={{ animation: 'modal-slide-in 0.3s ease-out' }}
         >
-          {/* Header with gradient - always visible */}
-          <div className="bg-gradient-to-r from-[#8C1515] via-[#C41E3A] to-[#8C1515] p-4 rounded-t-lg flex-shrink-0 z-20">
+          {/* Header with gradient */}
+          <div className="bg-gradient-to-r from-[#8C1515] via-[#C41E3A] to-[#8C1515] p-4 rounded-t-lg">
             <div className="flex items-center justify-between">
-              <h2 className="text-xl font-bold text-white flex items-center gap-2">
+              <h2 className="text-2xl font-bold text-white flex items-center gap-2">
                 <span className="text-3xl">🎯</span>
-                <div>
-                  <div className="text-xl font-bold">Result(s) of Your Decision</div>
-                  <div className="text-sm font-semibold opacity-95 mt-0.5">See the impact of your choice</div>
-                </div>
+                <span>Result(s) of Your Decision</span>
               </h2>
               <button
                 onClick={() => {
                   playButtonClick();
                   onClose();
                 }}
-                className="text-white hover:text-gray-200 transition-colors duration-200 text-2xl font-bold w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 flex-shrink-0"
+                className="text-white hover:text-gray-200 transition-colors duration-200 text-2xl font-bold w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20"
                 aria-label="Close modal"
               >
                 ×
@@ -82,8 +74,8 @@ export default function ResultsModal({
             </div>
           </div>
 
-          {/* Content - scrollable */}
-          <div className="p-4 space-y-4 overflow-y-auto flex-1 min-h-0" style={{ maxHeight: 'calc(100vh - 18rem)' }}>
+          {/* Content */}
+          <div className="p-6 space-y-4">
             {/* Summary */}
             <div className="bg-gradient-to-r from-[#8C1515]/10 to-[#175E54]/10 p-4 rounded-lg border-l-4 border-[#8C1515]">
               <p className="text-[#1F2937] text-sm font-semibold leading-relaxed">{results.summary}</p>
@@ -126,7 +118,7 @@ export default function ResultsModal({
           </div>
 
           {/* Footer */}
-          <div className="border-t border-gray-200 p-3 bg-gradient-to-r from-gray-50 to-transparent flex justify-end flex-shrink-0">
+          <div className="border-t border-gray-200 p-4 flex justify-end">
             <button
               onClick={() => {
                 playButtonClick();
