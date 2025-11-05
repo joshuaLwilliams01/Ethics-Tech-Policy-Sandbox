@@ -2713,3 +2713,14 @@ digest: "2094012415"
  ✓ Compiled in 1981ms (1158 modules)
  ✓ Compiled in 3.1s (1158 modules)
  ✓ Compiled in 2.7s (1158 modules)
+ ✓ Compiled in 1475ms (1158 modules)
+ GET / 200 in 214ms
+ GET / 200 in 190ms
+ ○ Compiling /about ...
+ ✓ Compiled /about in 1098ms (510 modules)
+ ✓ Compiled in 1720ms (1147 modules)
+ ✓ Compiled in 2s (1161 modules)
+ ✓ Compiled in 808ms (1161 modules)
+ ✓ Compiled in 2.2s (1161 modules)
+ ✓ Compiled in 2.2s (1161 modules)
+ ✓ Compiled in 887ms (1161 modules)

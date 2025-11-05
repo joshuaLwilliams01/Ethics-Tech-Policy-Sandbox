@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { loadProgress, clearProgress, saveProgress } from '@/lib/save';
 import type { SaveState } from '@/lib/save';
+import { getPlayerId, getPlayerName, setPlayerName } from '@/lib/player';
 import Link from 'next/link';
 import { playButtonClick } from '@/lib/sounds';
 
@@ -11,12 +12,19 @@ export default function TestProgressPage() {
   const [lastSaveTime, setLastSaveTime] = useState<number>(0);
   const [isClient, setIsClient] = useState(false);
   const [storageAvailable, setStorageAvailable] = useState<boolean | null>(null);
+  const [playerId, setPlayerId] = useState<string>('');
+  const [playerName, setPlayerNameState] = useState<string>('');
 
   useEffect(() => {
     // Mark as client-side to avoid hydration mismatch
     setIsClient(true);
     // Check localStorage availability
     setStorageAvailable(typeof window !== 'undefined' && 'localStorage' in window);
+    // Get player info
+    if (typeof window !== 'undefined') {
+      setPlayerId(getPlayerId());
+      setPlayerNameState(getPlayerName() || '');
+    }
     // Load saved progress on mount
     const loaded = loadProgress();
     setSavedState(loaded);
@@ -83,6 +91,43 @@ export default function TestProgressPage() {
             <p className="text-green-700 font-semibold">{testMessage}</p>
           </div>
         )}
+
+        {/* Player Information */}
+        <div className="card p-6 space-y-4">
+          <h2 className="text-2xl font-bold text-[#8C1515] border-b-2 border-[#8C1515] pb-2">
+            Player Information
+          </h2>
+          
+          <div className="space-y-3">
+            <div>
+              <strong className="text-[#2E2D29]">Player ID:</strong>
+              <span className="ml-2 text-[#53565A] font-mono text-sm">{playerId || 'Loading...'}</span>
+            </div>
+            <div>
+              <strong className="text-[#2E2D29]">Player Name:</strong>
+              <div className="flex items-center gap-2 mt-2">
+                <input
+                  type="text"
+                  value={playerName}
+                  onChange={(e) => setPlayerNameState(e.target.value)}
+                  placeholder="Enter your name (optional)"
+                  className="flex-1 border rounded px-3 py-2 text-sm"
+                />
+                <button
+                  onClick={() => {
+                    playButtonClick();
+                    setPlayerName(playerName);
+                    setTestMessage('✓ Player name saved!');
+                    setTimeout(() => setTestMessage(''), 3000);
+                  }}
+                  className="btn px-4 py-2 text-sm font-semibold"
+                >
+                  Save Name
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Current Saved State */}
         <div className="card p-6 space-y-4">
@@ -170,7 +215,9 @@ export default function TestProgressPage() {
           <div className="space-y-2 text-sm">
             <div>
               <strong className="text-[#2E2D29]">Storage Key:</strong>
-              <span className="ml-2 text-[#53565A] font-mono">ETP_DECISIONS_SANDBOX_SAVE</span>
+              <span className="ml-2 text-[#53565A] font-mono text-xs break-all">
+                {playerId ? `ETP_DECISIONS_SANDBOX_SAVE_${playerId}` : 'Loading...'}
+              </span>
             </div>
             <div>
               <strong className="text-[#2E2D29]">Storage Type:</strong>

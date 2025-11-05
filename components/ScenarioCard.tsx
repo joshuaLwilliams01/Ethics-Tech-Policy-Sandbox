@@ -121,7 +121,7 @@ export default function ScenarioCard({
   const doSave = () => {
     playButtonClick();
     saveProgress({ level, idx:index, timestamp:Date.now(), payload:{ choice, toolkit } });
-    alert("Progress saved locally.");
+    alert("Progress saved locally for your account.");
   };
 
   const handleSubmit = () => {
