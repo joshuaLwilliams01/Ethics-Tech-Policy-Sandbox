@@ -1981,3 +1981,56 @@ digest: "3421250340"
  ✓ Compiled in 982ms (474 modules)
  ✓ Compiled in 300ms (474 modules)
  ✓ Compiled in 308ms (474 modules)
+ ✓ Compiled in 624ms (474 modules)
+ ○ Compiling /completion ...
+ ✓ Compiled /completion in 3.1s (1144 modules)
+ GET /completion?test=true 200 in 3752ms
+ ✓ Compiled in 2.3s (1154 modules)
+ ⨯ ./app/completion/page.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+     ,-[[36;1;4m/Users/cristenwilliams/ethics-lab-p3/app/completion/page.tsx[0m:189:1]
+ [2m189[0m |   }
+ [2m190[0m | 
+ [2m191[0m |   return (
+ [2m192[0m |     <div className="min-h-screen flex items-center justify-center py-12 px-4" style={{ background: 'linear-gradient(135deg, #8C1515 0%, #175E54 50%, #8C1515 100%)' }}>
+     : [31;1m     ^^^[0m
+ [2m193[0m |       <div className="max-w-4xl w-full">
+ [2m194[0m |         {/* Celebration Header */}
+ [2m195[0m |         <div className="text-center mb-8 animate-pulse">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/completion/page.tsx
+ ○ Compiling /_error ...
+ ⨯ ./app/completion/page.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+     ,-[[36;1;4m/Users/cristenwilliams/ethics-lab-p3/app/completion/page.tsx[0m:189:1]
+ [2m189[0m |   }
+ [2m190[0m | 
+ [2m191[0m |   return (
+ [2m192[0m |     <div className="min-h-screen flex items-center justify-center py-12 px-4" style={{ background: 'linear-gradient(135deg, #8C1515 0%, #175E54 50%, #8C1515 100%)' }}>
+     : [31;1m     ^^^[0m
+ [2m193[0m |       <div className="max-w-4xl w-full">
+ [2m194[0m |         {/* Celebration Header */}
+ [2m195[0m |         <div className="text-center mb-8 animate-pulse">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/completion/page.tsx
+ GET /completion?test=true 500 in 234ms
+ GET /play/individual/1 500 in 251ms
+ ✓ Compiled /_not-found in 4.8s (1159 modules)
+ ✓ Compiled (1145 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /_next/static/webpack/c9e9c1a92418e11d.webpack.hot-update.json 404 in 5534ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /completion?test=true 200 in 1241ms
+ GET /play/individual/1 200 in 1270ms

@@ -67,18 +67,68 @@ function CompletionPageContent() {
         page.drawText(text, { x, y, size, font, ...options });
       };
       
-      // Draw centered text
-      centerText('ETHICS-TECH-POLICY', 720, 24, bold, { color: stanfordRed });
-      centerText('DECISIONS SANDBOX', 690, 24, bold, { color: stanfordRed });
-      centerText('Certificate of Completion', 600, 28, bold, { color: rgb(0.2, 0.2, 0.2) });
-      centerText('This is to certify that', 520, 14, font, { color: rgb(0.3, 0.3, 0.3) });
-      centerText(playerName.trim(), 480, 32, bold, { color: stanfordRed });
-      centerText('has successfully completed all 7 levels of', 430, 14, font, { color: rgb(0.3, 0.3, 0.3) });
-      centerText('the Ethics-Tech-Policy Decisions Sandbox', 400, 14, font, { color: rgb(0.3, 0.3, 0.3) });
-      centerText(`Completed on: ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`, 340, 12, font, { color: rgb(0.4, 0.4, 0.4) });
-      centerText('Drawing on Stanford\'s Ethics Toolkit', 280, 11, boldItalic, { color: stanfordGreen });
-      centerText('People · Planet · Parity', 250, 16, bold, { color: stanfordGreen });
-      centerText('Stanford Ethics, Technology + Public Policy for Practitioners', 120, 10, font, { color: rgb(0.5, 0.5, 0.5) });
+      // Certificate Header
+      centerText('ETHICS-TECH-POLICY', 750, 22, bold, { color: stanfordRed });
+      centerText('DECISIONS SANDBOX', 725, 22, bold, { color: stanfordRed });
+      
+      // Certificate Title
+      centerText('Certificate of Completion', 680, 30, bold, { color: rgb(0.2, 0.2, 0.2) });
+      
+      // Main certification text
+      centerText('This certifies that', 620, 14, font, { color: rgb(0.3, 0.3, 0.3) });
+      
+      // Recipient's Name (bold and prominent)
+      centerText(playerName.trim(), 580, 36, bold, { color: stanfordRed });
+      
+      centerText('has successfully completed the training in', 540, 14, font, { color: rgb(0.3, 0.3, 0.3) });
+      
+      // Program name (bold)
+      centerText('Ethics-Tech-Policy Decisions Sandbox', 510, 16, bold, { color: rgb(0.2, 0.2, 0.2) });
+      
+      // Description paragraph
+      const description = 'Created by Joshua Williams, this program explored the complexities of technology, policy, and society based on lessons from the Ethics, Technology + Public Policy for Practitioners SOE-XETECH0001 course.';
+      // Split into lines if needed (rough line breaks at ~70 chars)
+      const words = description.split(' ');
+      let line = '';
+      let yPos = 460;
+      for (const word of words) {
+        const testLine = line + (line ? ' ' : '') + word;
+        if (font.widthOfTextAtSize(testLine, 11) > 520) {
+          if (line) {
+            centerText(line, yPos, 11, font, { color: rgb(0.35, 0.35, 0.35) });
+            yPos -= 18;
+          }
+          line = word;
+        } else {
+          line = testLine;
+        }
+      }
+      if (line) {
+        centerText(line, yPos, 11, font, { color: rgb(0.35, 0.35, 0.35) });
+      }
+      
+      // Date of Completion
+      const completionDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      centerText('Date of Completion:', 380, 12, font, { color: rgb(0.3, 0.3, 0.3) });
+      centerText(completionDate, 360, 12, font, { color: rgb(0.4, 0.4, 0.4) });
+      
+      // Signature line
+      centerText('Signature:', 320, 12, font, { color: rgb(0.3, 0.3, 0.3) });
+      centerText('___________________________', 300, 12, font, { color: rgb(0.5, 0.5, 0.5) });
+      
+      // Title line (if applicable)
+      centerText('Title (if applicable):', 270, 12, font, { color: rgb(0.3, 0.3, 0.3) });
+      centerText('___________________________', 250, 12, font, { color: rgb(0.5, 0.5, 0.5) });
+      
+      // Organization line (if applicable)
+      centerText('Organization (if applicable):', 220, 12, font, { color: rgb(0.3, 0.3, 0.3) });
+      centerText('___________________________', 200, 12, font, { color: rgb(0.5, 0.5, 0.5) });
+      
+      // Congratulations message
+      centerText('Congratulations on this achievement!', 160, 14, bold, { color: stanfordGreen });
+      
+      // Footer
+      centerText('People · Planet · Parity', 100, 12, bold, { color: stanfordGreen });
       
       const bytes = await pdf.save();
       const blob = new Blob([bytes], { type: 'application/pdf' });
@@ -189,53 +239,69 @@ function CompletionPageContent() {
           </div>
 
           {/* Action Buttons */}
-          <div className="grid sm:grid-cols-2 gap-4">
-            {/* Download Certificate */}
-            <button
-              onClick={generateCertificate}
-              disabled={isGenerating || !playerName.trim()}
-              className={`btn px-8 py-4 text-lg font-semibold flex items-center justify-center gap-2 ${
-                !playerName.trim() ? 'opacity-50 cursor-not-allowed' : ''
-              }`}
-            >
-              {isGenerating ? (
-                <>
-                  <span className="animate-spin">⏳</span>
-                  <span>Generating...</span>
-                </>
-              ) : (
-                <>
-                  <span>📜</span>
-                  <span>Download Certificate</span>
-                </>
+          <div className="space-y-4">
+            {/* Download Certificate - Enhanced Visibility */}
+            <div className="bg-gradient-to-r from-[#8C1515]/10 to-[#175E54]/10 p-4 rounded-lg border-2 border-[#8C1515]">
+              <button
+                onClick={generateCertificate}
+                disabled={isGenerating || !playerName.trim()}
+                className={`w-full btn px-8 py-5 text-xl font-bold flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
+                  !playerName.trim() ? 'opacity-50 cursor-not-allowed hover:scale-100' : ''
+                }`}
+                style={{
+                  background: 'linear-gradient(135deg, #8C1515 0%, #C41E3A 50%, #8C1515 100%)',
+                  color: 'white'
+                }}
+              >
+                {isGenerating ? (
+                  <>
+                    <span className="animate-spin text-2xl">⏳</span>
+                    <span>Generating Certificate...</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="text-3xl">📜</span>
+                    <span>Download Certificate</span>
+                    <span className="text-2xl">⬇️</span>
+                  </>
+                )}
+              </button>
+              {!playerName.trim() && (
+                <p className="text-center text-sm text-gray-600 mt-2">
+                  Please enter your name above to generate your certificate
+                </p>
               )}
-            </button>
+            </div>
+            
+            {/* Share Section */}
+            <div className="grid sm:grid-cols-2 gap-4">
 
-            {/* Share Buttons */}
-            <div className="flex flex-col gap-2">
-              <p className="text-sm font-semibold text-gray-700 mb-2 text-center">Share Your Achievement</p>
-              <div className="flex gap-2">
-                <button
-                  onClick={shareOnTwitter}
-                  className="flex-1 px-4 py-3 bg-[#1DA1F2] text-white rounded-lg font-semibold hover:bg-[#1a8cd8] transition-colors flex items-center justify-center gap-2"
-                >
-                  <span>🐦</span>
-                  <span className="hidden sm:inline">Twitter</span>
-                </button>
-                <button
-                  onClick={shareOnLinkedIn}
-                  className="flex-1 px-4 py-3 bg-[#0077B5] text-white rounded-lg font-semibold hover:bg-[#006399] transition-colors flex items-center justify-center gap-2"
-                >
-                  <span>💼</span>
-                  <span className="hidden sm:inline">LinkedIn</span>
-                </button>
-                <button
-                  onClick={shareOnFacebook}
-                  className="flex-1 px-4 py-3 bg-[#1877F2] text-white rounded-lg font-semibold hover:bg-[#166fe5] transition-colors flex items-center justify-center gap-2"
-                >
-                  <span>📘</span>
-                  <span className="hidden sm:inline">Facebook</span>
-                </button>
+              {/* Share Buttons */}
+              <div className="flex flex-col gap-2">
+                <p className="text-sm font-semibold text-gray-700 mb-2 text-center">Share Your Achievement</p>
+                <div className="flex gap-2">
+                  <button
+                    onClick={shareOnTwitter}
+                    className="flex-1 px-4 py-3 bg-[#1DA1F2] text-white rounded-lg font-semibold hover:bg-[#1a8cd8] transition-colors flex items-center justify-center gap-2"
+                  >
+                    <span>🐦</span>
+                    <span className="hidden sm:inline">Twitter</span>
+                  </button>
+                  <button
+                    onClick={shareOnLinkedIn}
+                    className="flex-1 px-4 py-3 bg-[#0077B5] text-white rounded-lg font-semibold hover:bg-[#006399] transition-colors flex items-center justify-center gap-2"
+                  >
+                    <span>💼</span>
+                    <span className="hidden sm:inline">LinkedIn</span>
+                  </button>
+                  <button
+                    onClick={shareOnFacebook}
+                    className="flex-1 px-4 py-3 bg-[#1877F2] text-white rounded-lg font-semibold hover:bg-[#166fe5] transition-colors flex items-center justify-center gap-2"
+                  >
+                    <span>📘</span>
+                    <span className="hidden sm:inline">Facebook</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
