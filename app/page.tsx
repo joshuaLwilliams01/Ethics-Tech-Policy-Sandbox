@@ -51,7 +51,7 @@ export default function Home(){
         <AudioToggle />
       </div>
 
-      {/* How to Play & Start Button - Enhanced */}
+      {/* How to Play Button - Enhanced */}
       <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-8">
         <button 
           onClick={() => setShowHowToPlay(!showHowToPlay)}
@@ -62,13 +62,6 @@ export default function Home(){
             <span>HOW TO PLAY</span>
           </span>
         </button>
-        <Link href="/play/individual/1" className="btn px-6 py-3 text-base font-semibold relative overflow-hidden group">
-          <span className="relative z-10 flex items-center gap-2">
-            <span className="text-xl" style={{ animation: 'bounce-subtle 2s ease-in-out infinite' }}>🎮</span>
-            <span>START YOUR JOURNEY</span>
-            <span className="text-lg">→</span>
-          </span>
-        </Link>
       </div>
 
       {/* Level Selection - Enhanced with animations */}
