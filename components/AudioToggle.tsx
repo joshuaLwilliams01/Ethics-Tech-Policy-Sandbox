@@ -25,19 +25,23 @@ export default function AudioToggle(){
       audioContextRef.current = ctx;
       startTimeRef.current = ctx.currentTime;
       
-      // Mid-tempo: 113 BPM = ~0.531s per beat (confident, walking pace - increased by 3 BPM)
+      // Mid-tempo: 113 BPM = ~0.531s per beat (confident, walking pace)
+      // Professional quality matching AISES Knowledge Bowl standards
       const beatDuration = 0.531;
-      const bassGain = 0.20; // Increased for richer bass
-      const melodyGain = 0.14; // Increased for clearer melody
-      const harmonyGain = 0.10; // Increased for better depth
+      const bassGain = 0.16; // Balanced for professional sound
+      const melodyGain = 0.12; // Clear but not overpowering
+      const harmonyGain = 0.08; // Subtle depth
+      const subBassGain = 0.10; // Low frequency foundation
       
-      // James Bond/Mission Impossible inspired notes
+      // James Bond/Mission Impossible inspired notes - professional quality
       // Bass: Strong pulsing E2, B2, E3 pattern
       const bassNotes = [82.41, 123.47, 164.81]; // E2, B2, E3
       // Melody: Suspenseful but confident (E4, G#4, B4, E5)
       const melodyNotes = [329.63, 415.30, 493.88, 659.25]; // E4, G#4, B4, E5
       // Harmony: Suspense layer (minor third above)
       const harmonyNotes = [392.00, 466.16, 554.37, 783.99]; // G4, A#4, C#5, G5
+      // Sub-bass: Very low frequency for depth (one octave below bass)
+      const subBassNotes = [41.20, 61.74, 82.41]; // E1, B1, E2
       
       const isEnabledRef = { current: true };
       
