@@ -47,10 +47,10 @@ export default function ResultsModal({
       
       {/* Modal */}
       <div
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
+        className="fixed inset-0 z-50 flex items-start justify-center pt-4 pb-4 px-4 pointer-events-none overflow-y-auto"
       >
         <div
-          className="bg-gradient-to-br from-white via-[#F7F6F3] to-white rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh] flex flex-col relative border-2 border-[#8C1515] pointer-events-auto"
+          className="bg-gradient-to-br from-white via-[#F7F6F3] to-white rounded-lg shadow-2xl max-w-3xl w-full max-h-[calc(100vh-2rem)] flex flex-col relative border-2 border-[#8C1515] pointer-events-auto my-auto"
           onClick={(e) => e.stopPropagation()}
           style={{ animation: 'modal-slide-in 0.3s ease-out' }}
         >
