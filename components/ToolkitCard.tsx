@@ -11,20 +11,19 @@ export default function ToolkitCard({ flow, choice, onComplete }:{
   const actions = useMemo(() => {
     if (Array.isArray(flow.quick_actions)) {
       return flow.quick_actions; // Static actions
-    } else if (choice && flow.quick_actions[choice]) {
-      return flow.quick_actions[choice]; // Choice-specific actions
+    } else if (choice && typeof flow.quick_actions === 'object' && flow.quick_actions[choice]) {
+      return flow.quick_actions[choice] || []; // Choice-specific actions
     }
     return []; // No actions if no choice selected and actions are choice-specific
   }, [flow.quick_actions, choice]);
 
   const [answers, setAnswers] = useState<string[]>(() => flow.prompts.map(()=>''));
-  const [checks, setChecks] = useState<boolean[]>(() => actions.map(() => false));
+  const [checks, setChecks] = useState<boolean[]>(() => []);
 
   // Reset checks when actions change (due to choice change or flow change)
   useEffect(() => {
-    const newChecks = actions.map(() => false);
-    setChecks(newChecks);
-  }, [actions]);
+    setChecks(actions.map(() => false));
+  }, [choice, actions.length, JSON.stringify(actions)]);
 
   // Reset answers when prompts change
   useEffect(() => {
