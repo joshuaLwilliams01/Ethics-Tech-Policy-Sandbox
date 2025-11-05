@@ -58,28 +58,28 @@ export default function EthicsBrainIcon({ className = "w-12 h-12" }: { className
       <g>
         <circle cx="40" cy="40" r="18" fill="#10B981" opacity="0.7" stroke="#FFFFFF" strokeWidth="2" />
         <text x="40" y="45" textAnchor="middle" fill="#FFFFFF" fontSize="10" fontWeight="bold">ETHICS</text>
-        <line x1="60" y1="40" x2="85" x2="85" y2="50" stroke="#333" strokeWidth="1.5" opacity="0.5" />
+        <line x1="58" y1="40" x2="85" y2="50" stroke="#333" strokeWidth="1.5" opacity="0.5" />
       </g>
       
       {/* Efficiency - Top Right */}
       <g>
         <circle cx="160" cy="50" r="18" fill="#14B8A6" opacity="0.7" stroke="#FFFFFF" strokeWidth="2" />
         <text x="160" y="55" textAnchor="middle" fill="#FFFFFF" fontSize="9" fontWeight="bold">EFFICIENCY</text>
-        <line x1="142" y1="50" x2="115" x2="115" y2="60" stroke="#333" strokeWidth="1.5" opacity="0.5" />
+        <line x1="142" y1="50" x2="115" y2="60" stroke="#333" strokeWidth="1.5" opacity="0.5" />
       </g>
       
       {/* Security - Bottom Left */}
       <g>
         <circle cx="50" cy="150" r="18" fill="#3B82F6" opacity="0.7" stroke="#FFFFFF" strokeWidth="2" />
         <text x="50" y="155" textAnchor="middle" fill="#FFFFFF" fontSize="10" fontWeight="bold">SECURITY</text>
-        <line x1="68" y1="150" x2="85" x2="85" y2="140" stroke="#333" strokeWidth="1.5" opacity="0.5" />
+        <line x1="68" y1="150" x2="85" y2="140" stroke="#333" strokeWidth="1.5" opacity="0.5" />
       </g>
       
       {/* Growth - Bottom Right */}
       <g>
         <circle cx="150" cy="160" r="18" fill="#8B5CF6" opacity="0.7" stroke="#FFFFFF" strokeWidth="2" />
         <text x="150" y="165" textAnchor="middle" fill="#FFFFFF" fontSize="10" fontWeight="bold">GROWTH</text>
-        <line x1="132" y1="160" x2="115" x2="115" y2="150" stroke="#333" strokeWidth="1.5" opacity="0.5" />
+        <line x1="132" y1="160" x2="115" y2="150" stroke="#333" strokeWidth="1.5" opacity="0.5" />
       </g>
       
       {/* Connecting lines between spheres */}
