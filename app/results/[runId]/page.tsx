@@ -25,7 +25,7 @@ export default function Results({ params }:{ params:{ runId:string } }) {
     page.drawText(`Average Score: ${totals.avg ?? 0}`, { x: 40, y: 225, size: 12, font });
     page.drawText('People · Planet · Parity', { x: 40, y: 200, size: 12, font: bold, color: rgb(0.55,0,0) });
     const bytes = await pdf.save();
-    const blob = new Blob([bytes], { type: 'application/pdf' });
+    const blob = new Blob([bytes as BlobPart], { type: 'application/pdf' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a'); a.href = url; a.download = 'certificate.pdf'; a.click();
   };

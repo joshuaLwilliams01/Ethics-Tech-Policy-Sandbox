@@ -10,7 +10,7 @@ function CompletionPageContent() {
   const [playerName, setPlayerName] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
   const [hasAccess, setHasAccess] = useState(false);
-  const [stats, setStats] = useState({ completedLevels: [], totalLevels: 7, percentage: 0 });
+  const [stats, setStats] = useState<{ completedLevels: number[]; totalLevels: number; percentage: number }>({ completedLevels: [], totalLevels: 7, percentage: 0 });
   const searchParams = useSearchParams();
   const isTestMode = searchParams?.get('test') === 'true';
 
@@ -110,7 +110,7 @@ function CompletionPageContent() {
     }
     
     const bytes = await pdf.save();
-    return new Blob([bytes], { type: 'application/pdf' });
+    return new Blob([bytes as BlobPart], { type: 'application/pdf' });
   };
 
   const generateCertificate = async () => {

@@ -47,7 +47,9 @@ export default function IndividualLevel({ params }:{ params:{ id:string } }) {
         promptsDone: payload.toolkitOut?.prompts?.filter((p:string)=>p?.trim()).length ?? 0,
         actionsDone: payload.toolkitOut?.actions?.filter(Boolean).length ?? 0,
         totalPrompts: scenario.toolkit_flow.prompts.length,
-        totalActions: scenario.toolkit_flow.quick_actions.length,
+        totalActions: Array.isArray(scenario.toolkit_flow.quick_actions) 
+          ? scenario.toolkit_flow.quick_actions.length 
+          : (scenario.toolkit_flow.quick_actions?.A?.length ?? 0) + (scenario.toolkit_flow.quick_actions?.B?.length ?? 0) + (scenario.toolkit_flow.quick_actions?.C?.length ?? 0),
       },
       p3: {
         people: false,
