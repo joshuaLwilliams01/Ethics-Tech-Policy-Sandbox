@@ -117,11 +117,8 @@ export default function Home(){
 
       {/* Disclaimer */}
       <div className="text-center text-xs text-[#53565A] max-w-2xl">
-        <p className="mb-2">
-          The Ethics-Tech-Policy Decisions Sandbox is not associated with the McCoy Family Center for Ethics in Society staff.
-        </p>
         <p>
-          An independent capstone project by Joshua Williams for the Ethics+Tech Public Policy Practitioner Course.
+          This is an independent capstone project by Joshua Williams for the Ethics+Tech Public Policy Practitioner Course; not associated with the McCoy Family Center for Ethics in Society staff.
         </p>
       </div>
     </div>
