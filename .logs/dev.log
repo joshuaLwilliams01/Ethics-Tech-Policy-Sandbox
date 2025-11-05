@@ -2665,3 +2665,31 @@ digest: "1572739438"
  ✓ Compiled in 2.5s (1157 modules)
  ✓ Compiled in 2.6s (1159 modules)
  ✓ Compiled in 3.3s (1159 modules)
+ ✓ Compiled in 2.4s (1156 modules)
+ GET / 200 in 900ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 2.4s (1145 modules)
+ GET /stanford-logo.jpg 404 in 2761ms
+ GET /stanford-logo.jpg 404 in 1081ms
+ ✓ Compiled in 1332ms (1156 modules)
+ ✓ Compiled in 672ms (1154 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ app/page.tsx (15:12) @ EthicsBrainIcon
+ ⨯ ReferenceError: EthicsBrainIcon is not defined
+    at Home (./app/page.tsx:30:111)
+digest: "2094012415"
+[0m [90m 13 |[39m       [33m<[39m[33mdiv[39m className[33m=[39m[32m"text-center mb-8 relative"[39m[33m>[39m[0m
+[0m [90m 14 |[39m         [33m<[39m[33mdiv[39m className[33m=[39m[32m"absolute -top-10 left-1/2 transform -translate-x-1/2 opacity-20"[39m style[33m=[39m{{ animation[33m:[39m [32m'bounce-subtle 2s ease-in-out infinite'[39m }}[33m>[39m[0m
+[0m[31m[1m>[22m[39m[90m 15 |[39m           [33m<[39m[33mEthicsBrainIcon[39m className[33m=[39m[32m"w-24 h-24"[39m [33m/[39m[33m>[39m[0m
+[0m [90m    |[39m            [31m[1m^[22m[39m[0m
+[0m [90m 16 |[39m         [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[0m
+[0m [90m 17 |[39m         [33m<[39m[33mh1[39m className[33m=[39m[32m"text-5xl md:text-6xl font-bold mb-4 text-[#8C1515] tracking-tight relative inline-block"[39m[33m>[39m[0m
+[0m [90m 18 |[39m           [33m<[39m[33mspan[39m className[33m=[39m[32m"bg-gradient-to-r from-[#8C1515] via-[#C41E3A] to-[#8C1515] bg-clip-text text-transparent"[39m style[33m=[39m{{ animation[33m:[39m [32m'pulse-glow 3s ease-in-out infinite'[39m }}[33m>[39m[0m
+ GET / 500 in 266ms
+ ✓ Compiled in 1196ms (1154 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET / 200 in 313ms
+ ✓ Compiled /_not-found in 388ms (1143 modules)
+ GET /stanford-logo.jpg 404 in 547ms
+ ✓ Compiled in 653ms (1157 modules)
+ ✓ Compiled in 864ms (1157 modules)
