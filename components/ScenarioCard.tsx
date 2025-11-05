@@ -79,31 +79,20 @@ export default function ScenarioCard({
         </div>
         {scenario.toolkit_references && (
           <div className="mt-2">
-            <strong>Stanford Ethics Toolkit Reference(s):</strong>
-            <div className="mt-1 flex flex-wrap gap-2 items-center">
+            <strong>Stanford Ethics Toolkit Reference(s):</strong>{' '}
+            <a
+              href="https://ethicsinsociety.stanford.edu/tech-ethics/ethics-toolkit"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#8C1515] hover:text-[#820f0f] underline text-xs"
+            >
+              https://ethicsinsociety.stanford.edu/tech-ethics/ethics-toolkit
+            </a>
+            <div className="mt-1 flex flex-wrap gap-2 text-xs text-[#53565A]">
               {scenario.toolkit_references.split(',').map((ref, idx) => {
                 const trimmedRef = ref.trim();
-                return (
-                  <a
-                    key={idx}
-                    href="https://ethicsinsociety.stanford.edu/tech-ethics/ethics-toolkit"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#8C1515] hover:text-[#820f0f] underline text-xs"
-                  >
-                    {trimmedRef}
-                  </a>
-                );
+                return <span key={idx}>{trimmedRef}</span>;
               })}
-              <span className="text-gray-500">|</span>
-              <a
-                href="https://ethicsinsociety.stanford.edu/tech-ethics/ethics-toolkit"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#8C1515] hover:text-[#820f0f] underline text-xs font-medium"
-              >
-                Ethics Toolkit Website
-              </a>
             </div>
           </div>
         )}
