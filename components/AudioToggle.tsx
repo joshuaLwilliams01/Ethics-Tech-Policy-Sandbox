@@ -249,7 +249,7 @@ export default function AudioToggle(){
       </button>
       <audio 
         ref={audioRef} 
-        src="/sfx-suspense.mp3" 
+        src="/spy-detective-suspense.mp3" 
         loop 
         preload="none"
         onError={() => {

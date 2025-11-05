@@ -29,8 +29,8 @@ function isSoundEnabled(): boolean {
 }
 
 /**
- * Play an enticing, satisfying button click sound effect
- * Enhanced with musical chime and layered tones
+ * Play a spy/detective-themed button click sound effect
+ * Mirrors the suspenseful investigation theme
  * Only plays if sound is enabled
  */
 export function playButtonClick() {
@@ -42,74 +42,58 @@ export function playButtonClick() {
   
   const now = ctx.currentTime;
   
-  // Primary click tone - pleasant chime (1000Hz)
+  // Spy/detective click - lower frequency for mystery
+  // Main click tone (800Hz) - slightly lower for detective feel
   const clickOsc = ctx.createOscillator();
   const clickGain = ctx.createGain();
   
   clickOsc.type = 'sine';
-  clickOsc.frequency.value = 1000;
+  clickOsc.frequency.value = 800;
   
   clickGain.gain.setValueAtTime(0, now);
-  clickGain.gain.linearRampToValueAtTime(0.2, now + 0.002); // Quick attack
-  clickGain.gain.exponentialRampToValueAtTime(0.001, now + 0.08); // Smooth decay
+  clickGain.gain.linearRampToValueAtTime(0.15, now + 0.003); // Quick, sharp attack
+  clickGain.gain.exponentialRampToValueAtTime(0.001, now + 0.1); // Smooth decay
   
   clickOsc.connect(clickGain);
   clickGain.connect(ctx.destination);
   
   clickOsc.start(now);
-  clickOsc.stop(now + 0.08);
+  clickOsc.stop(now + 0.1);
   
-  // Harmonic layer - octave up (2000Hz) for brightness
-  const harmonicOsc = ctx.createOscillator();
-  const harmonicGain = ctx.createGain();
+  // Suspense layer - descending tone (600Hz → 400Hz) for mystery
+  const suspenseOsc = ctx.createOscillator();
+  const suspenseGain = ctx.createGain();
   
-  harmonicOsc.type = 'sine';
-  harmonicOsc.frequency.value = 2000;
+  suspenseOsc.type = 'sine';
+  suspenseOsc.frequency.setValueAtTime(600, now);
+  suspenseOsc.frequency.exponentialRampToValueAtTime(400, now + 0.08);
   
-  harmonicGain.gain.setValueAtTime(0, now);
-  harmonicGain.gain.linearRampToValueAtTime(0.1, now + 0.001);
-  harmonicGain.gain.exponentialRampToValueAtTime(0.001, now + 0.06);
+  suspenseGain.gain.setValueAtTime(0, now);
+  suspenseGain.gain.linearRampToValueAtTime(0.08, now + 0.002);
+  suspenseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
   
-  harmonicOsc.connect(harmonicGain);
-  harmonicGain.connect(ctx.destination);
+  suspenseOsc.connect(suspenseGain);
+  suspenseGain.connect(ctx.destination);
   
-  harmonicOsc.start(now);
-  harmonicOsc.stop(now + 0.06);
+  suspenseOsc.start(now);
+  suspenseOsc.stop(now + 0.08);
   
-  // Low frequency body (250Hz) - adds warmth and depth
-  const bodyOsc = ctx.createOscillator();
-  const bodyGain = ctx.createGain();
+  // Low detective thud (150Hz) - adds depth and mystery
+  const thudOsc = ctx.createOscillator();
+  const thudGain = ctx.createGain();
   
-  bodyOsc.type = 'sine';
-  bodyOsc.frequency.value = 250;
+  thudOsc.type = 'sine';
+  thudOsc.frequency.value = 150;
   
-  bodyGain.gain.setValueAtTime(0, now);
-  bodyGain.gain.linearRampToValueAtTime(0.12, now + 0.003);
-  bodyGain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+  thudGain.gain.setValueAtTime(0, now);
+  thudGain.gain.linearRampToValueAtTime(0.1, now + 0.005);
+  thudGain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
   
-  bodyOsc.connect(bodyGain);
-  bodyGain.connect(ctx.destination);
+  thudOsc.connect(thudGain);
+  thudGain.connect(ctx.destination);
   
-  bodyOsc.start(now);
-  bodyOsc.stop(now + 0.1);
-  
-  // Subtle pitch bend for musical interest
-  const bendOsc = ctx.createOscillator();
-  const bendGain = ctx.createGain();
-  
-  bendOsc.type = 'sine';
-  bendOsc.frequency.setValueAtTime(1200, now);
-  bendOsc.frequency.exponentialRampToValueAtTime(1000, now + 0.05);
-  
-  bendGain.gain.setValueAtTime(0, now);
-  bendGain.gain.linearRampToValueAtTime(0.08, now + 0.002);
-  bendGain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
-  
-  bendOsc.connect(bendGain);
-  bendGain.connect(ctx.destination);
-  
-  bendOsc.start(now);
-  bendOsc.stop(now + 0.05);
+  thudOsc.start(now);
+  thudOsc.stop(now + 0.12);
 }
 
 /**
