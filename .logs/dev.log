@@ -2053,3 +2053,9 @@ Import trace for requested module:
  ✓ Compiled in 3.2s (1154 modules)
  ✓ Compiled in 1790ms (1154 modules)
  ✓ Compiled in 1202ms (1154 modules)
+ ✓ Compiled in 2.6s (1154 modules)
+ GET /completion?test=true 200 in 358ms
+ ✓ Compiled in 3s (1154 modules)
+ ✓ Compiled in 1494ms (1154 modules)
+ ✓ Compiled in 2.7s (1154 modules)
+ ✓ Compiled in 5.8s (1154 modules)

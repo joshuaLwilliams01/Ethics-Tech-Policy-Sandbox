@@ -46,103 +46,12 @@ function CompletionPageContent() {
     setIsGenerating(true);
     
     try {
-      const pdf = await PDFDocument.create();
-      const page = pdf.addPage([612, 792]); // Letter size
-      const font = await pdf.embedFont(StandardFonts.Helvetica);
-      const bold = await pdf.embedFont(StandardFonts.HelveticaBold);
-      const boldItalic = await pdf.embedFont(StandardFonts.HelveticaBoldOblique);
-      
-      // Background gradient effect (simulated with rectangles)
-      const bgColor = rgb(0.95, 0.95, 0.95);
-      page.drawRectangle({ x: 0, y: 0, width: 612, height: 792, color: bgColor });
-      
-      // Stanford colors
-      const stanfordRed = rgb(0.55, 0.08, 0.08); // #8C1515
-      const stanfordGreen = rgb(0.09, 0.37, 0.33); // #175E54
-      
-      // Helper to center text
-      const centerText = (text: string, y: number, size: number, font: any, options: any = {}) => {
-        const textWidth = font.widthOfTextAtSize(text, size);
-        const x = (612 - textWidth) / 2;
-        page.drawText(text, { x, y, size, font, ...options });
-      };
-      
-      // Certificate Header
-      centerText('ETHICS-TECH-POLICY', 750, 22, bold, { color: stanfordRed });
-      centerText('DECISIONS SANDBOX', 725, 22, bold, { color: stanfordRed });
-      
-      // Certificate Title
-      centerText('Certificate of Completion', 680, 30, bold, { color: rgb(0.2, 0.2, 0.2) });
-      
-      // Main certification text
-      centerText('This certifies that', 620, 14, font, { color: rgb(0.3, 0.3, 0.3) });
-      
-      // Recipient's Name (bold and prominent)
-      centerText(playerName.trim(), 580, 36, bold, { color: stanfordRed });
-      
-      centerText('has successfully completed the training in', 540, 14, font, { color: rgb(0.3, 0.3, 0.3) });
-      
-      // Program name (bold)
-      centerText('Ethics-Tech-Policy Decisions Sandbox', 510, 16, bold, { color: rgb(0.2, 0.2, 0.2) });
-      
-      // Description paragraph
-      const description = 'Created by Joshua Williams, this program explored the complexities of technology, policy, and society based on lessons from the Ethics, Technology + Public Policy for Practitioners SOE-XETECH0001 course.';
-      // Split into lines if needed (rough line breaks at ~70 chars)
-      const words = description.split(' ');
-      let line = '';
-      let yPos = 460;
-      for (const word of words) {
-        const testLine = line + (line ? ' ' : '') + word;
-        if (font.widthOfTextAtSize(testLine, 11) > 520) {
-          if (line) {
-            centerText(line, yPos, 11, font, { color: rgb(0.35, 0.35, 0.35) });
-            yPos -= 18;
-          }
-          line = word;
-        } else {
-          line = testLine;
-        }
-      }
-      if (line) {
-        centerText(line, yPos, 11, font, { color: rgb(0.35, 0.35, 0.35) });
-      }
-      
-      // Date of Completion
-      const completionDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-      centerText('Date of Completion:', 380, 12, font, { color: rgb(0.3, 0.3, 0.3) });
-      centerText(completionDate, 360, 12, font, { color: rgb(0.4, 0.4, 0.4) });
-      
-      // Congratulations message
-      centerText('Congratulations on this achievement!', 320, 14, bold, { color: stanfordGreen });
-      
-      // Disclaimer
-      const disclaimer = 'Disclaimer: This is an independent capstone project by Joshua Williams for the Ethics+Tech Public Policy Practitioner Course; not associated with the Stanford McCoy Family Center for Ethics in Society or its staff.';
-      // Split disclaimer into lines
-      const disclaimerWords = disclaimer.split(' ');
-      let disclaimerLine = '';
-      let disclaimerYPos = 260;
-      for (const word of disclaimerWords) {
-        const testDisclaimerLine = disclaimerLine + (disclaimerLine ? ' ' : '') + word;
-        if (font.widthOfTextAtSize(testDisclaimerLine, 9) > 550) {
-          if (disclaimerLine) {
-            centerText(disclaimerLine, disclaimerYPos, 9, font, { color: rgb(0.5, 0.5, 0.5) });
-            disclaimerYPos -= 14;
-          }
-          disclaimerLine = word;
-        } else {
-          disclaimerLine = testDisclaimerLine;
-        }
-      }
-      if (disclaimerLine) {
-        centerText(disclaimerLine, disclaimerYPos, 9, font, { color: rgb(0.5, 0.5, 0.5) });
-      }
-      
-      const bytes = await pdf.save();
-      const blob = new Blob([bytes], { type: 'application/pdf' });
-      const url = URL.createObjectURL(blob);
+      const pdfBlob = await generateCertificatePDF();
+      const fileName = `ethics-sandbox-certificate-${playerName.trim().replace(/\s+/g, '-').toLowerCase()}.pdf`;
+      const url = URL.createObjectURL(pdfBlob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `ethics-sandbox-certificate-${playerName.trim().replace(/\s+/g, '-').toLowerCase()}.pdf`;
+      a.download = fileName;
       a.click();
       URL.revokeObjectURL(url);
     } catch (error) {
@@ -154,10 +63,116 @@ function CompletionPageContent() {
   };
 
   const shareOnTwitter = async () => {
+    if (!playerName.trim()) {
+      alert('Please enter your name to share your certificate.');
+      return;
+    }
+    
     playButtonClick();
-    const text = `I just completed all 7 levels of the Ethics-Tech-Policy Decisions Sandbox! ${playerName ? `- ${playerName}` : ''} 🎓✨`;
-    const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
-    window.open(url, '_blank');
+    setIsGenerating(true);
+    
+    try {
+      // Generate and auto-download certificate
+      const pdfBlob = await generateCertificatePDF();
+      const fileName = `ethics-sandbox-certificate-${playerName.trim().replace(/\s+/g, '-').toLowerCase()}.pdf`;
+      const pdfUrl = URL.createObjectURL(pdfBlob);
+      const pdfLink = document.createElement('a');
+      pdfLink.href = pdfUrl;
+      pdfLink.download = fileName;
+      pdfLink.click();
+      URL.revokeObjectURL(pdfUrl);
+      
+      // Open Twitter share dialog directly
+      const text = `I just completed all 7 levels of the Ethics-Tech-Policy Decisions Sandbox! ${playerName ? `- ${playerName}` : ''} 🎓✨`;
+      const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+      
+      setTimeout(() => {
+        window.open(url, '_blank');
+        setIsGenerating(false);
+      }, 300);
+      
+    } catch (error) {
+      console.error('Error generating certificate for Twitter:', error);
+      alert('Failed to generate certificate. Please try again.');
+      setIsGenerating(false);
+    }
+  };
+
+  // Helper function to generate certificate PDF
+  const generateCertificatePDF = async () => {
+    const pdf = await PDFDocument.create();
+    const page = pdf.addPage([612, 792]);
+    const font = await pdf.embedFont(StandardFonts.Helvetica);
+    const bold = await pdf.embedFont(StandardFonts.HelveticaBold);
+    const boldItalic = await pdf.embedFont(StandardFonts.HelveticaBoldOblique);
+    
+    const bgColor = rgb(0.95, 0.95, 0.95);
+    page.drawRectangle({ x: 0, y: 0, width: 612, height: 792, color: bgColor });
+    
+    const stanfordRed = rgb(0.55, 0.08, 0.08);
+    const stanfordGreen = rgb(0.09, 0.37, 0.33);
+    
+    const centerText = (text: string, y: number, size: number, font: any, options: any = {}) => {
+      const textWidth = font.widthOfTextAtSize(text, size);
+      const x = (612 - textWidth) / 2;
+      page.drawText(text, { x, y, size, font, ...options });
+    };
+    
+    centerText('ETHICS-TECH-POLICY', 750, 22, bold, { color: stanfordRed });
+    centerText('DECISIONS SANDBOX', 725, 22, bold, { color: stanfordRed });
+    centerText('Certificate of Completion', 680, 30, bold, { color: rgb(0.2, 0.2, 0.2) });
+    centerText('This certifies that', 620, 14, font, { color: rgb(0.3, 0.3, 0.3) });
+    centerText(playerName.trim(), 580, 36, bold, { color: stanfordRed });
+    centerText('has successfully completed the training in', 540, 14, font, { color: rgb(0.3, 0.3, 0.3) });
+    centerText('Ethics-Tech-Policy Decisions Sandbox', 510, 16, bold, { color: rgb(0.2, 0.2, 0.2) });
+    
+    const description = 'Created by Joshua Williams, this program explored the complexities of technology, policy, and society based on lessons from the Ethics, Technology + Public Policy for Practitioners SOE-XETECH0001 course.';
+    const words = description.split(' ');
+    let line = '';
+    let yPos = 460;
+    for (const word of words) {
+      const testLine = line + (line ? ' ' : '') + word;
+      if (font.widthOfTextAtSize(testLine, 11) > 520) {
+        if (line) {
+          centerText(line, yPos, 11, font, { color: rgb(0.35, 0.35, 0.35) });
+          yPos -= 18;
+        }
+        line = word;
+      } else {
+        line = testLine;
+      }
+    }
+    if (line) {
+      centerText(line, yPos, 11, font, { color: rgb(0.35, 0.35, 0.35) });
+    }
+    
+    const completionDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    centerText('Date of Completion:', 380, 12, font, { color: rgb(0.3, 0.3, 0.3) });
+    centerText(completionDate, 360, 12, font, { color: rgb(0.4, 0.4, 0.4) });
+    centerText('Congratulations on this achievement!', 320, 14, bold, { color: stanfordGreen });
+    
+    const disclaimer = 'Disclaimer: This is an independent capstone project by Joshua Williams for the Ethics+Tech Public Policy Practitioner Course; not associated with the Stanford McCoy Family Center for Ethics in Society or its staff.';
+    const disclaimerWords = disclaimer.split(' ');
+    let disclaimerLine = '';
+    let disclaimerYPos = 260;
+    for (const word of disclaimerWords) {
+      const testDisclaimerLine = disclaimerLine + (disclaimerLine ? ' ' : '') + word;
+      if (font.widthOfTextAtSize(testDisclaimerLine, 9) > 550) {
+        if (disclaimerLine) {
+          centerText(disclaimerLine, disclaimerYPos, 9, font, { color: rgb(0.5, 0.5, 0.5) });
+          disclaimerYPos -= 14;
+        }
+        disclaimerLine = word;
+      } else {
+        disclaimerLine = testDisclaimerLine;
+      }
+    }
+    if (disclaimerLine) {
+      centerText(disclaimerLine, disclaimerYPos, 9, font, { color: rgb(0.5, 0.5, 0.5) });
+    }
+    
+    const bytes = await pdf.save();
+    return new Blob([bytes], { type: 'application/pdf' });
   };
 
   const shareOnLinkedIn = async () => {
@@ -170,104 +185,9 @@ function CompletionPageContent() {
     setIsGenerating(true);
     
     try {
-      // First, generate and download the certificate PDF automatically
-      // This makes it ready for the user to attach
-      const pdf = await PDFDocument.create();
-      const page = pdf.addPage([612, 792]);
-      const font = await pdf.embedFont(StandardFonts.Helvetica);
-      const bold = await pdf.embedFont(StandardFonts.HelveticaBold);
-      const boldItalic = await pdf.embedFont(StandardFonts.HelveticaBoldOblique);
-      
-      const bgColor = rgb(0.95, 0.95, 0.95);
-      page.drawRectangle({ x: 0, y: 0, width: 612, height: 792, color: bgColor });
-      
-      const stanfordRed = rgb(0.55, 0.08, 0.08);
-      const stanfordGreen = rgb(0.09, 0.37, 0.33);
-      
-      const centerText = (text: string, y: number, size: number, font: any, options: any = {}) => {
-        const textWidth = font.widthOfTextAtSize(text, size);
-        const x = (612 - textWidth) / 2;
-        page.drawText(text, { x, y, size, font, ...options });
-      };
-      
-      centerText('ETHICS-TECH-POLICY', 750, 22, bold, { color: stanfordRed });
-      centerText('DECISIONS SANDBOX', 725, 22, bold, { color: stanfordRed });
-      centerText('Certificate of Completion', 680, 30, bold, { color: rgb(0.2, 0.2, 0.2) });
-      centerText('This certifies that', 620, 14, font, { color: rgb(0.3, 0.3, 0.3) });
-      centerText(playerName.trim(), 580, 36, bold, { color: stanfordRed });
-      centerText('has successfully completed the training in', 540, 14, font, { color: rgb(0.3, 0.3, 0.3) });
-      centerText('Ethics-Tech-Policy Decisions Sandbox', 510, 16, bold, { color: rgb(0.2, 0.2, 0.2) });
-      
-      const description = 'Created by Joshua Williams, this program explored the complexities of technology, policy, and society based on lessons from the Ethics, Technology + Public Policy for Practitioners SOE-XETECH0001 course.';
-      const words = description.split(' ');
-      let line = '';
-      let yPos = 460;
-      for (const word of words) {
-        const testLine = line + (line ? ' ' : '') + word;
-        if (font.widthOfTextAtSize(testLine, 11) > 520) {
-          if (line) {
-            centerText(line, yPos, 11, font, { color: rgb(0.35, 0.35, 0.35) });
-            yPos -= 18;
-          }
-          line = word;
-        } else {
-          line = testLine;
-        }
-      }
-      if (line) {
-        centerText(line, yPos, 11, font, { color: rgb(0.35, 0.35, 0.35) });
-      }
-      
-      const completionDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-      centerText('Date of Completion:', 380, 12, font, { color: rgb(0.3, 0.3, 0.3) });
-      centerText(completionDate, 360, 12, font, { color: rgb(0.4, 0.4, 0.4) });
-      centerText('Congratulations on this achievement!', 320, 14, bold, { color: stanfordGreen });
-      
-      const disclaimer = 'Disclaimer: This is an independent capstone project by Joshua Williams for the Ethics+Tech Public Policy Practitioner Course; not associated with the Stanford McCoy Family Center for Ethics in Society or its staff.';
-      const disclaimerWords = disclaimer.split(' ');
-      let disclaimerLine = '';
-      let disclaimerYPos = 260;
-      for (const word of disclaimerWords) {
-        const testDisclaimerLine = disclaimerLine + (disclaimerLine ? ' ' : '') + word;
-        if (font.widthOfTextAtSize(testDisclaimerLine, 9) > 550) {
-          if (disclaimerLine) {
-            centerText(disclaimerLine, disclaimerYPos, 9, font, { color: rgb(0.5, 0.5, 0.5) });
-            disclaimerYPos -= 14;
-          }
-          disclaimerLine = word;
-        } else {
-          disclaimerLine = testDisclaimerLine;
-        }
-      }
-      if (disclaimerLine) {
-        centerText(disclaimerLine, disclaimerYPos, 9, font, { color: rgb(0.5, 0.5, 0.5) });
-      }
-      
-      // Save PDF and auto-download it
-      const pdfBytes = await pdf.save();
-      const pdfBlob = new Blob([pdfBytes], { type: 'application/pdf' });
+      // Generate and auto-download certificate
+      const pdfBlob = await generateCertificatePDF();
       const fileName = `ethics-sandbox-certificate-${playerName.trim().replace(/\s+/g, '-').toLowerCase()}.pdf`;
-      
-      // Try using Web Share API with file if supported (for mobile/native apps)
-      if (navigator.share && navigator.canShare) {
-        const file = new File([pdfBlob], fileName, { type: 'application/pdf' });
-        if (navigator.canShare({ files: [file] })) {
-          try {
-            await navigator.share({
-              title: 'Ethics-Tech-Policy Decisions Sandbox Certificate',
-              text: `I just completed all 7 levels of the Ethics-Tech-Policy Decisions Sandbox! Check out my certificate of completion.`,
-              files: [file]
-            });
-            setIsGenerating(false);
-            return;
-          } catch (shareError) {
-            // If share fails or user cancels, fall through to download + LinkedIn
-            console.log('Web Share API not available, falling back to download');
-          }
-        }
-      }
-      
-      // Fallback: Auto-download certificate and open LinkedIn
       const pdfUrl = URL.createObjectURL(pdfBlob);
       const pdfLink = document.createElement('a');
       pdfLink.href = pdfUrl;
@@ -275,27 +195,55 @@ function CompletionPageContent() {
       pdfLink.click();
       URL.revokeObjectURL(pdfUrl);
       
-      // Now open LinkedIn share dialog with pre-filled text
+      // Open LinkedIn share dialog directly
       const shareText = `I just completed all 7 levels of the Ethics-Tech-Policy Decisions Sandbox! Check out my certificate of completion.`;
       const shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.origin)}&summary=${encodeURIComponent(shareText)}`;
       
-      // Small delay to ensure download starts before opening LinkedIn
       setTimeout(() => {
         window.open(shareUrl, '_blank');
         setIsGenerating(false);
-      }, 500);
+      }, 300);
       
     } catch (error) {
       console.error('Error generating certificate for LinkedIn:', error);
-      alert('Failed to generate certificate. Please try downloading it first, then sharing.');
+      alert('Failed to generate certificate. Please try again.');
       setIsGenerating(false);
     }
   };
 
-  const shareOnFacebook = () => {
+  const shareOnFacebook = async () => {
+    if (!playerName.trim()) {
+      alert('Please enter your name to share your certificate.');
+      return;
+    }
+    
     playButtonClick();
-    const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.origin)}`;
-    window.open(url, '_blank');
+    setIsGenerating(true);
+    
+    try {
+      // Generate and auto-download certificate
+      const pdfBlob = await generateCertificatePDF();
+      const fileName = `ethics-sandbox-certificate-${playerName.trim().replace(/\s+/g, '-').toLowerCase()}.pdf`;
+      const pdfUrl = URL.createObjectURL(pdfBlob);
+      const pdfLink = document.createElement('a');
+      pdfLink.href = pdfUrl;
+      pdfLink.download = fileName;
+      pdfLink.click();
+      URL.revokeObjectURL(pdfUrl);
+      
+      // Open Facebook share dialog directly
+      const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.origin)}`;
+      
+      setTimeout(() => {
+        window.open(url, '_blank');
+        setIsGenerating(false);
+      }, 300);
+      
+    } catch (error) {
+      console.error('Error generating certificate for Facebook:', error);
+      alert('Failed to generate certificate. Please try again.');
+      setIsGenerating(false);
+    }
   };
 
   if (!hasAccess) {
