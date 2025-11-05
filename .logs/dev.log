@@ -2697,3 +2697,5 @@ digest: "2094012415"
  GET / 200 in 192ms
  GET / 200 in 911ms
  ✓ Compiled in 1123ms (1154 modules)
+ ✓ Compiled in 2.3s (1154 modules)
+ ✓ Compiled in 5.3s (1154 modules)
