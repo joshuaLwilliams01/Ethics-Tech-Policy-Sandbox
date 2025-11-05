@@ -16,11 +16,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Establish worker councils and input mechanisms",
-          "Create reskilling and transition programs",
-          "Develop wage-sharing and job quality guarantees"
-        ],
+        "quick_actions": {
+          "A": [
+            "Establish worker councils and input mechanisms",
+            "Create reskilling and transition programs",
+            "Develop wage-sharing and job quality guarantees"
+          ],
+          "B": [
+            "Establish worker councils and input mechanisms",
+            "Create reskilling and transition programs",
+            "Develop wage-sharing and job quality guarantees"
+          ],
+          "C": [
+            "Establish worker councils and input mechanisms",
+            "Create reskilling and transition programs",
+            "Develop wage-sharing and job quality guarantees"
+          ]
+        },
         "metrics": [
           "Worker satisfaction",
           "Reskilling success rate",
@@ -45,11 +57,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Involve workers in algorithm design",
-          "Establish manual override mechanisms",
-          "Create regular feedback and adjustment process"
-        ],
+        "quick_actions": {
+          "A": [
+            "Involve workers in algorithm design",
+            "Establish manual override mechanisms",
+            "Create regular feedback and adjustment process"
+          ],
+          "B": [
+            "Involve workers in algorithm design",
+            "Establish manual override mechanisms",
+            "Create regular feedback and adjustment process"
+          ],
+          "C": [
+            "Involve workers in algorithm design",
+            "Establish manual override mechanisms",
+            "Create regular feedback and adjustment process"
+          ]
+        },
         "metrics": [
           "Worker satisfaction",
           "Burnout rate",
@@ -74,11 +98,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Develop comprehensive training program",
-          "Create skill-building opportunities",
-          "Establish promotion pathways"
-        ],
+        "quick_actions": {
+          "A": [
+            "Develop comprehensive training program",
+            "Create skill-building opportunities",
+            "Establish promotion pathways"
+          ],
+          "B": [
+            "Develop comprehensive training program",
+            "Create skill-building opportunities",
+            "Establish promotion pathways"
+          ],
+          "C": [
+            "Develop comprehensive training program",
+            "Create skill-building opportunities",
+            "Establish promotion pathways"
+          ]
+        },
         "metrics": [
           "Agent skill development",
           "Morale score",
@@ -103,11 +139,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Publish evaluation criteria and methodology",
-          "Establish expedited appeal process",
-          "Create bias audit and monitoring system"
-        ],
+        "quick_actions": {
+          "A": [
+            "Publish evaluation criteria and methodology",
+            "Establish expedited appeal process",
+            "Create bias audit and monitoring system"
+          ],
+          "B": [
+            "Publish evaluation criteria and methodology",
+            "Establish expedited appeal process",
+            "Create bias audit and monitoring system"
+          ],
+          "C": [
+            "Publish evaluation criteria and methodology",
+            "Establish expedited appeal process",
+            "Create bias audit and monitoring system"
+          ]
+        },
         "metrics": [
           "Tier distribution fairness",
           "Appeal success rate",
@@ -132,11 +180,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Develop comprehensive re-skilling programs",
-          "Create re-hiring prioritization process",
-          "Establish shared-work arrangements"
-        ],
+        "quick_actions": {
+          "A": [
+            "Develop comprehensive re-skilling programs",
+            "Create re-hiring prioritization process",
+            "Establish shared-work arrangements"
+          ],
+          "B": [
+            "Develop comprehensive re-skilling programs",
+            "Create re-hiring prioritization process",
+            "Establish shared-work arrangements"
+          ],
+          "C": [
+            "Develop comprehensive re-skilling programs",
+            "Create re-hiring prioritization process",
+            "Establish shared-work arrangements"
+          ]
+        },
         "metrics": [
           "Re-skilling success rate",
           "Re-hiring rate",

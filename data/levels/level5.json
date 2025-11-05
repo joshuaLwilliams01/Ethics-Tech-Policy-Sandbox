@@ -16,11 +16,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Establish clear consent process and documentation",
-          "Create data deletion mechanisms",
-          "Develop privacy-preserving learning methods"
-        ],
+        "quick_actions": {
+          "A": [
+            "Establish clear consent process and documentation",
+            "Create data deletion mechanisms",
+            "Develop privacy-preserving learning methods"
+          ],
+          "B": [
+            "Establish clear consent process and documentation",
+            "Create data deletion mechanisms",
+            "Develop privacy-preserving learning methods"
+          ],
+          "C": [
+            "Establish clear consent process and documentation",
+            "Create data deletion mechanisms",
+            "Develop privacy-preserving learning methods"
+          ]
+        },
         "metrics": [
           "Consent rate %",
           "Data deletion requests",
@@ -45,11 +57,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Establish transparent data usage policies",
-          "Create user control mechanisms",
-          "Develop fair pricing alternatives"
-        ],
+        "quick_actions": {
+          "A": [
+            "Establish transparent data usage policies",
+            "Create user control mechanisms",
+            "Develop fair pricing alternatives"
+          ],
+          "B": [
+            "Establish transparent data usage policies",
+            "Create user control mechanisms",
+            "Develop fair pricing alternatives"
+          ],
+          "C": [
+            "Establish transparent data usage policies",
+            "Create user control mechanisms",
+            "Develop fair pricing alternatives"
+          ]
+        },
         "metrics": [
           "Opt-in rate %",
           "User control usage",
@@ -74,11 +98,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Engage stakeholders in data usage decisions",
-          "Establish clear objectives and metrics",
-          "Create transparency and accountability framework"
-        ],
+        "quick_actions": {
+          "A": [
+            "Engage stakeholders in data usage decisions",
+            "Establish clear objectives and metrics",
+            "Create transparency and accountability framework"
+          ],
+          "B": [
+            "Engage stakeholders in data usage decisions",
+            "Establish clear objectives and metrics",
+            "Create transparency and accountability framework"
+          ],
+          "C": [
+            "Engage stakeholders in data usage decisions",
+            "Establish clear objectives and metrics",
+            "Create transparency and accountability framework"
+          ]
+        },
         "metrics": [
           "Stakeholder engagement rate",
           "Transparency score",
@@ -103,11 +139,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Conduct privacy risk assessment",
-          "Develop privacy-preserving technologies",
-          "Establish transparency and audit processes"
-        ],
+        "quick_actions": {
+          "A": [
+            "Conduct privacy risk assessment",
+            "Develop privacy-preserving technologies",
+            "Establish transparency and audit processes"
+          ],
+          "B": [
+            "Conduct privacy risk assessment",
+            "Develop privacy-preserving technologies",
+            "Establish transparency and audit processes"
+          ],
+          "C": [
+            "Conduct privacy risk assessment",
+            "Develop privacy-preserving technologies",
+            "Establish transparency and audit processes"
+          ]
+        },
         "metrics": [
           "Re-identification risk score",
           "Privacy-preserving tech usage %",
@@ -132,11 +180,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Establish opt-out mechanisms and alternatives",
-          "Create independent oversight committee",
-          "Involve employees in decision-making"
-        ],
+        "quick_actions": {
+          "A": [
+            "Establish opt-out mechanisms and alternatives",
+            "Create independent oversight committee",
+            "Involve employees in decision-making"
+          ],
+          "B": [
+            "Establish opt-out mechanisms and alternatives",
+            "Create independent oversight committee",
+            "Involve employees in decision-making"
+          ],
+          "C": [
+            "Establish opt-out mechanisms and alternatives",
+            "Create independent oversight committee",
+            "Involve employees in decision-making"
+          ]
+        },
         "metrics": [
           "Opt-out rate %",
           "Accuracy by demographic",

@@ -16,11 +16,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Negotiate clear data separation and audit rights",
-          "Establish oversight board with diverse stakeholders",
-          "Create exit plan and transition strategy"
-        ],
+        "quick_actions": {
+          "A": [
+            "Negotiate clear data separation and audit rights",
+            "Establish oversight board with diverse stakeholders",
+            "Create exit plan and transition strategy"
+          ],
+          "B": [
+            "Negotiate clear data separation and audit rights",
+            "Establish oversight board with diverse stakeholders",
+            "Create exit plan and transition strategy"
+          ],
+          "C": [
+            "Negotiate clear data separation and audit rights",
+            "Establish oversight board with diverse stakeholders",
+            "Create exit plan and transition strategy"
+          ]
+        },
         "metrics": [
           "Data separation compliance %",
           "Oversight board effectiveness",
@@ -45,11 +57,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Build coalition with other public-interest apps",
-          "Advocate for fee exemptions or reductions",
-          "Develop hybrid web/native strategy"
-        ],
+        "quick_actions": {
+          "A": [
+            "Build coalition with other public-interest apps",
+            "Advocate for fee exemptions or reductions",
+            "Develop hybrid web/native strategy"
+          ],
+          "B": [
+            "Build coalition with other public-interest apps",
+            "Advocate for fee exemptions or reductions",
+            "Develop hybrid web/native strategy"
+          ],
+          "C": [
+            "Build coalition with other public-interest apps",
+            "Advocate for fee exemptions or reductions",
+            "Develop hybrid web/native strategy"
+          ]
+        },
         "metrics": [
           "Coalition size",
           "Fee reduction success",
@@ -74,11 +98,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Establish clear value-sharing framework",
-          "Create transparent improvement reporting",
-          "Develop anti-monopoly safeguards"
-        ],
+        "quick_actions": {
+          "A": [
+            "Establish clear value-sharing framework",
+            "Create transparent improvement reporting",
+            "Develop anti-monopoly safeguards"
+          ],
+          "B": [
+            "Establish clear value-sharing framework",
+            "Create transparent improvement reporting",
+            "Develop anti-monopoly safeguards"
+          ],
+          "C": [
+            "Establish clear value-sharing framework",
+            "Create transparent improvement reporting",
+            "Develop anti-monopoly safeguards"
+          ]
+        },
         "metrics": [
           "Public benefit %",
           "Exclusivity limits",
@@ -103,11 +139,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Establish independent advisory committee",
-          "Create clear conflict-of-interest policies",
-          "Develop alternative funding sources"
-        ],
+        "quick_actions": {
+          "A": [
+            "Establish independent advisory committee",
+            "Create clear conflict-of-interest policies",
+            "Develop alternative funding sources"
+          ],
+          "B": [
+            "Establish independent advisory committee",
+            "Create clear conflict-of-interest policies",
+            "Develop alternative funding sources"
+          ],
+          "C": [
+            "Establish independent advisory committee",
+            "Create clear conflict-of-interest policies",
+            "Develop alternative funding sources"
+          ]
+        },
         "metrics": [
           "Conflict-of-interest compliance %",
           "Educational integrity score",
@@ -132,11 +180,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Establish privacy-preserving data collection",
-          "Create public value metrics",
-          "Develop alternative funding models"
-        ],
+        "quick_actions": {
+          "A": [
+            "Establish privacy-preserving data collection",
+            "Create public value metrics",
+            "Develop alternative funding models"
+          ],
+          "B": [
+            "Establish privacy-preserving data collection",
+            "Create public value metrics",
+            "Develop alternative funding models"
+          ],
+          "C": [
+            "Establish privacy-preserving data collection",
+            "Create public value metrics",
+            "Develop alternative funding models"
+          ]
+        },
         "metrics": [
           "Privacy compliance %",
           "Public value score",

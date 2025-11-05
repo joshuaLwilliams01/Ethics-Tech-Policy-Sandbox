@@ -16,11 +16,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Publish a 6-month transition plan",
-          "Define hospital/transit continuity plan",
-          "Trigger supplier labor audit"
-        ],
+        "quick_actions": {
+          "A": [
+            "Publish a 6-month transition plan",
+            "Define hospital/transit continuity plan",
+            "Trigger supplier labor audit"
+          ],
+          "B": [
+            "Publish a 6-month transition plan",
+            "Define hospital/transit continuity plan",
+            "Trigger supplier labor audit"
+          ],
+          "C": [
+            "Publish a 6-month transition plan",
+            "Define hospital/transit continuity plan",
+            "Trigger supplier labor audit"
+          ]
+        },
         "metrics": [
           "Continuity incidents",
           "Audit completion %"
@@ -44,11 +56,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Audit current vendor labor practices",
-          "Create transition timeline with milestones",
-          "Establish worker compensation standards"
-        ],
+        "quick_actions": {
+          "A": [
+            "Audit current vendor labor practices",
+            "Create transition timeline with milestones",
+            "Establish worker compensation standards"
+          ],
+          "B": [
+            "Audit current vendor labor practices",
+            "Create transition timeline with milestones",
+            "Establish worker compensation standards"
+          ],
+          "C": [
+            "Audit current vendor labor practices",
+            "Create transition timeline with milestones",
+            "Establish worker compensation standards"
+          ]
+        },
         "metrics": [
           "Fair pay compliance %",
           "App uptime %"
@@ -72,11 +96,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Establish mental health support program",
-          "Create clear workload limits and rotation schedules",
-          "Develop safety protocols for high-risk content"
-        ],
+        "quick_actions": {
+          "A": [
+            "Establish mental health support program",
+            "Create clear workload limits and rotation schedules",
+            "Develop safety protocols for high-risk content"
+          ],
+          "B": [
+            "Establish mental health support program",
+            "Create clear workload limits and rotation schedules",
+            "Develop safety protocols for high-risk content"
+          ],
+          "C": [
+            "Establish mental health support program",
+            "Create clear workload limits and rotation schedules",
+            "Develop safety protocols for high-risk content"
+          ]
+        },
         "metrics": [
           "Moderator wellbeing score",
           "Content removal accuracy %"
@@ -100,11 +136,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Conduct vulnerability assessment for affected district",
-          "Establish transparent decision-making process",
-          "Create emergency support fund"
-        ],
+        "quick_actions": {
+          "A": [
+            "Conduct vulnerability assessment for affected district",
+            "Establish transparent decision-making process",
+            "Create emergency support fund"
+          ],
+          "B": [
+            "Conduct vulnerability assessment for affected district",
+            "Establish transparent decision-making process",
+            "Create emergency support fund"
+          ],
+          "C": [
+            "Conduct vulnerability assessment for affected district",
+            "Establish transparent decision-making process",
+            "Create emergency support fund"
+          ]
+        },
         "metrics": [
           "Outage distribution fairness",
           "Vulnerable population support %"
@@ -128,11 +176,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Audit current recycling facilities and safety standards",
-          "Establish clear responsibility and accountability framework",
-          "Create transition plan for safer practices"
-        ],
+        "quick_actions": {
+          "A": [
+            "Audit current recycling facilities and safety standards",
+            "Establish clear responsibility and accountability framework",
+            "Create transition plan for safer practices"
+          ],
+          "B": [
+            "Audit current recycling facilities and safety standards",
+            "Establish clear responsibility and accountability framework",
+            "Create transition plan for safer practices"
+          ],
+          "C": [
+            "Audit current recycling facilities and safety standards",
+            "Establish clear responsibility and accountability framework",
+            "Create transition plan for safer practices"
+          ]
+        },
         "metrics": [
           "Worker safety compliance %",
           "Environmental impact score"

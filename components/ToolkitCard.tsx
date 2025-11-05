@@ -9,12 +9,16 @@ export default function ToolkitCard({ flow, choice, onComplete }:{
 }) {
   // Get actions based on choice (if choice-specific) or use static array
   const actions = useMemo(() => {
-    if (Array.isArray(flow.quick_actions)) {
-      return flow.quick_actions; // Static actions
-    } else if (choice && typeof flow.quick_actions === 'object' && flow.quick_actions[choice]) {
-      return flow.quick_actions[choice] || []; // Choice-specific actions
+    // Check if quick_actions is an object with choice keys (A, B, C)
+    if (flow.quick_actions && typeof flow.quick_actions === 'object' && !Array.isArray(flow.quick_actions)) {
+      // It's a choice-specific object
+      if (choice && flow.quick_actions[choice]) {
+        return flow.quick_actions[choice] || []; // Return actions for the selected choice
+      }
+      return []; // No choice selected yet, or choice has no actions
     }
-    return []; // No actions if no choice selected and actions are choice-specific
+    // It's a static array - return as-is
+    return Array.isArray(flow.quick_actions) ? flow.quick_actions : [];
   }, [flow.quick_actions, choice]);
 
   const [answers, setAnswers] = useState<string[]>(() => flow.prompts.map(()=>''));

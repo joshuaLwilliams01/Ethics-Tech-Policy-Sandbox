@@ -16,11 +16,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Establish clear false positive appeal process",
-          "Create educational resources on reporting",
-          "Develop privacy-preserving detection methods"
-        ],
+        "quick_actions": {
+          "A": [
+            "Establish clear false positive appeal process",
+            "Create educational resources on reporting",
+            "Develop privacy-preserving detection methods"
+          ],
+          "B": [
+            "Establish clear false positive appeal process",
+            "Create educational resources on reporting",
+            "Develop privacy-preserving detection methods"
+          ],
+          "C": [
+            "Establish clear false positive appeal process",
+            "Create educational resources on reporting",
+            "Develop privacy-preserving detection methods"
+          ]
+        },
         "metrics": [
           "Detection accuracy rate",
           "False positive rate",
@@ -45,11 +57,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Conduct comprehensive red-teaming exercises",
-          "Establish clear safety protocols and watermarking",
-          "Create appeal process for false flags"
-        ],
+        "quick_actions": {
+          "A": [
+            "Conduct comprehensive red-teaming exercises",
+            "Establish clear safety protocols and watermarking",
+            "Create appeal process for false flags"
+          ],
+          "B": [
+            "Conduct comprehensive red-teaming exercises",
+            "Establish clear safety protocols and watermarking",
+            "Create appeal process for false flags"
+          ],
+          "C": [
+            "Conduct comprehensive red-teaming exercises",
+            "Establish clear safety protocols and watermarking",
+            "Create appeal process for false flags"
+          ]
+        },
         "metrics": [
           "Safety protocol compliance %",
           "False positive rate",
@@ -74,11 +98,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Establish rate limits and abuse prevention measures",
-          "Create independent verification process",
-          "Develop strong appeal process for false reports"
-        ],
+        "quick_actions": {
+          "A": [
+            "Establish rate limits and abuse prevention measures",
+            "Create independent verification process",
+            "Develop strong appeal process for false reports"
+          ],
+          "B": [
+            "Establish rate limits and abuse prevention measures",
+            "Create independent verification process",
+            "Develop strong appeal process for false reports"
+          ],
+          "C": [
+            "Establish rate limits and abuse prevention measures",
+            "Create independent verification process",
+            "Develop strong appeal process for false reports"
+          ]
+        },
         "metrics": [
           "False report rate",
           "Appeal success rate",
@@ -103,11 +139,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Conduct security audit of AI monitoring systems",
-          "Establish clear consent process for parents and students",
-          "Develop alternative safety measures"
-        ],
+        "quick_actions": {
+          "A": [
+            "Conduct security audit of AI monitoring systems",
+            "Establish clear consent process for parents and students",
+            "Develop alternative safety measures"
+          ],
+          "B": [
+            "Conduct security audit of AI monitoring systems",
+            "Establish clear consent process for parents and students",
+            "Develop alternative safety measures"
+          ],
+          "C": [
+            "Conduct security audit of AI monitoring systems",
+            "Establish clear consent process for parents and students",
+            "Develop alternative safety measures"
+          ]
+        },
         "metrics": [
           "Security incident rate",
           "Consent rate %",
@@ -132,11 +180,23 @@
       "toolkit_flow": {
         "order": [],
         "prompts": [],
-        "quick_actions": [
-          "Establish survivor consent process",
-          "Create evidence escrow system",
-          "Develop expedited removal protocols"
-        ],
+        "quick_actions": {
+          "A": [
+            "Establish survivor consent process",
+            "Create evidence escrow system",
+            "Develop expedited removal protocols"
+          ],
+          "B": [
+            "Establish survivor consent process",
+            "Create evidence escrow system",
+            "Develop expedited removal protocols"
+          ],
+          "C": [
+            "Establish survivor consent process",
+            "Create evidence escrow system",
+            "Develop expedited removal protocols"
+          ]
+        },
         "metrics": [
           "Removal time",
           "Survivor satisfaction",
