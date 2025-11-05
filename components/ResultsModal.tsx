@@ -47,21 +47,21 @@ export default function ResultsModal({
       
       {/* Modal */}
       <div
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
+        className="fixed inset-0 z-50 flex items-start justify-center pt-8 pb-8 px-4 pointer-events-none overflow-y-auto"
       >
         <div
-          className="bg-gradient-to-br from-white via-[#F7F6F3] to-white rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto relative border-2 border-[#8C1515] pointer-events-auto"
+          className="bg-gradient-to-br from-white via-[#F7F6F3] to-white rounded-lg shadow-2xl max-w-3xl w-full max-h-[calc(100vh-4rem)] overflow-hidden relative border-2 border-[#8C1515] pointer-events-auto my-auto"
           onClick={(e) => e.stopPropagation()}
           style={{ animation: 'modal-slide-in 0.3s ease-out' }}
         >
-          {/* Header with gradient */}
-          <div className="bg-gradient-to-r from-[#8C1515] via-[#C41E3A] to-[#8C1515] p-6 rounded-t-lg">
+          {/* Header with gradient - sticky so it's always visible */}
+          <div className="bg-gradient-to-r from-[#8C1515] via-[#C41E3A] to-[#8C1515] p-6 rounded-t-lg sticky top-0 z-10">
             <div className="flex items-center justify-between">
               <h2 className="text-2xl font-bold text-white flex items-center gap-3">
                 <span className="text-4xl">🎯</span>
                 <div>
-                  <div>Result(s) of Your Decision</div>
-                  <div className="text-sm font-normal opacity-90 mt-1">See the impact of your choice</div>
+                  <div className="text-2xl font-bold">Result(s) of Your Decision</div>
+                  <div className="text-base font-semibold opacity-95 mt-1">See the impact of your choice</div>
                 </div>
               </h2>
               <button
@@ -69,7 +69,7 @@ export default function ResultsModal({
                   playButtonClick();
                   onClose();
                 }}
-                className="text-white hover:text-gray-200 transition-colors duration-200 text-3xl font-bold w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/20"
+                className="text-white hover:text-gray-200 transition-colors duration-200 text-3xl font-bold w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/20 flex-shrink-0"
                 aria-label="Close modal"
               >
                 ×
@@ -77,26 +77,26 @@ export default function ResultsModal({
             </div>
           </div>
 
-          {/* Content */}
-          <div className="p-6 space-y-6">
+          {/* Content - scrollable */}
+          <div className="p-6 space-y-6 overflow-y-auto max-h-[calc(100vh-16rem)]">
             {/* Summary */}
-            <div className="bg-gradient-to-r from-[#8C1515]/10 to-[#175E54]/10 p-4 rounded-lg border-l-4 border-[#8C1515]">
-              <p className="text-[#2E2D29] text-base leading-relaxed font-medium">{results.summary}</p>
+            <div className="bg-gradient-to-r from-[#8C1515]/10 to-[#175E54]/10 p-5 rounded-lg border-l-4 border-[#8C1515]">
+              <p className="text-[#1F2937] text-base font-semibold leading-relaxed">{results.summary}</p>
             </div>
 
             {/* Benefits and Harms Grid */}
             <div className="grid sm:grid-cols-2 gap-4">
               {/* Benefits */}
               <div className="bg-gradient-to-br from-green-50 to-green-100/50 p-5 rounded-lg border-2 border-green-200 shadow-md">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-2xl">✨</span>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-3xl">✨</span>
                   <h3 className="text-xl font-bold text-green-800">Benefits</h3>
                 </div>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {results.benefits.map((benefit, i) => (
-                    <li key={i} className="flex items-start gap-2 text-[#2E2D29]">
-                      <span className="text-green-600 font-bold mt-1">✓</span>
-                      <span className="leading-relaxed">{benefit}</span>
+                    <li key={i} className="flex items-start gap-3 text-[#1F2937]">
+                      <span className="text-green-600 font-bold mt-1 text-lg">✓</span>
+                      <span className="leading-relaxed text-base font-medium">{benefit}</span>
                     </li>
                   ))}
                 </ul>
@@ -104,15 +104,15 @@ export default function ResultsModal({
 
               {/* Harms */}
               <div className="bg-gradient-to-br from-red-50 to-red-100/50 p-5 rounded-lg border-2 border-red-200 shadow-md">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-2xl">⚠️</span>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-3xl">⚠️</span>
                   <h3 className="text-xl font-bold text-red-800">Harms</h3>
                 </div>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {results.harms.map((harm, i) => (
-                    <li key={i} className="flex items-start gap-2 text-[#2E2D29]">
-                      <span className="text-red-600 font-bold mt-1">⚠</span>
-                      <span className="leading-relaxed">{harm}</span>
+                    <li key={i} className="flex items-start gap-3 text-[#1F2937]">
+                      <span className="text-red-600 font-bold mt-1 text-lg">⚠</span>
+                      <span className="leading-relaxed text-base font-medium">{harm}</span>
                     </li>
                   ))}
                 </ul>
