@@ -6,6 +6,16 @@ import { SoundProvider } from "@/contexts/SoundContext";
 export const metadata = {
   title: "Ethics-Tech-Policy Decisions Sandbox",
   description: "A web-based simulator for ethical tradeoffs in tech and policy.",
+  openGraph: {
+    title: "Ethics-Tech-Policy Decisions Sandbox",
+    description: "A web-based simulator for ethical tradeoffs in tech and policy.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ethics-Tech-Policy Decisions Sandbox",
+    description: "A web-based simulator for ethical tradeoffs in tech and policy.",
+  },
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}) {
