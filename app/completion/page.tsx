@@ -300,12 +300,11 @@ function CompletionPageContent() {
             </div>
             
             {/* Share Section */}
-            <div className="grid sm:grid-cols-2 gap-4">
-
+            <div className="flex justify-center">
               {/* Share Buttons */}
-              <div className="flex flex-col gap-2">
-                <p className="text-sm font-semibold text-gray-700 mb-2 text-center">Share Your Achievement</p>
-                <div className="flex gap-2">
+              <div className="flex flex-col items-center gap-2 w-full max-w-md">
+                <p className="text-sm font-semibold text-gray-700 mb-2">Share Your Achievement</p>
+                <div className="flex gap-2 justify-center w-full">
                   <button
                     onClick={shareOnTwitter}
                     className="flex-1 px-4 py-3 bg-[#1DA1F2] text-white rounded-lg font-semibold hover:bg-[#1a8cd8] transition-all duration-200 flex items-center justify-center gap-2 shadow-md hover:shadow-lg transform hover:scale-105"
