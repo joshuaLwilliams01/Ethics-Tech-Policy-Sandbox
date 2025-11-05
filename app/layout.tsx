@@ -17,7 +17,7 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
               <span className="group-hover:underline">Ethics-Tech-Policy Decisions Sandbox</span>
             </Link>
             <div className="flex items-center gap-4">
-              <Link href="/about" className="text-sm text-[#2E2D29] hover:text-[#8C1515] transition-all duration-300 font-medium hover:underline">About</Link>
+              <Link href="/about" className="text-sm text-[#2E2D29] hover:text-[#8C1515] transition-all duration-300 font-semibold hover:underline">About</Link>
             </div>
           </nav>
           <div className="mx-auto max-w-5xl px-4 pb-3 text-xs text-[#53565A] border-t border-gray-100 pt-2 bg-gradient-to-r from-transparent via-gray-50 to-transparent">

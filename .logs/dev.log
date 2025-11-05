@@ -206,3 +206,7 @@
  ✓ Compiled in 302ms (790 modules)
  ✓ Compiled in 718ms (790 modules)
  ✓ Compiled in 272ms (790 modules)
+ ✓ Compiled in 1042ms (790 modules)
+ GET /play/individual/2 200 in 215ms
+ ✓ Compiled in 1080ms (790 modules)
+ ✓ Compiled in 384ms (790 modules)
