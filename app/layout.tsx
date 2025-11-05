@@ -24,7 +24,7 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
             <strong>Disclaimer:</strong> This is an independent capstone project by Joshua Williams for the Ethics+Tech Public Policy Practitioner Course; not associated with the Stanford McCoy Family Center for Ethics in Society or its staff.
           </div>
         </header>
-        <main className="relative z-10">{children}</main>
+        <main className="relative z-10 mx-auto max-w-5xl px-4 py-4">{children}</main>
       </body>
     </html>
   );

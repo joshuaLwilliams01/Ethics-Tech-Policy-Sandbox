@@ -6,6 +6,56 @@ import { describeResult } from '@/lib/results';
 import Link from 'next/link';
 import { saveProgress } from '@/lib/save';
 
+function CheatCodeButton({ scenario }: { scenario: Scenario }) {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  return (
+    <div className="mb-3">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="btn-ghost px-4 py-2 text-sm font-semibold w-full text-left flex items-center justify-between"
+      >
+        <span className="flex items-center gap-2">
+          <span>🎮</span>
+          <span>Cheat Code</span>
+        </span>
+        <span className="text-xs">{isOpen ? '▼' : '▶'}</span>
+      </button>
+      {isOpen && (
+        <div className="mt-2 text-sm text-gray-700 card">
+          <div>
+            <strong>Stanford Ethics Toolkit Cue(s):</strong> {scenario.toolkit_cues}
+          </div>
+          {scenario.toolkit_references && (
+            <div className="mt-2">
+              <strong>Stanford Ethics Toolkit Reference(s):</strong>{' '}
+              <a
+                href="https://ethicsinsociety.stanford.edu/tech-ethics/ethics-toolkit"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#8C1515] hover:text-[#820f0f] underline text-xs"
+              >
+                https://ethicsinsociety.stanford.edu/tech-ethics/ethics-toolkit
+              </a>
+              <ol className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-sm text-[#2E2D29] font-medium list-decimal list-inside">
+                {scenario.toolkit_references.split(',').map((ref, idx) => {
+                  const trimmedRef = ref.trim();
+                  return (
+                    <li key={idx} className="leading-relaxed">
+                      {trimmedRef}
+                    </li>
+                  );
+                })}
+              </ol>
+            </div>
+          )}
+          <div className="mt-2"><strong>People + Planet + Parity Cues:</strong> {scenario.p3_cues}</div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function ScenarioCard({
   scenario,
   level,
@@ -51,17 +101,19 @@ export default function ScenarioCard({
   };
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-4">
       <div className="flex items-start justify-between gap-3">
-        <div>
+        <div className="flex-1">
           <h3 className="text-xl font-semibold">{scenario.title}</h3>
           <p className="text-gray-700 mt-1">{scenario.prompt}</p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-shrink-0">
           <button onClick={doSave} className="btn-ghost px-4 py-2 text-sm font-semibold">Save Your Progress</button>
           <Link href="/" className="btn-ghost px-4 py-2 text-sm font-semibold">Back Home</Link>
         </div>
       </div>
+
+      <CheatCodeButton scenario={scenario} />
 
       <fieldset className="card space-y-2">
         <div className="font-medium">Choose From Below:</div>
@@ -72,36 +124,6 @@ export default function ScenarioCard({
           </label>
         ))}
       </fieldset>
-
-      <div className="text-sm text-gray-700 card">
-        <div>
-          <strong>Stanford Ethics Toolkit Cue(s):</strong> {scenario.toolkit_cues}
-        </div>
-        {scenario.toolkit_references && (
-          <div className="mt-2">
-            <strong>Stanford Ethics Toolkit Reference(s):</strong>{' '}
-            <a
-              href="https://ethicsinsociety.stanford.edu/tech-ethics/ethics-toolkit"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#8C1515] hover:text-[#820f0f] underline text-xs"
-            >
-              https://ethicsinsociety.stanford.edu/tech-ethics/ethics-toolkit
-            </a>
-            <ol className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-sm text-[#2E2D29] font-medium list-decimal list-inside">
-              {scenario.toolkit_references.split(',').map((ref, idx) => {
-                const trimmedRef = ref.trim();
-                return (
-                  <li key={idx} className="leading-relaxed">
-                    {trimmedRef}
-                  </li>
-                );
-              })}
-            </ol>
-          </div>
-        )}
-        <div className="mt-2"><strong>People + Planet + Parity Cues:</strong> {scenario.p3_cues}</div>
-      </div>
 
       <ToolkitCard flow={scenario.toolkit_flow} choice={choice} onComplete={setToolkit} />
 

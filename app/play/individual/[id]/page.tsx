@@ -57,7 +57,7 @@ export default function IndividualLevel({ params }:{ params:{ id:string } }) {
   const isLast = idx === pack.scenarios.length - 1;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 pb-16">
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-semibold">Level {pack.level}: {pack.title}</h2>
         <div className="text-sm text-gray-600">Progress: {progress}</div>
@@ -70,6 +70,13 @@ export default function IndividualLevel({ params }:{ params:{ id:string } }) {
         {!isLast && <button onClick={()=> setIdx(i=>Math.min(pack.scenarios.length-1, i+1))} className="btn-ghost px-4 py-2 text-sm font-semibold">Next</button>}
         {isLast && <Link href={`/results/local-${Date.now()}`} className="btn px-6 py-3 text-base font-semibold">See Level Results</Link>}
         <Link href="/" className="ml-auto btn-ghost px-4 py-2 text-sm font-semibold">Back Home</Link>
+      </div>
+
+      {/* Disclaimer at bottom */}
+      <div className="mt-8 pt-4 border-t border-gray-200 text-center text-xs text-[#53565A]">
+        <p>
+          This is an independent capstone project by Joshua Williams for the Ethics+Tech Public Policy Practitioner Course; not associated with the Stanford McCoy Family Center for Ethics in Society or its staff.
+        </p>
       </div>
     </div>
   );
