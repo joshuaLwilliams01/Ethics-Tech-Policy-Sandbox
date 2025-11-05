@@ -77,28 +77,21 @@ export default function ScenarioCard({
         <div>
           <strong>Stanford Ethics Toolkit Cue(s):</strong> {scenario.toolkit_cues}
         </div>
-        {scenario.toolkit_flow.order.length > 0 && (
+        {scenario.toolkit_references && (
           <div className="mt-2">
             <strong>Stanford Ethics Toolkit Reference(s):</strong>
             <div className="mt-1 flex flex-wrap gap-2 items-center">
-              {scenario.toolkit_flow.order.map(t => {
-                const names: Record<string, string> = {
-                  'T1': 'Impacts Explorer',
-                  'T2': 'Values Clarifier',
-                  'T3': 'Risks Anticipator',
-                  'T4': 'Alternatives Generator',
-                  'T5': 'Accountability Builder'
-                };
-                const toolName = names[t] || t;
+              {scenario.toolkit_references.split(',').map((ref, idx) => {
+                const trimmedRef = ref.trim();
                 return (
                   <a
-                    key={t}
+                    key={idx}
                     href="https://ethicsinsociety.stanford.edu/tech-ethics/ethics-toolkit"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#8C1515] hover:text-[#820f0f] underline text-xs"
                   >
-                    {toolName}
+                    {trimmedRef}
                   </a>
                 );
               })}

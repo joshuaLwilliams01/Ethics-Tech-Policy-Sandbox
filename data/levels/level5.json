@@ -11,10 +11,16 @@
         "B": "Offer an opt-in for participation and protect privacy with fake data and secure learning methods.",
         "C": "Choose to have no data retained and allow all personalization to occur solely on the device, enhancing user privacy and security."
       },
-      "toolkit_cues": "Informed consent, secondary use, redress.",
-      "p3_cues": "People (chilling effects), Planet (local vs. cloud energy), Parity (who loses utility under opt-in).",
+      "toolkit_cues": "What benefits come from memory vs. chilling effects? What privacy-preserving defaults fit?",
+      "p3_cues": "People (speech/privacy), Planet (local vs. cloud energy), Parity (opt-in exclusion).",
       "toolkit_flow": {
-        "order": ["T2", "T1", "T3", "T4", "T5"],
+        "order": [
+          "T2",
+          "T1",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T2 Clarify Values: What is informed consent? What is secondary use? What is redress?",
           "T1 Map Impacts: Who is harmed by data collection? Who benefits? Who loses utility?",
@@ -27,10 +33,15 @@
           "Create data deletion mechanisms",
           "Develop privacy-preserving learning methods"
         ],
-        "metrics": ["Consent rate %", "Data deletion requests", "Privacy compliance %"],
+        "metrics": [
+          "Consent rate %",
+          "Data deletion requests",
+          "Privacy compliance %"
+        ],
         "owner_required": true,
         "review_default_days": 90
-      }
+      },
+      "toolkit_references": "Impact Explorer, Weighing Options"
     },
     {
       "scenario_id": "L5-S2",
@@ -41,10 +52,16 @@
         "B": "Provide users with complete control over their data sharing preferences.",
         "C": "Offer tiered discounts based on the depth of data shared while ensuring robust data protection measures."
       },
-      "toolkit_cues": "Is this coercive consent?",
+      "toolkit_cues": "Is price-for-privacy coercive here? What re-identification risks follow?",
       "p3_cues": "People (movement privacy), Planet (edge compute), Parity (regressive tradeoffs).",
       "toolkit_flow": {
-        "order": ["T2", "T1", "T3", "T4", "T5"],
+        "order": [
+          "T2",
+          "T1",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T2 Clarify Values: What makes consent meaningful? Is discount consent coercive?",
           "T1 Map Impacts: Who benefits from discounts? Who is harmed by privacy loss? Who faces regressive tradeoffs?",
@@ -57,10 +74,15 @@
           "Create user control mechanisms",
           "Develop fair pricing alternatives"
         ],
-        "metrics": ["Opt-in rate %", "User control usage", "Privacy compliance %"],
+        "metrics": [
+          "Opt-in rate %",
+          "User control usage",
+          "Privacy compliance %"
+        ],
         "owner_required": true,
         "review_default_days": 90
-      }
+      },
+      "toolkit_references": "Values Explainer Cards, Future Story"
     },
     {
       "scenario_id": "L5-S3",
@@ -71,10 +93,16 @@
         "B": "Establish clear objectives for how the data will be used to measure program success and impact.",
         "C": "Avoid using brokered data if it does not prioritize transparency and accountability in data collection and usage."
       },
-      "toolkit_cues": "AI data supply chain; legitimacy.",
-      "p3_cues": "People (expectations), Planet (storage), Parity (visibility of vulnerable groups).",
+      "toolkit_cues": "Who becomes newly visible or targeted? What legitimacy and usage limits are required?",
+      "p3_cues": "People (expectations), Planet (storage load), Parity (visibility of vulnerable groups).",
       "toolkit_flow": {
-        "order": ["T2", "T1", "T3", "T4", "T5"],
+        "order": [
+          "T2",
+          "T1",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T2 Clarify Values: What is legitimacy? What is transparency in the data supply chain?",
           "T1 Map Impacts: Who benefits from planning? Who is made visible? Who is vulnerable?",
@@ -87,10 +115,15 @@
           "Establish clear objectives and metrics",
           "Create transparency and accountability framework"
         ],
-        "metrics": ["Stakeholder engagement rate", "Transparency score", "Accountability compliance %"],
+        "metrics": [
+          "Stakeholder engagement rate",
+          "Transparency score",
+          "Accountability compliance %"
+        ],
         "owner_required": true,
         "review_default_days": 90
-      }
+      },
+      "toolkit_references": "Impact Explorer, Ethics Frame"
     },
     {
       "scenario_id": "L5-S4",
@@ -101,10 +134,16 @@
         "B": "Continue implementing the chatbot, conduct regular audits of data-sharing practices, and enhance transparency for users.",
         "C": "Develop an educational campaign to inform users about data privacy and encourage community feedback on policies."
       },
-      "toolkit_cues": "Residual risk vs. public benefit.",
+      "toolkit_cues": "What residual re-ID risks remain? What safer sharing options exist for research?",
       "p3_cues": "People (stigma), Planet (DP/synthetic compute), Parity (who benefits).",
       "toolkit_flow": {
-        "order": ["T2", "T1", "T3", "T4", "T5"],
+        "order": [
+          "T2",
+          "T1",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T2 Clarify Values: What is residual risk? How do we balance risk and public benefit?",
           "T1 Map Impacts: Who is harmed by re-identification? Who benefits from research? Who faces stigma?",
@@ -117,10 +156,15 @@
           "Develop privacy-preserving technologies",
           "Establish transparency and audit processes"
         ],
-        "metrics": ["Re-identification risk score", "Privacy-preserving tech usage %", "Transparency score"],
+        "metrics": [
+          "Re-identification risk score",
+          "Privacy-preserving tech usage %",
+          "Transparency score"
+        ],
         "owner_required": true,
         "review_default_days": 90
-      }
+      },
+      "toolkit_references": "Future Story, Weighing Options"
     },
     {
       "scenario_id": "L5-S5",
@@ -131,10 +175,16 @@
         "B": "Establish an independent oversight committee to monitor the implementation and address any ethical concerns that arise.",
         "C": "Involve employees in the decision-making process through surveys or focus groups to gauge their feelings about the system."
       },
-      "toolkit_cues": "Necessity, proportionality, alternatives.",
+      "toolkit_cues": "Is biometric entry necessary and proportional? What oversight and opt-outs enforce trust?",
       "p3_cues": "People (biometric risk), Planet (cameras), Parity (accuracy gaps).",
       "toolkit_flow": {
-        "order": ["T2", "T1", "T3", "T4", "T5"],
+        "order": [
+          "T2",
+          "T1",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T2 Clarify Values: Is this necessary? Is it proportional? What alternatives exist?",
           "T1 Map Impacts: Who is harmed by biometric collection? Who benefits? Who faces accuracy gaps?",
@@ -147,10 +197,15 @@
           "Create independent oversight committee",
           "Involve employees in decision-making"
         ],
-        "metrics": ["Opt-out rate %", "Accuracy by demographic", "Employee satisfaction"],
+        "metrics": [
+          "Opt-out rate %",
+          "Accuracy by demographic",
+          "Employee satisfaction"
+        ],
         "owner_required": true,
         "review_default_days": 60
-      }
+      },
+      "toolkit_references": "Values Explainer Cards, Ethics Frame"
     }
   ]
 }

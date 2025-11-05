@@ -11,10 +11,16 @@
         "B": "Stop implementation for 6 weeks to optimize equalized odds, accepting lower throughput.",
         "C": "Hybrid approach: restrict use for roles with minimal disparity; use manual processes for others."
       },
-      "toolkit_cues": "What definition of 'fairness' are you advocating for, and why? Are you referring to the concept of an accountability chain?",
-      "p3_cues": "People (false negatives), Planet (retraining cost), Parity (distribution of opportunity).",
+      "toolkit_cues": "Which fairness goal are we optimizing? Who absorbs false negatives?",
+      "p3_cues": "People (rejected applicants), Planet (retraining compute), Parity (opportunity gaps).",
       "toolkit_flow": {
-        "order": ["T2", "T1", "T3", "T4", "T5"],
+        "order": [
+          "T2",
+          "T1",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T2 Clarify Values: What does 'fairness' mean here? Equal opportunity? Equal outcomes? Equalized odds?",
           "T1 Map Impacts: Who is harmed by the disparity? Who benefits from the tool? Who is excluded?",
@@ -27,10 +33,14 @@
           "Establish appeal and review process",
           "Conduct bias audit across demographic groups"
         ],
-        "metrics": ["Demographic parity %", "Appeal success rate"],
+        "metrics": [
+          "Demographic parity %",
+          "Appeal success rate"
+        ],
         "owner_required": true,
         "review_default_days": 90
-      }
+      },
+      "toolkit_references": "Values Explainer Cards, Impact Explorer"
     },
     {
       "scenario_id": "L2-S2",
@@ -41,10 +51,16 @@
         "B": "Encourage participation only through an opt-in model that includes independent bias audits.",
         "C": "Test the system on small loans initially and analyze the outcomes."
       },
-      "toolkit_cues": "Is user consent meaningful? What potential harms could arise from mis-scoring?",
-      "p3_cues": "Consider the impacts on People (over-indebted individuals), Planet (constant scoring), and Parity (users with limited data access).",
+      "toolkit_cues": "What privacy harms could arise from location scoring? What safer pilots exist?",
+      "p3_cues": "People (over-indebted), Planet (always-on scoring), Parity (data-poor applicants).",
       "toolkit_flow": {
-        "order": ["T2", "T1", "T3", "T4", "T5"],
+        "order": [
+          "T2",
+          "T1",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T2 Clarify Values: What makes consent meaningful? Is opt-out consent sufficient here?",
           "T1 Map Impacts: Who benefits from quick loans? Who is harmed by mis-scoring? Who lacks data access?",
@@ -57,10 +73,15 @@
           "Establish clear consent process and documentation",
           "Create appeal process for loan denials"
         ],
-        "metrics": ["Opt-in rate %", "Bias audit results", "Appeal success rate"],
+        "metrics": [
+          "Opt-in rate %",
+          "Bias audit results",
+          "Appeal success rate"
+        ],
         "owner_required": true,
         "review_default_days": 90
-      }
+      },
+      "toolkit_references": "Future Story, Weighing Options"
     },
     {
       "scenario_id": "L2-S3",
@@ -71,10 +92,16 @@
         "B": "Provide alternatives to webcams, such as oral presentations or portfolios.",
         "C": "Pause the system until the error gaps have been resolved."
       },
-      "toolkit_cues": "Strategies for Enhancing Contestability and Utilizing Less Intrusive Methods.",
-      "p3_cues": "People (stress and dignity), Planet (continuous monitoring through video), Parity (issues with false positives).",
+      "toolkit_cues": "Who is mis-flagged and with what consequences? What low-intrusion options exist?",
+      "p3_cues": "People (stress/dignity), Planet (video monitoring), Parity (false positives by skin tone).",
       "toolkit_flow": {
-        "order": ["T1", "T2", "T3", "T4", "T5"],
+        "order": [
+          "T1",
+          "T2",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T1 Map Impacts: Who is harmed by false positives? Who benefits from proctoring? What alternatives exist?",
           "T2 Clarify Values: What is the balance between integrity and dignity? Is less intrusive always better?",
@@ -87,10 +114,14 @@
           "Develop alternative assessment methods",
           "Establish clear appeal process for flagged exams"
         ],
-        "metrics": ["False positive rate by demographic", "Alternative assessment usage %"],
+        "metrics": [
+          "False positive rate by demographic",
+          "Alternative assessment usage %"
+        ],
         "owner_required": true,
         "review_default_days": 60
-      }
+      },
+      "toolkit_references": "Impact Explorer, Weighing Options"
     },
     {
       "scenario_id": "L2-S4",
@@ -101,10 +132,16 @@
         "B": "Impose penalties for model uncertainty to enhance decision-making safety by promoting caution with limited historical data.",
         "C": "Set aside 'equity slots' in the queue to make sure that underrepresented individuals or groups have fair access."
       },
-      "toolkit_cues": "Missing data = hidden bias.",
-      "p3_cues": "People (outcomes), Planet (compute), and Parity (who is deprioritized).",
+      "toolkit_cues": "Where is data missing and how does it bias priority? Who can override and how?",
+      "p3_cues": "People (care outcomes), Planet (compute), Parity (patients with thin histories).",
       "toolkit_flow": {
-        "order": ["T1", "T2", "T3", "T4", "T5"],
+        "order": [
+          "T1",
+          "T2",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T1 Map Impacts: Who is deprioritized? Who benefits from reduced wait times? Who has limited medical history?",
           "T2 Clarify Values: How should we handle missing data? What does fairness mean in healthcare?",
@@ -117,10 +154,15 @@
           "Establish override protocols and documentation",
           "Create equity monitoring system"
         ],
-        "metrics": ["Triage accuracy by patient history", "Override usage rate", "Equity slot utilization"],
+        "metrics": [
+          "Triage accuracy by patient history",
+          "Override usage rate",
+          "Equity slot utilization"
+        ],
         "owner_required": true,
         "review_default_days": 30
-      }
+      },
+      "toolkit_references": "Future Story, Ethics Frame"
     },
     {
       "scenario_id": "L2-S5",
@@ -131,10 +173,16 @@
         "B": "Implement randomized block trials to assess effectiveness and gather data.",
         "C": "Prioritize investment in community safety programs as alternatives to traditional policing."
       },
-      "toolkit_cues": "Outcome vs. process fairness.",
-      "p3_cues": "People (chilling effects), Planet (miles), Parity (surveillance load).",
+      "toolkit_cues": "Is our process fair even if outcomes improve? What alternatives reduce surveillance load?",
+      "p3_cues": "People (chilling effects), Planet (patrol miles), Parity (over-policing hot spots).",
       "toolkit_flow": {
-        "order": ["T2", "T1", "T3", "T4", "T5"],
+        "order": [
+          "T2",
+          "T1",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T2 Clarify Values: What is the difference between outcome fairness and process fairness? Which matters more here?",
           "T1 Map Impacts: Who experiences increased surveillance? Who benefits from crime reduction? What are the chilling effects?",
@@ -147,10 +195,15 @@
           "Establish transparent decision-making process",
           "Create community advisory board"
         ],
-        "metrics": ["Crime reduction in hot spots", "Community trust score", "Surveillance distribution"],
+        "metrics": [
+          "Crime reduction in hot spots",
+          "Community trust score",
+          "Surveillance distribution"
+        ],
         "owner_required": true,
         "review_default_days": 90
-      }
+      },
+      "toolkit_references": "Values Explainer Cards, Weighing Options"
     }
   ]
 }

@@ -21,10 +21,14 @@
           "Define hospital/transit continuity plan",
           "Trigger supplier labor audit"
         ],
-        "metrics": ["Continuity incidents", "Audit completion %"],
+        "metrics": [
+          "Continuity incidents",
+          "Audit completion %"
+        ],
         "owner_required": true,
         "review_default_days": 90
-      }
+      },
+      "toolkit_references": "Values Explainer Cards, Impact Explorer, Future Story, Weighing Options, Ethics Frame"
     },
     {
       "scenario_id": "L1-S2",
@@ -35,10 +39,16 @@
         "B": "Pause the app now until fair labor practices are verified.",
         "C": "Keep the app running smoothly during the transition with emergency payment options for citizens and a public audit for transparency."
       },
-      "toolkit_cues": "Are we treating people merely as a means to an end? Who will experience short-term harm?",
-      "p3_cues": "People (exploitation), Planet (energy retraining), Parity (who loses access during a pause).",
+      "toolkit_cues": "Who is helped or hurt by pause vs. phased transition? What risks grow if we wait?",
+      "p3_cues": "People (exploitation), Planet (training energy), Parity (loss of access during pause).",
       "toolkit_flow": {
-        "order": ["T2", "T1", "T3", "T4", "T5"],
+        "order": [
+          "T2",
+          "T1",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T2 Clarify Values: Are workers being treated as ends in themselves or just means?",
           "T1 Map Impacts: Who benefits from the app? Who is harmed by low wages? Who loses access if paused?",
@@ -51,10 +61,14 @@
           "Create transition timeline with milestones",
           "Establish worker compensation standards"
         ],
-        "metrics": ["Fair pay compliance %", "App uptime %"],
+        "metrics": [
+          "Fair pay compliance %",
+          "App uptime %"
+        ],
         "owner_required": true,
         "review_default_days": 90
-      }
+      },
+      "toolkit_references": "Impact Explorer, Future Story, Ethics Frame"
     },
     {
       "scenario_id": "L1-S3",
@@ -65,10 +79,16 @@
         "B": "Temporarily turn off high-risk features until sufficient protections are in place.",
         "C": "Increase the use of AI filters, reserving human review for appeals."
       },
-      "toolkit_cues": "Duty of care versus service uptime.",
-      "p3_cues": "People (mental health), Planet (increased AI compute), Parity (who is protected online).",
+      "toolkit_cues": "What do we owe moderators? Which protections are minimally required?",
+      "p3_cues": "People (mental health), Planet (AI filtering compute), Parity (who is safest online).",
       "toolkit_flow": {
-        "order": ["T1", "T2", "T3", "T4", "T5"],
+        "order": [
+          "T1",
+          "T2",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T1 Map Impacts: Who is harmed by current working conditions? Who benefits from platform safety?",
           "T2 Clarify Values: What duties do we have to our moderators? What duties to platform users?",
@@ -81,10 +101,14 @@
           "Create clear workload limits and rotation schedules",
           "Develop safety protocols for high-risk content"
         ],
-        "metrics": ["Moderator wellbeing score", "Content removal accuracy %"],
+        "metrics": [
+          "Moderator wellbeing score",
+          "Content removal accuracy %"
+        ],
         "owner_required": true,
         "review_default_days": 60
-      }
+      },
+      "toolkit_references": "Values Explainer Cards, Weighing Options"
     },
     {
       "scenario_id": "L1-S4",
@@ -95,10 +119,16 @@
         "B": "Adjust the system so that no single area experiences the majority of the negative impact; rising costs should be distributed more equitably.",
         "C": "Temporarily pause this feature until fair rules are established and made publicly available."
       },
-      "toolkit_cues": "Focus on consent and proportionality.",
-      "p3_cues": "Consider the People (health and safety), Planet (energy consumption), and Parity (distribution of burdens).",
+      "toolkit_cues": "Who bears outages vs. bill savings? How can harms be fairly shared?",
+      "p3_cues": "People (health/safety), Planet (energy use), Parity (burden distribution).",
       "toolkit_flow": {
-        "order": ["T1", "T2", "T3", "T4", "T5"],
+        "order": [
+          "T1",
+          "T2",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T1 Map Impacts: Who experiences blackouts? Who benefits from cost savings? Who is most vulnerable?",
           "T2 Clarify Values: What is the relationship between consent and harm? Is this proportional?",
@@ -111,10 +141,14 @@
           "Establish transparent decision-making process",
           "Create emergency support fund"
         ],
-        "metrics": ["Outage distribution fairness", "Vulnerable population support %"],
+        "metrics": [
+          "Outage distribution fairness",
+          "Vulnerable population support %"
+        ],
         "owner_required": true,
         "review_default_days": 30
-      }
+      },
+      "toolkit_references": "Impact Explorer, Weighing Options"
     },
     {
       "scenario_id": "L1-S5",
@@ -125,10 +159,16 @@
         "B": "Stop exports and focus on developing safe local recycling options. Please anticipate possible service delays.",
         "C": "Reduce program size and ensure compliance with strict recycling standards only."
       },
-      "toolkit_cues": "Clarify the difference between goals (ends) and methods (means), and encourage equitable distribution of responsibilities.",
-      "p3_cues": "Considerations: People (worker safety), Planet (toxic waste), Parity (responsibility for cleanup).",
+      "toolkit_cues": "What environmental and health risks are likely? Who is responsible for cleanup?",
+      "p3_cues": "People (worker safety), Planet (toxic waste), Parity (who pays for remediation).",
       "toolkit_flow": {
-        "order": ["T2", "T1", "T3", "T4", "T5"],
+        "order": [
+          "T2",
+          "T1",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T2 Clarify Values: What is the goal (sustainability) vs. the method (export)? Are they aligned?",
           "T1 Map Impacts: Who is harmed by unsafe recycling? Who benefits from the program? Who is responsible for cleanup?",
@@ -141,10 +181,14 @@
           "Establish clear responsibility and accountability framework",
           "Create transition plan for safer practices"
         ],
-        "metrics": ["Worker safety compliance %", "Environmental impact score"],
+        "metrics": [
+          "Worker safety compliance %",
+          "Environmental impact score"
+        ],
         "owner_required": true,
         "review_default_days": 90
-      }
+      },
+      "toolkit_references": "Future Story, Ethics Frame"
     }
   ]
 }

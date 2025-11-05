@@ -11,10 +11,16 @@
         "B": "Implement phased pilot programs that include worker councils and establish guardrails for algorithmic management.",
         "C": "Demand no rollout until wage-sharing and job quality guarantees are officially established."
       },
-      "toolkit_cues": "Just transition, surveillance limits, error accountability.",
-      "p3_cues": "People (dignity, autonomy), Planet (compute intensity), Parity (who benefits from productivity).",
+      "toolkit_cues": "What does a just transition require here? What guardrails and KPIs prove it?",
+      "p3_cues": "People (dignity/autonomy), Planet (compute intensity), Parity (who gains from productivity).",
       "toolkit_flow": {
-        "order": ["T2", "T1", "T3", "T4", "T5"],
+        "order": [
+          "T2",
+          "T1",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T2 Clarify Values: What is a just transition? What are surveillance limits? What is error accountability?",
           "T1 Map Impacts: Who is displaced? Who benefits from productivity? Who loses autonomy?",
@@ -27,10 +33,15 @@
           "Create reskilling and transition programs",
           "Develop wage-sharing and job quality guarantees"
         ],
-        "metrics": ["Worker satisfaction", "Reskilling success rate", "Productivity gain distribution"],
+        "metrics": [
+          "Worker satisfaction",
+          "Reskilling success rate",
+          "Productivity gain distribution"
+        ],
         "owner_required": true,
         "review_default_days": 180
-      }
+      },
+      "toolkit_references": "Values Explainer Cards, Ethics Frame"
     },
     {
       "scenario_id": "L6-S2",
@@ -41,10 +52,16 @@
         "B": "Decide to implement the algorithm on a trial basis.",
         "C": "Reject algorithm-based systems; prioritize well-being and work-life balance through current scheduling and regular manager-staff meetings."
       },
-      "toolkit_cues": "Human agency vs. efficiency.",
+      "toolkit_cues": "How does scheduling affect burnout vs. stability? What co-designed alternatives fit?",
       "p3_cues": "People (fatigue), Planet (energy), Parity (frontline voice).",
       "toolkit_flow": {
-        "order": ["T2", "T1", "T3", "T4", "T5"],
+        "order": [
+          "T2",
+          "T1",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T2 Clarify Values: What is human agency? How does it relate to efficiency?",
           "T1 Map Impacts: Who experiences burnout? Who benefits from optimization? Who loses voice?",
@@ -57,10 +74,15 @@
           "Establish manual override mechanisms",
           "Create regular feedback and adjustment process"
         ],
-        "metrics": ["Worker satisfaction", "Burnout rate", "Scheduling efficiency"],
+        "metrics": [
+          "Worker satisfaction",
+          "Burnout rate",
+          "Scheduling efficiency"
+        ],
         "owner_required": true,
         "review_default_days": 60
-      }
+      },
+      "toolkit_references": "Impact Explorer, Weighing Options"
     },
     {
       "scenario_id": "L6-S3",
@@ -71,10 +93,16 @@
         "B": "Limit AI suggestions to specific scenarios where agents may struggle and encourage independent problem-solving in other situations.",
         "C": "Implement the Live Call Coach without training, understanding that this may boost efficiency but also risks agent frustration and misuse."
       },
-      "toolkit_cues": "Long-term skill vs. dependency.",
-      "p3_cues": "People (morale), Planet (compute per call), Parity (promotion paths).",
+      "toolkit_cues": "What surveillance and skill-loss risks exist? Where should assist be limited?",
+      "p3_cues": "People (morale/agency), Planet (compute per call), Parity (advancement paths).",
       "toolkit_flow": {
-        "order": ["T2", "T1", "T3", "T4", "T5"],
+        "order": [
+          "T2",
+          "T1",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T2 Clarify Values: What is the balance between skill development and dependency?",
           "T1 Map Impacts: Who benefits from efficiency? Who loses skills? Who is blocked from promotion?",
@@ -87,10 +115,15 @@
           "Create skill-building opportunities",
           "Establish promotion pathways"
         ],
-        "metrics": ["Agent skill development", "Morale score", "Promotion rate"],
+        "metrics": [
+          "Agent skill development",
+          "Morale score",
+          "Promotion rate"
+        ],
         "owner_required": true,
         "review_default_days": 90
-      }
+      },
+      "toolkit_references": "Future Story, Weighing Options"
     },
     {
       "scenario_id": "L6-S4",
@@ -101,10 +134,16 @@
         "B": "Eliminate tiers and create a randomized pool to guarantee equal job opportunities for freelancers.",
         "C": "Establish union-negotiated tier structures that guarantee a minimum level of job access regardless of performance metrics."
       },
-      "toolkit_cues": "Procedural fairness and transparency.",
-      "p3_cues": "People (income swings), Planet (routing), Parity (bias).",
+      "toolkit_cues": "How do tiers shift income and access? What transparent floors and appeals are needed?",
+      "p3_cues": "People (income swings), Planet (routing), Parity (bias by rating).",
       "toolkit_flow": {
-        "order": ["T2", "T1", "T3", "T4", "T5"],
+        "order": [
+          "T2",
+          "T1",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T2 Clarify Values: What is procedural fairness? What is transparency?",
           "T1 Map Impacts: Who is harmed by tiers? Who benefits? Who faces bias?",
@@ -117,10 +156,15 @@
           "Establish expedited appeal process",
           "Create bias audit and monitoring system"
         ],
-        "metrics": ["Tier distribution fairness", "Appeal success rate", "Bias audit results"],
+        "metrics": [
+          "Tier distribution fairness",
+          "Appeal success rate",
+          "Bias audit results"
+        ],
         "owner_required": true,
         "review_default_days": 90
-      }
+      },
+      "toolkit_references": "Impact Explorer, Ethics Frame"
     },
     {
       "scenario_id": "L6-S5",
@@ -131,10 +175,16 @@
         "B": "Provide fully funded training programs aimed at equipping employees with skills for higher-demand positions.",
         "C": "A hybrid approach of reduced hours with shared-work arrangements, combined with robust training opportunities for skill development."
       },
-      "toolkit_cues": "Who shares the gains of automation?",
+      "toolkit_cues": "Who should share automation gains? What mix of severance, training, and shared work is fair?",
       "p3_cues": "People (stability), Planet (facility use), Parity (training access).",
       "toolkit_flow": {
-        "order": ["T2", "T1", "T3", "T4", "T5"],
+        "order": [
+          "T2",
+          "T1",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T2 Clarify Values: Who should benefit from automation? Who shares the gains?",
           "T1 Map Impacts: Who is displaced? Who benefits from automation? Who has training access?",
@@ -147,10 +197,15 @@
           "Create re-hiring prioritization process",
           "Establish shared-work arrangements"
         ],
-        "metrics": ["Re-skilling success rate", "Re-hiring rate", "Worker satisfaction"],
+        "metrics": [
+          "Re-skilling success rate",
+          "Re-hiring rate",
+          "Worker satisfaction"
+        ],
         "owner_required": true,
         "review_default_days": 180
-      }
+      },
+      "toolkit_references": "Values Explainer Cards, Weighing Options"
     }
   ]
 }

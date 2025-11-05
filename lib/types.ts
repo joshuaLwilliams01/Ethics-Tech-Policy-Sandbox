@@ -13,6 +13,7 @@ export type Scenario = {
   prompt: string;
   choices: Record<ChoiceKey,string>;
   toolkit_cues?: string;
+  toolkit_references?: string;
   p3_cues?: string;
   toolkit_flow: ToolkitFlow;
   tags?: string[];

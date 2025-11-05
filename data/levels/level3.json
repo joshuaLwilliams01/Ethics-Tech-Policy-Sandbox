@@ -11,10 +11,16 @@
         "B": "Implement server-side scanning with takedown measures, create educational resources, and share information on harmful content.",
         "C": "Customize scanning protocols based on environments: some allow user device scans, while others require server scans."
       },
-      "toolkit_cues": "Harm minimization vs. privacy; false positives & appeals; duty to report.",
-      "p3_cues": "People (victim safety/trauma), Planet (inference costs at scale), Parity (over-policing certain geos/communities).",
+      "toolkit_cues": "How do we balance child safety with privacy by default? What mix limits harm?",
+      "p3_cues": "People (victim safety), Planet (scale inference), Parity (over-policing certain groups).",
       "toolkit_flow": {
-        "order": ["T2", "T1", "T3", "T4", "T5"],
+        "order": [
+          "T2",
+          "T1",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T2 Clarify Values: What is the balance between harm minimization and privacy? What duties do we have?",
           "T1 Map Impacts: Who is harmed by delays? Who is harmed by privacy violations? Who faces false positives?",
@@ -27,10 +33,15 @@
           "Create educational resources on reporting",
           "Develop privacy-preserving detection methods"
         ],
-        "metrics": ["Detection accuracy rate", "False positive rate", "Appeal success rate"],
+        "metrics": [
+          "Detection accuracy rate",
+          "False positive rate",
+          "Appeal success rate"
+        ],
         "owner_required": true,
         "review_default_days": 90
-      }
+      },
+      "toolkit_references": "Values Explainer Cards, Weighing Options"
     },
     {
       "scenario_id": "L3-S2",
@@ -41,10 +52,16 @@
         "B": "Refine datasets to exclude harmful material, slow release pace, and conduct red-teaming before public deployment.",
         "C": "Restrict access to potentially sensitive features, allowing only verified researchers to utilize them for responsible experimentation."
       },
-      "toolkit_cues": "Openness vs. prevention; duty to test.",
-      "p3_cues": "People (secondary trauma), Planet (retraining), Parity (access for small orgs).",
+      "toolkit_cues": "What abuse paths and secondary-trauma risks exist? What gates and response plans are required?",
+      "p3_cues": "People (reviewer well-being), Planet (retraining cycles), Parity (access for small orgs).",
       "toolkit_flow": {
-        "order": ["T2", "T1", "T3", "T4", "T5"],
+        "order": [
+          "T2",
+          "T1",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T2 Clarify Values: What is the balance between openness and prevention? What is our duty to test?",
           "T1 Map Impacts: Who is harmed by inappropriate content? Who benefits from access? Who is excluded by restrictions?",
@@ -57,10 +74,15 @@
           "Establish clear safety protocols and watermarking",
           "Create appeal process for false flags"
         ],
-        "metrics": ["Safety protocol compliance %", "False positive rate", "Red-team findings"],
+        "metrics": [
+          "Safety protocol compliance %",
+          "False positive rate",
+          "Red-team findings"
+        ],
         "owner_required": true,
         "review_default_days": 60
-      }
+      },
+      "toolkit_references": "Future Story, Ethics Frame"
     },
     {
       "scenario_id": "L3-S3",
@@ -71,10 +93,16 @@
         "B": "Prioritize matches that have high confidence levels and establish strong processes for handling appeals.",
         "C": "Direct submissions through an independent clearinghouse to verify reports before they are processed."
       },
-      "toolkit_cues": "Who's accountable when errors cascade?",
-      "p3_cues": "People (wrongful flags), Planet (compute), Parity (small platforms' capacity).",
+      "toolkit_cues": "Do faster reports outweigh wrongful flags? Who reviews, how fast, and with what limits?",
+      "p3_cues": "People (mislabeling harm), Planet (processing load), Parity (small platform capacity).",
       "toolkit_flow": {
-        "order": ["T1", "T2", "T3", "T4", "T5"],
+        "order": [
+          "T1",
+          "T2",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T1 Map Impacts: Who is harmed by false reports? Who benefits from bulk uploads? Who lacks capacity?",
           "T2 Clarify Values: What is accountability when errors cascade? Who is responsible?",
@@ -87,10 +115,15 @@
           "Create independent verification process",
           "Develop strong appeal process for false reports"
         ],
-        "metrics": ["False report rate", "Appeal success rate", "Processing time"],
+        "metrics": [
+          "False report rate",
+          "Appeal success rate",
+          "Processing time"
+        ],
         "owner_required": true,
         "review_default_days": 90
-      }
+      },
+      "toolkit_references": "Impact Explorer, Ethics Frame"
     },
     {
       "scenario_id": "L3-S4",
@@ -101,10 +134,16 @@
         "B": "Encourage schools to be transparent about AI monitoring practices and engage in open conversations with parents and students.",
         "C": "Propose alternative measures for ensuring student safety that do not involve AI monitoring, like enhanced conflict resolution programs and better mental health support."
       },
-      "toolkit_cues": "Child's best interest.",
-      "p3_cues": "People (trust), Planet (storage), Parity (guardian consent gaps).",
+      "toolkit_cues": "Is monitoring the least intrusive means for safety? What non-AI measures could replace it?",
+      "p3_cues": "People (student trust), Planet (data storage), Parity (guardian consent gaps).",
       "toolkit_flow": {
-        "order": ["T2", "T1", "T3", "T4", "T5"],
+        "order": [
+          "T2",
+          "T1",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T2 Clarify Values: What is in the child's best interest? How do we balance safety and privacy?",
           "T1 Map Impacts: Who is harmed by security risks? Who benefits from monitoring? Who lacks consent?",
@@ -117,10 +156,15 @@
           "Establish clear consent process for parents and students",
           "Develop alternative safety measures"
         ],
-        "metrics": ["Security incident rate", "Consent rate %", "Alternative program effectiveness"],
+        "metrics": [
+          "Security incident rate",
+          "Consent rate %",
+          "Alternative program effectiveness"
+        ],
         "owner_required": true,
         "review_default_days": 60
-      }
+      },
+      "toolkit_references": "Values Explainer Cards, Weighing Options"
     },
     {
       "scenario_id": "L3-S5",
@@ -131,10 +175,16 @@
         "B": "Conduct a gradual removal process, ensuring consent from survivors and utilizing evidence escrow for accountability.",
         "C": "Establish a court-mandated expedited removal route, with a standard procedure for all other cases."
       },
-      "toolkit_cues": "Do no further harm; informed consent.",
-      "p3_cues": "People (re-trauma), Planet (storage), Parity (legal access).",
+      "toolkit_cues": "How does speed vs. evidence retention affect survivors? What safe proof and appeal paths exist?",
+      "p3_cues": "People (re-trauma risk), Planet (storage), Parity (legal access pathways).",
       "toolkit_flow": {
-        "order": ["T2", "T1", "T3", "T4", "T5"],
+        "order": [
+          "T2",
+          "T1",
+          "T3",
+          "T4",
+          "T5"
+        ],
         "prompts": [
           "T2 Clarify Values: What does 'do no further harm' mean here? What is informed consent?",
           "T1 Map Impacts: Who is harmed by delays? Who is harmed by lack of evidence? Who is re-traumatized?",
@@ -147,10 +197,15 @@
           "Create evidence escrow system",
           "Develop expedited removal protocols"
         ],
-        "metrics": ["Removal time", "Survivor satisfaction", "Investigation success rate"],
+        "metrics": [
+          "Removal time",
+          "Survivor satisfaction",
+          "Investigation success rate"
+        ],
         "owner_required": true,
         "review_default_days": 30
-      }
+      },
+      "toolkit_references": "Impact Explorer, Ethics Frame"
     }
   ]
 }
