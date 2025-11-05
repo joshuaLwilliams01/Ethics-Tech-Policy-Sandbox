@@ -1930,3 +1930,7 @@ digest: "3421250340"
  ✓ Compiled in 488ms (802 modules)
  ✓ Compiled in 631ms (802 modules)
  ✓ Compiled in 1714ms (802 modules)
+ ✓ Compiled in 914ms (802 modules)
+ GET /play/individual/1 200 in 254ms
+ ✓ Compiled in 1592ms (802 modules)
+ ✓ Compiled in 497ms (802 modules)

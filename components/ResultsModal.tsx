@@ -31,12 +31,15 @@ export default function ResultsModal({
     if (isOpen) {
       document.addEventListener('keydown', handleEscape);
       document.body.style.overflow = 'hidden';
-      // Ensure modal scrolls to top when opening
-      setTimeout(() => {
+      // Ensure modal scrolls to top when opening - multiple attempts
+      const scrollToTop = () => {
         if (modalRef.current) {
           modalRef.current.scrollTop = 0;
         }
-      }, 0);
+      };
+      scrollToTop();
+      setTimeout(scrollToTop, 0);
+      setTimeout(scrollToTop, 100);
     }
     return () => {
       document.removeEventListener('keydown', handleEscape);
@@ -59,7 +62,7 @@ export default function ResultsModal({
       <div
         ref={containerRef}
         className="fixed inset-0 z-50 flex items-start justify-center p-4 pointer-events-none"
-        style={{ paddingTop: '2rem', overflow: 'hidden' }}
+        style={{ paddingTop: '1rem', overflow: 'hidden' }}
       >
         <div
           ref={modalRef}
@@ -67,22 +70,22 @@ export default function ResultsModal({
           onClick={(e) => e.stopPropagation()}
           style={{ 
             animation: 'modal-slide-in 0.3s ease-out',
-            maxHeight: 'calc(100vh - 4rem)'
+            maxHeight: 'calc(100vh - 2rem)'
           }}
         >
-          {/* Header with gradient - very compact */}
-          <div className="bg-gradient-to-r from-[#8C1515] via-[#C41E3A] to-[#8C1515] px-3 py-1.5 rounded-t-lg">
+          {/* Header with gradient - compact but visible */}
+          <div className="bg-gradient-to-r from-[#8C1515] via-[#C41E3A] to-[#8C1515] px-3 py-2 rounded-t-lg sticky top-0 z-10">
             <div className="flex items-center justify-between gap-2">
-              <h2 className="text-sm font-bold text-white flex items-center gap-1.5 flex-1 min-w-0">
-                <span className="text-base flex-shrink-0">🎯</span>
-                <span className="truncate">Result(s) of Your Decision</span>
+              <h2 className="text-base font-bold text-white flex items-center gap-1.5 flex-1 min-w-0">
+                <span className="text-lg flex-shrink-0">🎯</span>
+                <span>Result(s) of Your Decision</span>
               </h2>
               <button
                 onClick={() => {
                   playButtonClick();
                   onClose();
                 }}
-                className="text-white hover:text-gray-200 transition-colors duration-200 text-base font-bold w-5 h-5 flex items-center justify-center rounded-full hover:bg-white/20 flex-shrink-0"
+                className="text-white hover:text-gray-200 transition-colors duration-200 text-lg font-bold w-6 h-6 flex items-center justify-center rounded-full hover:bg-white/20 flex-shrink-0"
                 aria-label="Close modal"
               >
                 ×
