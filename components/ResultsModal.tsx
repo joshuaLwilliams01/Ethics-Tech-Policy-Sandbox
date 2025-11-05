@@ -26,11 +26,10 @@ export default function ResultsModal({
     };
     if (isOpen) {
       document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden';
+      // Don't hide body overflow - let the modal container handle scrolling
     }
     return () => {
       document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
     };
   }, [isOpen, onClose]);
 
@@ -47,12 +46,17 @@ export default function ResultsModal({
       
       {/* Modal */}
       <div
-        className="fixed inset-0 z-50 flex items-start justify-center pt-4 pb-4 px-4 pointer-events-none overflow-y-auto"
+        className="fixed inset-0 z-50 flex items-start justify-center pt-6 pb-6 px-4 pointer-events-none overflow-y-auto"
+        style={{ paddingTop: '1.5rem', paddingBottom: '1.5rem' }}
       >
         <div
-          className="bg-gradient-to-br from-white via-[#F7F6F3] to-white rounded-lg shadow-2xl max-w-3xl w-full max-h-[calc(100vh-2rem)] flex flex-col relative border-2 border-[#8C1515] pointer-events-auto my-auto"
+          className="bg-gradient-to-br from-white via-[#F7F6F3] to-white rounded-lg shadow-2xl max-w-3xl w-full flex flex-col relative border-2 border-[#8C1515] pointer-events-auto"
           onClick={(e) => e.stopPropagation()}
-          style={{ animation: 'modal-slide-in 0.3s ease-out' }}
+          style={{ 
+            animation: 'modal-slide-in 0.3s ease-out',
+            maxHeight: 'calc(100vh - 3rem)',
+            marginTop: '0'
+          }}
         >
           {/* Header with gradient - always visible */}
           <div className="bg-gradient-to-r from-[#8C1515] via-[#C41E3A] to-[#8C1515] p-6 rounded-t-lg flex-shrink-0">
