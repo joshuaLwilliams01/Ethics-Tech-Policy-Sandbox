@@ -58,8 +58,8 @@ export default function ResultsModal({
       {/* Modal */}
       <div
         ref={containerRef}
-        className="fixed inset-0 z-50 flex items-start justify-center p-4 pointer-events-none"
-        style={{ paddingTop: '1rem', overflow: 'hidden' }}
+        className="fixed inset-0 z-[100] flex items-start justify-center p-2 sm:p-4 pointer-events-none"
+        style={{ paddingTop: '0.5rem', overflow: 'hidden' }}
       >
         <div
           ref={modalRef}
@@ -67,15 +67,15 @@ export default function ResultsModal({
           onClick={(e) => e.stopPropagation()}
           style={{ 
             animation: 'modal-slide-in 0.3s ease-out',
-            maxHeight: 'calc(100vh - 2rem)'
+            maxHeight: 'calc(100vh - 1rem)'
           }}
         >
           {/* Header with gradient - enhanced visibility */}
-          <div className="bg-gradient-to-r from-[#8C1515] via-[#C41E3A] to-[#8C1515] px-5 py-3 rounded-t-lg sticky top-0 z-10 shadow-md">
-            <div className="flex items-center justify-between gap-3">
-              <h2 className="text-lg font-bold text-white flex items-center gap-2 flex-1 min-w-0">
-                <span className="text-xl flex-shrink-0">🎯</span>
-                <span>Result(s) of Your Decision</span>
+          <div className="bg-gradient-to-r from-[#8C1515] via-[#C41E3A] to-[#8C1515] px-3 sm:px-5 py-2 sm:py-3 rounded-t-lg sticky top-0 z-10 shadow-md">
+            <div className="flex items-center justify-between gap-2 sm:gap-3">
+              <h2 className="text-sm sm:text-lg font-bold text-white flex items-center gap-1 sm:gap-2 flex-1 min-w-0">
+                <span className="text-base sm:text-xl flex-shrink-0">🎯</span>
+                <span className="truncate">Result(s) of Your Decision</span>
               </h2>
               <button
                 onClick={() => {
@@ -91,41 +91,41 @@ export default function ResultsModal({
           </div>
 
           {/* Content - enhanced padding and spacing */}
-          <div className="p-6 space-y-4">
+          <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
             {/* Summary */}
-            <div className="bg-gradient-to-r from-[#8C1515]/10 to-[#175E54]/10 p-4 rounded-lg border-l-4 border-[#8C1515] shadow-sm">
-              <p className="text-[#1F2937] text-sm font-semibold leading-relaxed">{results.summary}</p>
+            <div className="bg-gradient-to-r from-[#8C1515]/10 to-[#175E54]/10 p-3 sm:p-4 rounded-lg border-l-4 border-[#8C1515] shadow-sm">
+              <p className="text-[#1F2937] text-xs sm:text-sm font-semibold leading-relaxed">{results.summary}</p>
             </div>
 
             {/* Benefits and Harms Grid */}
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
               {/* Benefits */}
-              <div className="bg-gradient-to-br from-green-50 to-green-100/50 p-4 rounded-lg border-2 border-green-200 shadow-md">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-2xl">✨</span>
-                  <h3 className="text-lg font-bold text-green-800">Benefits</h3>
+              <div className="bg-gradient-to-br from-green-50 to-green-100/50 p-3 sm:p-4 rounded-lg border-2 border-green-200 shadow-md">
+                <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                  <span className="text-xl sm:text-2xl">✨</span>
+                  <h3 className="text-base sm:text-lg font-bold text-green-800">Benefits</h3>
                 </div>
-                <ul className="space-y-2">
+                <ul className="space-y-1.5 sm:space-y-2">
                   {results.benefits.map((benefit, i) => (
                     <li key={i} className="flex items-start gap-2 text-[#1F2937]">
-                      <span className="text-green-600 font-bold mt-0.5 text-base">✓</span>
-                      <span className="leading-relaxed text-sm font-medium">{benefit}</span>
+                      <span className="text-green-600 font-bold mt-0.5 text-sm sm:text-base flex-shrink-0">✓</span>
+                      <span className="leading-relaxed text-xs sm:text-sm font-medium">{benefit}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* Harms */}
-              <div className="bg-gradient-to-br from-red-50 to-red-100/50 p-4 rounded-lg border-2 border-red-200 shadow-md">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-2xl">⚠️</span>
-                  <h3 className="text-lg font-bold text-red-800">Harms</h3>
+              <div className="bg-gradient-to-br from-red-50 to-red-100/50 p-3 sm:p-4 rounded-lg border-2 border-red-200 shadow-md">
+                <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                  <span className="text-xl sm:text-2xl">⚠️</span>
+                  <h3 className="text-base sm:text-lg font-bold text-red-800">Harms</h3>
                 </div>
-                <ul className="space-y-2">
+                <ul className="space-y-1.5 sm:space-y-2">
                   {results.harms.map((harm, i) => (
                     <li key={i} className="flex items-start gap-2 text-[#1F2937]">
-                      <span className="text-red-600 font-bold mt-0.5 text-base">⚠</span>
-                      <span className="leading-relaxed text-sm font-medium">{harm}</span>
+                      <span className="text-red-600 font-bold mt-0.5 text-sm sm:text-base flex-shrink-0">⚠</span>
+                      <span className="leading-relaxed text-xs sm:text-sm font-medium">{harm}</span>
                     </li>
                   ))}
                 </ul>
@@ -134,13 +134,13 @@ export default function ResultsModal({
           </div>
 
           {/* Footer */}
-          <div className="border-t border-gray-200 p-4 flex justify-end">
+          <div className="border-t border-gray-200 p-3 sm:p-4 flex justify-end">
             <button
               onClick={() => {
                 playButtonClick();
                 onClose();
               }}
-              className="btn px-8 py-3 text-base font-semibold"
+              className="btn px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base font-semibold"
             >
               Got it! Continue
             </button>

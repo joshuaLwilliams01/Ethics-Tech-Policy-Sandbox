@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Mobile-specific utilities */
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Hide details marker on summary */
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  details summary::marker {
+    display: none;
+  }
+}
+
 /* Stanford University Official Brand Colors - Enhanced */
 :root{
   --cardinal:#8C1515;       /* Stanford Cardinal Red - primary brand color */

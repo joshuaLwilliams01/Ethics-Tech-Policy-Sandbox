@@ -22,7 +22,7 @@ export default function Home(){
   }, []);
   
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center py-12 px-4">
+    <div className="min-h-screen flex flex-col items-center justify-center py-6 sm:py-12 px-4">
       {/* Main Title - Enhanced */}
       <div className="text-center mb-8 relative">
         <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 text-6xl opacity-20" style={{ animation: 'bounce-subtle 2s ease-in-out infinite' }}>🌲</div>

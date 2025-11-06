@@ -68,11 +68,11 @@ export default function AudioToggle(){
         Your browser does not support the audio element.
       </audio>
       
-      <div className="flex flex-col items-center gap-2">
+      <div className="flex flex-col items-center gap-1 sm:gap-2">
         <div className="relative">
           {/* Speaker icon with enhanced animation */}
           <div 
-            className={`text-2xl transition-all duration-300 ${
+            className={`text-lg sm:text-2xl transition-all duration-300 ${
               enabled 
                 ? 'animate-pulse-glow text-[#8C1515] scale-110' 
                 : 'text-[#53565A] scale-100'
@@ -107,18 +107,18 @@ export default function AudioToggle(){
             </>
           )}
         </div>
-        <div className={`text-xs font-medium transition-colors duration-300 ${
+        <div className={`text-[10px] sm:text-xs font-medium transition-colors duration-300 ${
           enabled ? 'text-[#8C1515]' : 'text-[#53565A]'
         }`}>
           {enabled ? 'Sound On' : 'Sound Off'}
         </div>
         <button 
           onClick={handleToggle}
-          className={`text-xs transition-all duration-300 hover:scale-105 ${
+          className={`text-[8px] sm:text-xs transition-all duration-300 hover:scale-105 ${
             enabled 
               ? 'text-[#8C1515] hover:text-[#820f0f] font-semibold' 
               : 'text-[#53565A] hover:text-[#8C1515]'
-          } cursor-pointer underline`}
+          } cursor-pointer underline hidden sm:block`}
           aria-pressed={enabled}
           aria-label={enabled ? "Turn sound off" : "Turn sound on"}
         >

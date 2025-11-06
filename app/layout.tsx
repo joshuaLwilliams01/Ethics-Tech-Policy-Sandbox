@@ -24,21 +24,31 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
       <body className="min-h-screen suspense-bg">
         <SoundProvider>
           <header className="bg-white border-b-2 border-[#8C1515] sticky top-0 z-50 shadow-lg">
-            <nav className="mx-auto max-w-6xl flex items-center justify-between p-4">
-              <Link href="/" className="font-semibold text-[#2E2D29] text-lg hover:text-[#8C1515] transition-all duration-300 flex items-center gap-2 group">
-                <span className="text-2xl stanford-tree">🌲</span>
-                <span className="group-hover:underline">Ethics-Tech-Policy Decisions Sandbox</span>
+            <nav className="mx-auto max-w-6xl flex items-center justify-between p-2 sm:p-4">
+              <Link href="/" className="font-semibold text-[#2E2D29] text-sm sm:text-lg hover:text-[#8C1515] transition-all duration-300 flex items-center gap-1 sm:gap-2 group flex-1 min-w-0">
+                <span className="text-xl sm:text-2xl stanford-tree flex-shrink-0">🌲</span>
+                <span className="group-hover:underline truncate sm:truncate-none">Ethics-Tech-Policy Decisions Sandbox</span>
               </Link>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
                 <AudioToggle />
-                <Link href="/about" className="text-sm text-[#2E2D29] hover:text-[#8C1515] transition-all duration-300 font-semibold hover:underline">About</Link>
+                <Link href="/about" className="text-xs sm:text-sm text-[#2E2D29] hover:text-[#8C1515] transition-all duration-300 font-semibold hover:underline whitespace-nowrap">About</Link>
               </div>
             </nav>
+            {/* Collapsible Disclaimer for Mobile */}
             <div className="bg-[#F4F4F4] border-t border-[#8C1515]/20">
-              <div className="mx-auto max-w-6xl px-4 py-2">
-                <p className="text-xs text-[#53565A] text-left">
-                  <strong>Disclaimer:</strong> This is an independent capstone project by Joshua Williams for the Ethics+Tech Public Policy Practitioner Course; not associated with the Stanford McCoy Family Center for Ethics in Society or its staff.
-                </p>
+              <div className="mx-auto max-w-6xl px-2 sm:px-4 py-1 sm:py-2">
+                <details className="group">
+                  <summary className="text-xs text-[#53565A] cursor-pointer list-none flex items-start gap-1">
+                    <span className="font-semibold text-[#8C1515] flex-shrink-0">Disclaimer:</span>
+                    <span className="text-[#53565A] line-clamp-2 sm:line-clamp-none">
+                      This is an independent capstone project by Joshua Williams for the Ethics+Tech Public Policy Practitioner Course; not associated with the Stanford McCoy Family Center for Ethics in Society or its staff.
+                    </span>
+                    <span className="text-[#8C1515] font-semibold ml-auto flex-shrink-0 sm:hidden">(tap to expand)</span>
+                  </summary>
+                  <p className="text-xs text-[#53565A] mt-1 pl-4 sm:pl-0">
+                    This is an independent capstone project by Joshua Williams for the Ethics+Tech Public Policy Practitioner Course; not associated with the Stanford McCoy Family Center for Ethics in Society or its staff.
+                  </p>
+                </details>
               </div>
             </div>
           </header>
