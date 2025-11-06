@@ -54,10 +54,9 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
                       <span className="text-[#8C1515] font-semibold ml-2 flex-shrink-0 sm:hidden" id="disclaimer-expand-hint">(tap to expand)</span>
                     </div>
                   </summary>
-                  {/* Mobile: Only shows full text when expanded (replaces summary text) */}
+                  {/* Mobile: Only shows full text when expanded */}
                   <div className="sm:hidden">
-                    <p className="text-xs text-[#53565A] leading-relaxed mt-1">
-                      <span className="font-semibold text-[#8C1515]">Disclaimer: </span>
+                    <p className="text-xs text-[#53565A] leading-relaxed mt-2">
                       This is an independent capstone project by Joshua Williams for the Ethics+Tech Public Policy Practitioner Course; not associated with the Stanford McCoy Family Center for Ethics in Society or its staff.
                     </p>
                   </div>

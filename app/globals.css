@@ -20,16 +20,35 @@
     display: none;
   }
   
-  /* Mobile: Hide entire summary when details is open to prevent duplication */
+  /* Mobile: Hide truncated text when open, but keep summary clickable to collapse */
   @media (max-width: 639px) {
-    /* Hide the entire summary when open - expanded content will show full text with label */
-    details[open] summary {
+    /* Hide the truncated text and (tap to expand) when open */
+    details[open] summary #disclaimer-summary-mobile {
       display: none;
+    }
+    
+    details[open] summary #disclaimer-expand-hint {
+      display: none;
+    }
+    
+    /* When open, show "(tap to collapse)" hint instead */
+    details[open] summary::after {
+      content: " (tap to collapse)";
+      color: #8C1515;
+      font-weight: 600;
+      margin-left: 0.5rem;
+      font-size: 0.75rem;
     }
     
     /* Show expanded content only when open */
     details:not([open]) > div {
       display: none;
+    }
+    
+    /* Keep summary visible and clickable even when open */
+    details[open] summary {
+      display: block;
+      cursor: pointer;
     }
   }
   
