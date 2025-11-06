@@ -19,6 +19,12 @@
   details summary::marker {
     display: none;
   }
+  
+  /* Touch manipulation for better mobile interaction */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(140, 21, 21, 0.1);
+  }
 }
 
 /* Stanford University Official Brand Colors - Enhanced */

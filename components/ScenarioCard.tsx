@@ -133,32 +133,34 @@ export default function ScenarioCard({
   };
 
   return (
-    <div className="space-y-4">
-      <div className="flex items-start justify-between gap-3">
-        <div className="flex-1">
-          <h3 className="text-2xl font-bold text-[#1F2937] mb-2">{scenario.title}</h3>
-          <p className="text-base font-medium text-[#374151] leading-relaxed">{scenario.prompt}</p>
+    <div className="space-y-5 sm:space-y-6">
+      <div className="flex flex-col sm:flex-row items-start justify-between gap-4 sm:gap-3">
+        <div className="flex-1 space-y-3 sm:space-y-4">
+          <h3 className="text-xl sm:text-2xl font-bold text-[#1F2937] leading-tight">{scenario.title}</h3>
+          <p className="text-sm sm:text-base font-medium text-[#374151] leading-relaxed pr-2 sm:pr-0">
+            {scenario.prompt}
+          </p>
         </div>
-        <div className="flex gap-2 flex-shrink-0">
-          <button onClick={doSave} className="btn-ghost px-4 py-2 text-sm font-semibold">Save Your Progress</button>
-          <Link href="/" className="btn-ghost px-4 py-2 text-sm font-semibold">Back Home</Link>
+        <div className="flex gap-2 flex-shrink-0 w-full sm:w-auto justify-end sm:justify-start">
+          <button onClick={doSave} className="btn-ghost px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold touch-manipulation">Save Your Progress</button>
+          <Link href="/" className="btn-ghost px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold touch-manipulation">Back Home</Link>
         </div>
       </div>
 
       <CheatCodeButton scenario={scenario} />
 
-      <fieldset className="card space-y-3 p-4">
-        <div className="font-bold text-base text-[#1F2937] mb-2">Choose From Below:</div>
+      <fieldset className="card space-y-4 p-5 sm:p-6">
+        <div className="font-bold text-sm sm:text-base text-[#1F2937] mb-3">Choose From Below:</div>
         {(['A','B','C'] as ChoiceKey[]).map(key => (
-          <label key={key} className="flex items-start gap-3 cursor-pointer hover:bg-gray-50 p-2 rounded transition-colors">
+          <label key={key} className="flex items-start gap-3 sm:gap-4 cursor-pointer hover:bg-gray-50 active:bg-gray-100 p-3 sm:p-4 rounded-lg transition-colors touch-manipulation">
             <input 
               type="radio" 
               name={`choice-${scenario.scenario_id}`} 
               checked={choice===key} 
               onChange={()=>setChoice(key)}
-              className="mt-1 flex-shrink-0"
+              className="mt-1 sm:mt-1.5 flex-shrink-0 w-5 h-5 sm:w-4 sm:h-4"
             />
-            <span className="text-base font-semibold text-[#1F2937] leading-relaxed">
+            <span className="text-sm sm:text-base font-semibold text-[#1F2937] leading-relaxed pt-0.5">
               <strong className="text-[#8C1515] font-bold">{key}:</strong> {scenario.choices[key]}
             </span>
           </label>
@@ -167,11 +169,11 @@ export default function ScenarioCard({
 
       <ToolkitCard flow={scenario.toolkit_flow} choice={choice} onComplete={setToolkit} />
 
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 pt-2">
         <button 
           disabled={!canSubmit} 
           onClick={handleSubmit}
-          className={`btn px-6 py-3 text-base font-semibold ${!canSubmit ? 'opacity-60 cursor-not-allowed' : ''}`} 
+          className={`btn px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold touch-manipulation ${!canSubmit ? 'opacity-60 cursor-not-allowed' : ''}`} 
           aria-disabled={!canSubmit}
         >
           Submit Decision

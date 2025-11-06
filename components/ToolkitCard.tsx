@@ -53,23 +53,23 @@ export default function ToolkitCard({ flow, choice, onComplete }:{
   }, [answers, checks, flow.prompts, actions, flow.metrics, onComplete]);
 
   return (
-    <div className="card space-y-4">
+    <div className="card space-y-5 sm:space-y-6 p-5 sm:p-6">
       {/* Title changed by parent; prompts only */}
       {flow.prompts.map((p, i) => (
-        <div key={i}>
-          <label className="block font-semibold text-base text-[#1F2937] mb-2">{p}</label>
-          <textarea className="w-full border rounded p-3 min-h-[84px] text-base text-[#374151] leading-relaxed"
+        <div key={i} className="space-y-3">
+          <label className="block font-semibold text-sm sm:text-base text-[#1F2937] mb-3">{p}</label>
+          <textarea className="w-full border-2 rounded-lg p-4 min-h-[100px] sm:min-h-[84px] text-sm sm:text-base text-[#374151] leading-relaxed focus:ring-2 focus:ring-[#8C1515] focus:border-[#8C1515] transition-all"
             value={answers[i]}
             onChange={e => { const next = answers.slice(); next[i] = e.target.value; setAnswers(next); }}
             aria-label={`Toolkit prompt ${i+1}`} />
         </div>
       ))}
       {actions.length > 0 && (
-        <div>
-          <div className="font-bold text-base text-[#1F2937] mb-2">Potential Action Steps{choice ? ` (for choice ${choice})` : ''}</div>
-          <p className="text-sm text-gray-600 mb-3 font-medium">All potential action steps must be selected to proceed.</p>
+        <div className="space-y-4">
+          <div className="font-bold text-sm sm:text-base text-[#1F2937] mb-2">Potential Action Steps{choice ? ` (for choice ${choice})` : ''}</div>
+          <p className="text-xs sm:text-sm text-gray-600 mb-4 font-medium">All potential action steps must be selected to proceed.</p>
           {actions.map((a, i) => (
-            <label key={i} className="flex items-start gap-3 mb-2 cursor-pointer hover:bg-gray-50 p-2 rounded transition-colors">
+            <label key={i} className="flex items-start gap-3 sm:gap-4 mb-3 cursor-pointer hover:bg-gray-50 active:bg-gray-100 p-3 sm:p-4 rounded-lg transition-colors touch-manipulation">
               <input 
                 type="checkbox" 
                 checked={checks[i] || false} 
@@ -79,9 +79,9 @@ export default function ToolkitCard({ flow, choice, onComplete }:{
                   setChecks(next); 
                 }} 
                 aria-label={`Potential action step ${i+1}`}
-                className="mt-1 flex-shrink-0"
+                className="mt-1 sm:mt-1.5 flex-shrink-0 w-5 h-5 sm:w-4 sm:h-4"
               />
-              <span className="text-base font-semibold text-[#1F2937] leading-relaxed">{a}</span>
+              <span className="text-sm sm:text-base font-semibold text-[#1F2937] leading-relaxed pt-0.5">{a}</span>
             </label>
           ))}
         </div>

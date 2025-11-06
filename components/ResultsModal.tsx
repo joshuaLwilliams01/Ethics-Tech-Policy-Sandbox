@@ -71,10 +71,10 @@ export default function ResultsModal({
           }}
         >
           {/* Header with gradient - enhanced visibility */}
-          <div className="bg-gradient-to-r from-[#8C1515] via-[#C41E3A] to-[#8C1515] px-3 sm:px-5 py-2 sm:py-3 rounded-t-lg sticky top-0 z-10 shadow-md">
-            <div className="flex items-center justify-between gap-2 sm:gap-3">
-              <h2 className="text-sm sm:text-lg font-bold text-white flex items-center gap-1 sm:gap-2 flex-1 min-w-0">
-                <span className="text-base sm:text-xl flex-shrink-0">🎯</span>
+          <div className="bg-gradient-to-r from-[#8C1515] via-[#C41E3A] to-[#8C1515] px-3 sm:px-5 py-3 sm:py-4 rounded-t-lg sticky top-0 z-10 shadow-md">
+            <div className="flex items-center justify-between gap-2 sm:gap-3 mb-1">
+              <h2 className="text-base sm:text-lg font-bold text-white flex items-center gap-1 sm:gap-2 flex-1 min-w-0">
+                <span className="text-lg sm:text-xl flex-shrink-0">🎯</span>
                 <span className="truncate">Result(s) of Your Decision</span>
               </h2>
               <button
@@ -82,12 +82,15 @@ export default function ResultsModal({
                   playButtonClick();
                   onClose();
                 }}
-                className="text-white hover:text-gray-200 transition-colors duration-200 text-xl font-bold w-7 h-7 flex items-center justify-center rounded-full hover:bg-white/20 flex-shrink-0"
+                className="text-white hover:text-gray-200 transition-colors duration-200 text-xl font-bold w-7 h-7 flex items-center justify-center rounded-full hover:bg-white/20 flex-shrink-0 touch-manipulation"
                 aria-label="Close modal"
               >
                 ×
               </button>
             </div>
+            <p className="text-xs sm:text-sm text-white/90 font-medium italic">
+              As a result of your decision...
+            </p>
           </div>
 
           {/* Content - enhanced padding and spacing */}

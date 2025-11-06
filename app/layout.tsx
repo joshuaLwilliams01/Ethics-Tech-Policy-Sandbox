@@ -38,14 +38,14 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
             <div className="bg-[#F4F4F4] border-t border-[#8C1515]/20">
               <div className="mx-auto max-w-6xl px-2 sm:px-4 py-1 sm:py-2">
                 <details className="group">
-                  <summary className="text-xs text-[#53565A] cursor-pointer list-none flex items-start gap-1">
+                  <summary className="text-xs text-[#53565A] cursor-pointer list-none flex items-start gap-1 py-1 touch-manipulation">
                     <span className="font-semibold text-[#8C1515] flex-shrink-0">Disclaimer:</span>
-                    <span className="text-[#53565A] line-clamp-2 sm:line-clamp-none">
+                    <span className="text-[#53565A] line-clamp-2 sm:line-clamp-none flex-1">
                       This is an independent capstone project by Joshua Williams for the Ethics+Tech Public Policy Practitioner Course; not associated with the Stanford McCoy Family Center for Ethics in Society or its staff.
                     </span>
-                    <span className="text-[#8C1515] font-semibold ml-auto flex-shrink-0 sm:hidden">(tap to expand)</span>
+                    <span className="text-[#8C1515] font-semibold ml-2 flex-shrink-0 sm:hidden">(tap to expand)</span>
                   </summary>
-                  <p className="text-xs text-[#53565A] mt-1 pl-4 sm:pl-0">
+                  <p className="text-xs text-[#53565A] mt-2 pl-4 sm:pl-0 leading-relaxed">
                     This is an independent capstone project by Joshua Williams for the Ethics+Tech Public Policy Practitioner Course; not associated with the Stanford McCoy Family Center for Ethics in Society or its staff.
                   </p>
                 </details>
