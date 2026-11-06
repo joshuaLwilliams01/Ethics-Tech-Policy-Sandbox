@@ -1,4 +1,5 @@
 'use client';
+import { createPortal } from 'react-dom';
 import { useEffect } from 'react';
 import React from 'react';
 import { playButtonClick } from '@/lib/sounds';
@@ -46,7 +47,10 @@ export default function ResultsModal({
 
   if (!isOpen || !results) return null;
 
-  return (
+  // Render at the top of the page so the sticky site header can't cover it
+  // (inside the page, a parent's stacking context traps the z-index).
+  if (typeof document === 'undefined') return null;
+  return createPortal(
     <>
       {/* Backdrop */}
       <div
@@ -150,7 +154,8 @@ export default function ResultsModal({
           </div>
         </div>
       </div>
-    </>
+    </>,
+    document.body
   );
 }
 
