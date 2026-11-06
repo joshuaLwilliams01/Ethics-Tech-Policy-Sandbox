@@ -41,7 +41,8 @@
         "owner_required": true,
         "review_default_days": 180
       },
-      "toolkit_references": "Future Story, Weighing Options"
+      "toolkit_references": "Future Story, Weighing Options",
+      "toolkit_tip": "Write a Future Story five years in: is the city locked into one provider? Which choice keeps the ability to leave and to audit?"
     },
     {
       "scenario_id": "L4-S2",
@@ -82,7 +83,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Impact Explorer, Ethics Frame"
+      "toolkit_references": "Impacts Explorer, Ethics Frame",
+      "toolkit_tip": "Use Impacts Explorer on leaving the app store: which users lose access or features, and what does that cost them and the app's public mission?"
     },
     {
       "scenario_id": "L4-S3",
@@ -123,7 +125,8 @@
         "owner_required": true,
         "review_default_days": 180
       },
-      "toolkit_references": "Values Explainer Cards, Ethics Frame"
+      "toolkit_references": "Values Explainer Cards, Ethics Frame",
+      "toolkit_tip": "Use the Values Explainer Cards on justice: who created the public data, who profits from it, and what should the public get back?"
     },
     {
       "scenario_id": "L4-S4",
@@ -164,7 +167,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Future Story, Weighing Options"
+      "toolkit_references": "Future Story, Weighing Options",
+      "toolkit_tip": "Use Weighing Options to compare accepting the deal with safeguards against declining it: what happens to students, teachers, and curriculum independence under each?"
     },
     {
       "scenario_id": "L4-S5",
@@ -205,7 +209,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Impact Explorer, Values Explainer Cards"
+      "toolkit_references": "Impacts Explorer, Values Explainer Cards",
+      "toolkit_tip": "Use Impacts Explorer to follow the data: where does it go once shared with messaging apps, and whose privacy pays for the engagement gains?"
     }
   ]
 }

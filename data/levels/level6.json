@@ -41,7 +41,8 @@
         "owner_required": true,
         "review_default_days": 180
       },
-      "toolkit_references": "Values Explainer Cards, Ethics Frame"
+      "toolkit_references": "Values Explainer Cards, Ethics Frame",
+      "toolkit_tip": "Use the Values Explainer Cards on well-being and justice: who gets the 20% productivity gain, and who bears the 8% displacement risk?"
     },
     {
       "scenario_id": "L6-S2",
@@ -82,7 +83,8 @@
         "owner_required": true,
         "review_default_days": 60
       },
-      "toolkit_references": "Impact Explorer, Weighing Options"
+      "toolkit_references": "Impacts Explorer, Weighing Options",
+      "toolkit_tip": "Use Weighing Options on co-designed vs. trial scheduling: which reduces burnout, and do workers get a say in their own shifts?"
     },
     {
       "scenario_id": "L6-S3",
@@ -123,7 +125,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Future Story, Weighing Options"
+      "toolkit_references": "Future Story, Weighing Options",
+      "toolkit_tip": "Write a Future Story one year after rollout: are agents more skilled, or more dependent and monitored? Which choice led there?"
     },
     {
       "scenario_id": "L6-S4",
@@ -164,7 +167,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Impact Explorer, Ethics Frame"
+      "toolkit_references": "Impacts Explorer, Ethics Frame",
+      "toolkit_tip": "Use Impacts Explorer from a bottom-tier freelancer's view: how does a low ranking affect their income, and can they ever climb out?"
     },
     {
       "scenario_id": "L6-S5",
@@ -205,7 +209,8 @@
         "owner_required": true,
         "review_default_days": 180
       },
-      "toolkit_references": "Values Explainer Cards, Weighing Options"
+      "toolkit_references": "Values Explainer Cards, Weighing Options",
+      "toolkit_tip": "Use Weighing Options to compare severance with re-skilling: which leaves displaced clerks better off in two years, and which can the budget sustain?"
     }
   ]
 }

@@ -40,7 +40,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Future Story, Ethics Frame, Weighing Options, Values Explainer Cards"
+      "toolkit_references": "Future Story, Ethics Frame, Weighing Options, Values Explainer Cards",
+      "toolkit_tip": "Write a Future Story for each path, five years out: one with the ban and one without. Who is safer in each, and whose speech was chilled?"
     },
     {
       "scenario_id": "L7-S2",
@@ -80,7 +81,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Ethics Frame, Impact Explorer, Ethics Gauge, Weighing Options"
+      "toolkit_references": "Ethics Frame, Impacts Explorer, Ethics Gauge, Weighing Options",
+      "toolkit_tip": "Use the Ethics Gauge on speed vs. accuracy: rate the harm of a wrongful takedown against the harm of leaving harassment up."
     },
     {
       "scenario_id": "L7-S3",
@@ -120,7 +122,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Impact Explorer, Ethics Gauge, Weighing Options, Future Story"
+      "toolkit_references": "Impacts Explorer, Ethics Gauge, Weighing Options, Future Story",
+      "toolkit_tip": "Use Impacts Explorer on each path: what happens to the people who were harmed, to the offender, and to community trust in the platform?"
     },
     {
       "scenario_id": "L7-S4",
@@ -160,7 +163,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Values Explainer Cards, Impact Explorer, Weighing Options"
+      "toolkit_references": "Values Explainer Cards, Impacts Explorer, Weighing Options",
+      "toolkit_tip": "Use the Values Explainer Cards to define safety with dignity the way residents would, then test each option against that definition."
     },
     {
       "scenario_id": "L7-S5",
@@ -200,8 +204,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Values Explainer Cards, Ethics Frame, Future Story"
+      "toolkit_references": "Values Explainer Cards, Ethics Frame, Future Story",
+      "toolkit_tip": "In the Ethics Frame, list who cannot leave the agency's services. Which choice best protects them while reform happens?"
     }
   ]
 }
-

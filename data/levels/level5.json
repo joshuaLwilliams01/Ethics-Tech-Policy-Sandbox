@@ -41,7 +41,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Impact Explorer, Weighing Options"
+      "toolkit_references": "Impacts Explorer, Weighing Options",
+      "toolkit_tip": "Use Weighing Options on storing conversations vs. keeping none: what does the city learn, and will residents speak less freely if they are recorded?"
     },
     {
       "scenario_id": "L5-S2",
@@ -82,7 +83,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Values Explainer Cards, Future Story"
+      "toolkit_references": "Values Explainer Cards, Future Story",
+      "toolkit_tip": "Use the Values Explainer Cards on autonomy: is sharing your location truly a free choice when the discount matters most to low-income riders?"
     },
     {
       "scenario_id": "L5-S3",
@@ -123,7 +125,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Impact Explorer, Ethics Frame"
+      "toolkit_references": "Impacts Explorer, Ethics Frame",
+      "toolkit_tip": "Use Impacts Explorer on buying the data: who becomes newly visible to the state, and how might that change how they are treated?"
     },
     {
       "scenario_id": "L5-S4",
@@ -164,7 +167,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Future Story, Weighing Options"
+      "toolkit_references": "Future Story, Weighing Options",
+      "toolkit_tip": "Write a Future Story where one user is re-identified from shared data: what harm follows, and which choice would have prevented it?"
     },
     {
       "scenario_id": "L5-S5",
@@ -205,7 +209,8 @@
         "owner_required": true,
         "review_default_days": 60
       },
-      "toolkit_references": "Values Explainer Cards, Ethics Frame"
+      "toolkit_references": "Values Explainer Cards, Ethics Frame",
+      "toolkit_tip": "In the Ethics Frame, ask whether face scans are necessary to solve the security problem. What lighter options exist, and who could refuse?"
     }
   ]
 }

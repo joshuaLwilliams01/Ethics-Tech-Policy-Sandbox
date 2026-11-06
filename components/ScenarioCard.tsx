@@ -1,5 +1,6 @@
 'use client';
 import { useMemo, useState, useEffect } from 'react';
+import ToolkitGuide from '@/components/ToolkitGuide';
 import type { Scenario, ChoiceKey } from '@/lib/types';
 import ToolkitCard from './ToolkitCard';
 import { describeResult } from '@/lib/results';
@@ -54,27 +55,7 @@ function CheatCodeButton({ scenario }: { scenario: Scenario }) {
             <span className="text-[#1F2937] font-semibold text-base">{scenario.toolkit_cues}</span>
           </div>
           {scenario.toolkit_references && (
-            <div className="mt-3 p-4 bg-white/70 rounded border border-[#8C1515]/30">
-              <strong className="text-[#8C1515] text-base font-bold">Stanford Ethics Toolkit Reference(s):</strong>{' '}
-              <a
-                href="https://ethicsinsociety.stanford.edu/tech-ethics/ethics-toolkit"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#8C1515] hover:text-[#820f0f] underline text-sm font-semibold"
-              >
-                https://ethicsinsociety.stanford.edu/tech-ethics/ethics-toolkit
-              </a>
-              <ol className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-base text-[#1F2937] font-semibold list-decimal list-inside">
-                {scenario.toolkit_references.split(',').map((ref, idx) => {
-                  const trimmedRef = ref.trim();
-                  return (
-                    <li key={idx} className="leading-relaxed">
-                      {trimmedRef}
-                    </li>
-                  );
-                })}
-              </ol>
-            </div>
+            <ToolkitGuide references={scenario.toolkit_references} tip={scenario.toolkit_tip} />
           )}
           <div className="mt-3 p-4 bg-white/70 rounded border border-[#8C1515]/30">
             <strong className="text-[#8C1515] text-base font-bold">People + Planet + Parity Cues:</strong>{' '}
