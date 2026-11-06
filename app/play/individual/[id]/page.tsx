@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { playButtonClick } from '@/lib/sounds';
 import { loadProgress } from '@/lib/save';
+import { saveLatestRun } from '@/lib/run';
 
 type StepResult = {
   scenario_id: string;
@@ -63,6 +64,9 @@ export default function IndividualLevel({ params }:{ params:{ id:string } }) {
 
     const step: StepResult = { scenario_id: scenario.scenario_id, ...payload, score };
     const next = [...results]; next[idx] = step; setResults(next);
+
+    // Persist the run so the Results page can read it
+    saveLatestRun({ level: levelIndex, title: pack.title, steps: next.filter(Boolean), updatedAt: Date.now() });
     
     // Check if this is the last scenario of level 7 (completion)
     if (isLast && levelIndex === 7) {
@@ -98,7 +102,7 @@ export default function IndividualLevel({ params }:{ params:{ id:string } }) {
           playButtonClick();
           setIdx(i=>Math.min(pack.scenarios.length-1, i+1));
         }} className="btn-ghost px-4 py-2 text-sm font-semibold">Next</button>}
-        {isLast && <Link href={`/results/local-${Date.now()}`} onClick={() => playButtonClick()} className="btn px-6 py-3 text-base font-semibold">See Level Results</Link>}
+        {isLast && <Link href={`/results/local-${Date.now()}`} onClick={() => { playButtonClick(); saveLatestRun({ level: levelIndex, title: pack.title, steps: results.filter(Boolean), updatedAt: Date.now() }); }} className="btn px-6 py-3 text-base font-semibold">See Level Results</Link>}
         <Link href="/" onClick={() => playButtonClick()} className="ml-auto btn-ghost px-4 py-2 text-sm font-semibold">Back Home</Link>
       </div>
 
