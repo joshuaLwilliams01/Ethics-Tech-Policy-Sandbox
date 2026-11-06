@@ -41,7 +41,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Values Explainer Cards, Weighing Options"
+      "toolkit_references": "Values Explainer Cards, Weighing Options",
+      "toolkit_tip": "Use the Values Explainer Cards to name the values in tension, child safety and privacy, then ask which choice gives up the least of each."
     },
     {
       "scenario_id": "L3-S2",
@@ -82,7 +83,8 @@
         "owner_required": true,
         "review_default_days": 60
       },
-      "toolkit_references": "Future Story, Ethics Frame"
+      "toolkit_references": "Future Story, Ethics Frame",
+      "toolkit_tip": "Write a Future Story where the misuse becomes public: which safeguards would you wish had been in place before launch?"
     },
     {
       "scenario_id": "L3-S3",
@@ -123,7 +125,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Impact Explorer, Ethics Frame"
+      "toolkit_references": "Impacts Explorer, Ethics Frame",
+      "toolkit_tip": "Use Impacts Explorer on one wrongful bulk report: who is falsely flagged, how long until it is corrected, and what does that do to trust?"
     },
     {
       "scenario_id": "L3-S4",
@@ -164,7 +167,8 @@
         "owner_required": true,
         "review_default_days": 60
       },
-      "toolkit_references": "Values Explainer Cards, Weighing Options"
+      "toolkit_references": "Values Explainer Cards, Weighing Options",
+      "toolkit_tip": "Use Weighing Options to compare stricter monitoring rules with non-AI alternatives: which keeps students safe with the least intrusion on their privacy?"
     },
     {
       "scenario_id": "L3-S5",
@@ -205,7 +209,8 @@
         "owner_required": true,
         "review_default_days": 30
       },
-      "toolkit_references": "Impact Explorer, Ethics Frame"
+      "toolkit_references": "Impacts Explorer, Ethics Frame",
+      "toolkit_tip": "In the Ethics Frame, put survivors first: what does each choice mean for their safety and consent, and what proof do investigators truly need?"
     }
   ]
 }

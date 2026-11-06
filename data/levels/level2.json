@@ -40,7 +40,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Values Explainer Cards, Impact Explorer"
+      "toolkit_references": "Values Explainer Cards, Impacts Explorer",
+      "toolkit_tip": "Trace the 10–15% disparity in Impacts Explorer: which applicants are wrongly screened out, what happens to them next, and which values does that affect?"
     },
     {
       "scenario_id": "L2-S2",
@@ -81,7 +82,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Future Story, Weighing Options"
+      "toolkit_references": "Future Story, Weighing Options",
+      "toolkit_tip": "Write a Future Story where location scoring is everywhere: what could lenders learn about borrowers, and which choice would you be glad you picked?"
     },
     {
       "scenario_id": "L2-S3",
@@ -121,7 +123,8 @@
         "owner_required": true,
         "review_default_days": 60
       },
-      "toolkit_references": "Impact Explorer, Weighing Options"
+      "toolkit_references": "Impacts Explorer, Weighing Options",
+      "toolkit_tip": "Use Impacts Explorer from a mis-flagged student's view: what happens after a false flag, and which choice removes that harm fastest?"
     },
     {
       "scenario_id": "L2-S4",
@@ -162,7 +165,8 @@
         "owner_required": true,
         "review_default_days": 30
       },
-      "toolkit_references": "Future Story, Ethics Frame"
+      "toolkit_references": "Future Story, Ethics Frame",
+      "toolkit_tip": "In the Ethics Frame, list who is affected: patients with thin medical records versus everyone else. Is a shorter average wait worth unequal priority?"
     },
     {
       "scenario_id": "L2-S5",
@@ -203,7 +207,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Values Explainer Cards, Weighing Options"
+      "toolkit_references": "Values Explainer Cards, Weighing Options",
+      "toolkit_tip": "Use Weighing Options on your top two choices: does each reduce harm without increasing surveillance of the same neighborhoods? Who gains, and who pays?"
     }
   ]
 }

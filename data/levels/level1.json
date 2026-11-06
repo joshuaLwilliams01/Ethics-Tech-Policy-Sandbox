@@ -40,7 +40,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Values Explainer Cards, Impact Explorer, Future Story, Weighing Options, Ethics Frame"
+      "toolkit_references": "Values Explainer Cards, Impacts Explorer, Future Story, Weighing Options, Ethics Frame",
+      "toolkit_tip": "Use Weighing Options on A vs. B: who keeps hospital and transit service, and how long are exploited workers left waiting under each?"
     },
     {
       "scenario_id": "L1-S2",
@@ -80,7 +81,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Impact Explorer, Future Story, Ethics Frame"
+      "toolkit_references": "Impacts Explorer, Future Story, Ethics Frame",
+      "toolkit_tip": "Run Impacts Explorer twice, for a pause and for a phased transition, tracing effects on residents who rely on the app and on the overnight labelers."
     },
     {
       "scenario_id": "L1-S3",
@@ -120,7 +122,8 @@
         "owner_required": true,
         "review_default_days": 60
       },
-      "toolkit_references": "Values Explainer Cards, Weighing Options"
+      "toolkit_references": "Values Explainer Cards, Weighing Options",
+      "toolkit_tip": "Use the Values Explainer Cards to name what you owe moderators (well-being, fair treatment), then test which choice protects them without abandoning users."
     },
     {
       "scenario_id": "L1-S4",
@@ -160,7 +163,8 @@
         "owner_required": true,
         "review_default_days": 30
       },
-      "toolkit_references": "Impact Explorer, Weighing Options"
+      "toolkit_references": "Impacts Explorer, Weighing Options",
+      "toolkit_tip": "With Impacts Explorer, map who gets the bill savings and who gets the blackouts. Are they the same people? Then see which option shares the burden fairly."
     },
     {
       "scenario_id": "L1-S5",
@@ -200,7 +204,8 @@
         "owner_required": true,
         "review_default_days": 90
       },
-      "toolkit_references": "Future Story, Ethics Frame"
+      "toolkit_references": "Future Story, Ethics Frame",
+      "toolkit_tip": "Write a Future Story five years out: where did the devices end up, whose health was harmed, and who paid for the cleanup?"
     }
   ]
 }

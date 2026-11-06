@@ -14,6 +14,7 @@ export type Scenario = {
   choices: Record<ChoiceKey,string>;
   toolkit_cues?: string;
   toolkit_references?: string;
+  toolkit_tip?: string; // scenario-specific guidance for using the toolkit
   p3_cues?: string;
   toolkit_flow: ToolkitFlow;
   tags?: string[];
