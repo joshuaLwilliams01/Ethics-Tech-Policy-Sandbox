@@ -67,7 +67,7 @@ export default function ToolkitCard({ flow, choice, onComplete }:{
       {actions.length > 0 && (
         <div className="space-y-4">
           <div className="font-bold text-sm sm:text-base text-[#1F2937] mb-2">Potential Action Steps{choice ? ` (for choice ${choice})` : ''}</div>
-          <p className="text-xs sm:text-sm text-gray-600 mb-4 font-medium">All potential action steps must be selected to proceed.</p>
+          <p className="text-xs sm:text-sm text-[#8C1515] mb-4 font-bold">All potential action steps must be selected to proceed.</p>
           {actions.map((a, i) => (
             <label key={i} className="flex items-start gap-3 sm:gap-4 mb-3 cursor-pointer hover:bg-gray-50 active:bg-gray-100 p-3 sm:p-4 rounded-lg transition-colors touch-manipulation">
               <input 
