@@ -3,7 +3,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { loadLevel } from '@/lib/content';
 import type { LevelPack, ChoiceKey } from '@/lib/types';
 import ScenarioCard from '@/components/ScenarioCard';
-import { scoreDecision } from '@/lib/scoring';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { playButtonClick } from '@/lib/sounds';
@@ -15,7 +14,6 @@ type StepResult = {
   choice: ChoiceKey;
   toolkitOut: any;
   p3Out: any;
-  score: ReturnType<typeof scoreDecision>;
 };
 
 export default function IndividualLevel({ params }:{ params:{ id:string } }) {
@@ -41,28 +39,7 @@ export default function IndividualLevel({ params }:{ params:{ id:string } }) {
   if (!scenario) return <div>No scenarios found in this level.</div>;
 
   const onSubmit = (payload: any) => {
-    const score = scoreDecision({
-      scenario,
-      choice: payload.choice,
-      toolkitFilled: {
-        promptsDone: payload.toolkitOut?.prompts?.filter((p:string)=>p?.trim()).length ?? 0,
-        actionsDone: payload.toolkitOut?.actions?.filter(Boolean).length ?? 0,
-        totalPrompts: scenario.toolkit_flow.prompts.length,
-        totalActions: Array.isArray(scenario.toolkit_flow.quick_actions) 
-          ? scenario.toolkit_flow.quick_actions.length 
-          : (scenario.toolkit_flow.quick_actions?.A?.length ?? 0) + (scenario.toolkit_flow.quick_actions?.B?.length ?? 0) + (scenario.toolkit_flow.quick_actions?.C?.length ?? 0),
-      },
-      p3: {
-        people: false,
-        planet: false,
-        parity: false,
-        specifics: 0
-      },
-      reflectionChars: 200, // no free-text now; give small credit
-      priorVector: 0.5
-    });
-
-    const step: StepResult = { scenario_id: scenario.scenario_id, ...payload, score };
+    const step: StepResult = { scenario_id: scenario.scenario_id, ...payload };
     const next = [...results]; next[idx] = step; setResults(next);
 
     // Persist the run so the Results page can read it

@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { playButtonClick } from '@/lib/sounds';
 import { loadLatestRun, getCompletedLevels, TOTAL_LEVELS } from '@/lib/run';
@@ -32,12 +32,6 @@ export default function Results({ params }:{ params:{ runId:string } }) {
       setScenarios(map);
     });
   }, [run]);
-  const totals = useMemo(() => {
-    if (!run?.steps?.length) return { total:0, count:0 };
-    const total = run.steps.reduce((acc:number, s:any)=> acc + (s?.score?.total||0), 0);
-    return { total, count: run.steps.length, avg: Math.round(total/run.steps.length) };
-  }, [run]);
-
   if (!loaded) return <div>Loading results…</div>;
   if (!run || !run.steps?.length) return (
     <div className="space-y-4">
@@ -49,10 +43,6 @@ export default function Results({ params }:{ params:{ runId:string } }) {
   return (
     <div className="space-y-6">
       <h2 className="text-2xl font-semibold">{run.level ? `Level ${run.level} Results` : 'Results'}{run.title ? `: ${run.title}` : ''}</h2>
-      <div className="border rounded p-3 bg-white/70">
-        <div>Total steps: {totals.count}</div>
-        <div>Average score: <strong>{totals.avg ?? 0}</strong></div>
-      </div>
       <div className="space-y-3">
         {run.steps.map((s:any, i:number)=>{
           const sc = scenarios[s.scenario_id];
@@ -70,7 +60,6 @@ export default function Results({ params }:{ params:{ runId:string } }) {
                 </ol>
               </div>
             )}
-            <div className="text-sm text-gray-600">Total: {s.score?.total ?? 0}</div>
           </div>
           );
         })}
