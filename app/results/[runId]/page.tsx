@@ -1,9 +1,8 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
-import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import Link from 'next/link';
 import { playButtonClick } from '@/lib/sounds';
-import { loadLatestRun } from '@/lib/run';
+import { loadLatestRun, getCompletedLevels, TOTAL_LEVELS } from '@/lib/run';
 import { loadLevel } from '@/lib/content';
 import type { Scenario, ChoiceKey } from '@/lib/types';
 
@@ -18,7 +17,8 @@ function actionsFor(scenario: Scenario | undefined, choice: ChoiceKey): string[]
 export default function Results({ params }:{ params:{ runId:string } }) {
   const [run, setRun] = useState<any>(null);
   const [loaded, setLoaded] = useState(false);
-  useEffect(() => { setRun(loadLatestRun()); setLoaded(true); }, []);
+  const [completed, setCompleted] = useState<number[]>([]);
+  useEffect(() => { setRun(loadLatestRun()); setCompleted(getCompletedLevels()); setLoaded(true); }, []);
   // Look up full choice text and action steps from the level data.
   const [scenarios, setScenarios] = useState<Record<string, Scenario>>({});
   useEffect(() => {
@@ -37,23 +37,6 @@ export default function Results({ params }:{ params:{ runId:string } }) {
     const total = run.steps.reduce((acc:number, s:any)=> acc + (s?.score?.total||0), 0);
     return { total, count: run.steps.length, avg: Math.round(total/run.steps.length) };
   }, [run]);
-
-  const generateCertificate = async () => {
-    playButtonClick();
-    const pdf = await PDFDocument.create();
-    const page = pdf.addPage([612, 396]);
-    const font = await pdf.embedFont(StandardFonts.Helvetica);
-    const bold = await pdf.embedFont(StandardFonts.HelveticaBold);
-    page.drawText('Ethics+Tech Simulator — Certificate of Completion', { x: 40, y: 320, size: 16, font: bold, color: rgb(0.2,0.2,0.2) });
-    page.drawText(`Awarded to: ${'Player'}`, { x: 40, y: 270, size: 14, font: bold });
-    page.drawText(`Completed: ${new Date().toLocaleDateString()}`, { x: 40, y: 245, size: 12, font });
-    page.drawText(`Average Score: ${totals.avg ?? 0}`, { x: 40, y: 225, size: 12, font });
-    page.drawText('People · Planet · Parity', { x: 40, y: 200, size: 12, font: bold, color: rgb(0.55,0,0) });
-    const bytes = await pdf.save();
-    const blob = new Blob([bytes as BlobPart], { type: 'application/pdf' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a'); a.href = url; a.download = 'certificate.pdf'; a.click();
-  };
 
   if (!loaded) return <div>Loading results…</div>;
   if (!run || !run.steps?.length) return (
@@ -92,10 +75,25 @@ export default function Results({ params }:{ params:{ runId:string } }) {
           );
         })}
       </div>
-      <div className="flex gap-2">
-        <button onClick={generateCertificate} className="btn px-6 py-3 text-base font-semibold">Generate Certificate</button>
-        <Link href="/" onClick={() => playButtonClick()} className="btn-ghost px-6 py-3 text-base font-semibold">Back Home</Link>
-      </div>
+      {(() => {
+        const allDone = completed.length >= TOTAL_LEVELS;
+        const nextLevel = Array.from({ length: TOTAL_LEVELS }, (_, k) => k + 1).find(n => !completed.includes(n));
+        return (
+          <div className="space-y-3">
+            <div className="border rounded p-3 bg-white/70 text-sm">
+              {allDone
+                ? <span className="font-semibold">You&apos;ve completed all {TOTAL_LEVELS} levels — your certificate is ready!</span>
+                : <span><span className="font-semibold">{completed.length} of {TOTAL_LEVELS} levels completed.</span> Finish all {TOTAL_LEVELS} levels to unlock your Certificate of Completion.</span>}
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {allDone
+                ? <Link href="/completion" onClick={() => playButtonClick()} className="btn px-6 py-3 text-base font-semibold">Get Your Certificate</Link>
+                : nextLevel && <Link href={`/play/individual/${nextLevel}`} onClick={() => playButtonClick()} className="btn px-6 py-3 text-base font-semibold">Continue to Level {nextLevel}</Link>}
+              <Link href="/" onClick={() => playButtonClick()} className="btn-ghost px-6 py-3 text-base font-semibold">Back Home</Link>
+            </div>
+          </div>
+        );
+      })()}
     </div>
   );
 }

@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { playButtonClick } from '@/lib/sounds';
 import { loadProgress } from '@/lib/save';
-import { saveLatestRun } from '@/lib/run';
+import { saveLatestRun, markLevelCompleted } from '@/lib/run';
 
 type StepResult = {
   scenario_id: string;
@@ -68,18 +68,8 @@ export default function IndividualLevel({ params }:{ params:{ id:string } }) {
     // Persist the run so the Results page can read it
     saveLatestRun({ level: levelIndex, title: pack.title, steps: next.filter(Boolean), updatedAt: Date.now() });
     
-    // Check if this is the last scenario of level 7 (completion)
-    if (isLast && levelIndex === 7) {
-      // Save completion status
-      try {
-        const completedLevels = new Set<number>();
-        completedLevels.add(7);
-        // Store in sessionStorage for completion check
-        sessionStorage.setItem('COMPLETED_LEVELS', JSON.stringify(Array.from(completedLevels)));
-      } catch (e) {
-        console.error('Error saving completion:', e);
-      }
-    }
+    // Finishing the last scenario completes the level (counts toward the certificate)
+    if (isLast) markLevelCompleted(levelIndex);
   };
 
   const isLast = idx === pack.scenarios.length - 1;

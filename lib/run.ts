@@ -37,3 +37,28 @@ export function loadLatestRun(): RunRecord | null {
   }
   return null;
 }
+
+// ---- Level completion tracking (unlocks the certificate) ----
+export const COMPLETED_LEVELS_KEY = 'ETP_COMPLETED_LEVELS';
+export const TOTAL_LEVELS = 7;
+
+export function getCompletedLevels(): number[] {
+  if (typeof window === 'undefined') return [];
+  try {
+    const raw = localStorage.getItem(COMPLETED_LEVELS_KEY);
+    const arr = raw ? JSON.parse(raw) : [];
+    return Array.isArray(arr)
+      ? Array.from(new Set(arr.map(Number).filter(n => n >= 1 && n <= TOTAL_LEVELS))).sort((a, b) => a - b)
+      : [];
+  } catch {
+    return [];
+  }
+}
+
+export function markLevelCompleted(level: number) {
+  if (typeof window === 'undefined') return;
+  const levels = new Set(getCompletedLevels());
+  levels.add(level);
+  try { localStorage.setItem(COMPLETED_LEVELS_KEY, JSON.stringify(Array.from(levels).sort((a, b) => a - b))); }
+  catch (e) { console.error('Could not save level completion', e); }
+}
