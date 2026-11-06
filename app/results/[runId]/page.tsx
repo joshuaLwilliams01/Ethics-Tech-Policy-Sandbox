@@ -3,13 +3,15 @@ import { useEffect, useMemo, useState } from 'react';
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import Link from 'next/link';
 import { playButtonClick } from '@/lib/sounds';
+import { loadLatestRun } from '@/lib/run';
 
 export default function Results({ params }:{ params:{ runId:string } }) {
   const [run, setRun] = useState<any>(null);
-  useEffect(() => { const raw = sessionStorage.getItem('LATEST_RUN'); if (raw) setRun(JSON.parse(raw)); }, []);
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => { setRun(loadLatestRun()); setLoaded(true); }, []);
   const totals = useMemo(() => {
     if (!run?.steps?.length) return { total:0, count:0 };
-    const total = run.steps.reduce((acc:number, s:any)=> acc + (s.score?.total||0), 0);
+    const total = run.steps.reduce((acc:number, s:any)=> acc + (s?.score?.total||0), 0);
     return { total, count: run.steps.length, avg: Math.round(total/run.steps.length) };
   }, [run]);
 
@@ -30,10 +32,17 @@ export default function Results({ params }:{ params:{ runId:string } }) {
     const a = document.createElement('a'); a.href = url; a.download = 'certificate.pdf'; a.click();
   };
 
-  if (!run) return <div>No local run found.</div>;
+  if (!loaded) return <div>Loading results…</div>;
+  if (!run || !run.steps?.length) return (
+    <div className="space-y-4">
+      <h2 className="text-2xl font-semibold">No results yet</h2>
+      <p>We couldn&apos;t find a completed level on this device. Submit at least one decision in a level, then choose &quot;See Level Results.&quot;</p>
+      <Link href="/" onClick={() => playButtonClick()} className="btn px-6 py-3 text-base font-semibold">Back Home</Link>
+    </div>
+  );
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-semibold">Results</h2>
+      <h2 className="text-2xl font-semibold">{run.level ? `Level ${run.level} Results` : 'Results'}{run.title ? `: ${run.title}` : ''}</h2>
       <div className="border rounded p-3 bg-white/70">
         <div>Total steps: {totals.count}</div>
         <div>Average score: <strong>{totals.avg ?? 0}</strong></div>
@@ -43,7 +52,7 @@ export default function Results({ params }:{ params:{ runId:string } }) {
           <div key={i} className="border rounded p-3">
             <div className="font-medium">{s.scenario_id}</div>
             <div className="text-sm text-gray-600">Choice: {s.choice}</div>
-            <div className="text-sm">Total: {s.score.total}</div>
+            <div className="text-sm">Total: {s.score?.total ?? 0}</div>
           </div>
         ))}
       </div>
